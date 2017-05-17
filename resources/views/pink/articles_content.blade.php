@@ -1,0 +1,68 @@
+<div id="content-blog" class="content group">
+	@if($alias)
+	@if($articles)
+	@foreach($articles as $item)
+	      <div class="sticky hentry hentry-post blog-big group">
+				                <!-- post featured & title -->
+				                <div class="thumbnail">
+				                    <!-- post title -->
+				                    <h2 class="post-title"><a href="{{ route('posts.show',['id'=>$item->id]) }}">{{ $item->title }}</a></h2>
+				                    <!-- post featured -->
+				                    <div class="image-wrap">
+				                        <img src="{{$item->img}}" alt="{{ $item->title }}" title="{{ $item->title }}" />        
+				                    </div>
+				                    <p class="date">
+				                        <span class="month">{{$item->created_at->format('M')}}</span>
+				                        <span class="day">{{$item->created_at->format('d')}}</span>
+				                    </p>
+				                </div>
+				                <!-- post meta -->
+				                <div class="meta group">
+				                    <p class="author"><span>by <a href="#" title="Posts by {{$item->user->name}}" rel="author">{{$item->user->name}}</a></span></p>
+				                    <p class="categories"><span>In: <a href="{{route('postsCat',['cat_alias' => $item->category->alias])}}" title="View all posts in {{$item->category->title}}" rel="category tag">{{$item->category->title}}</a></span></p>
+				                    <p class="comments"><span><a href="{{ route('posts.show',['id'=>$item->id]) }}#respond" title="Comment on Section shortcodes &amp; sticky posts!">{{count($item->comments) ? count($item->comments) : '0'}} {{Lang::choice('ru.comments',count($item->comments))}}</a></span></p>
+				                </div>
+				                <!-- post content -->
+				                <div class="the-content group">
+				                    <p>{!!str_limit($item->text,512)!!}</p>
+				                    <p><a href="{{route('posts.show',['id'=>$item->id])}}" class="btn   btn-beetle-bus-goes-jamba-juice-4 btn-more-link">→ {{Lang::get('ru.read_more')}}</a></p>
+				                    <!--<hr size="1" color="grey">-->
+				                </div>
+				                <div class="clear"></div>
+		 </div>
+	@endforeach			            
+				        
+				            
+				            <div class="general-pagination group">
+				            
+				            	@if($articles->lastPage() > 1) 
+				            		
+				            		@if($articles->currentPage() !== 1)
+				            			<a href="{{ $articles->url(($articles->currentPage() - 1)) }}">{{ Lang::get('pagination.previous') }}</a>
+				            		@endif
+				            		
+				            		@for($i = 1; $i <= $articles->lastPage(); $i++)
+				            			@if($articles->currentPage() == $i)
+				            				<a class="selected disabled">{{ $i }}</a>
+				            			@else
+				            				<a href="{{ $articles->url($i) }}">{{ $i }}</a>
+				            			@endif		
+				            		@endfor
+				            		
+				            		@if($articles->currentPage() !== $articles->lastPage())
+				            			<a href="{{ $articles->url(($articles->currentPage() + 1)) }}">{{ Lang::get('pagination.next') }}</a>
+				            		@endif
+				            		
+				            	
+				            	@endif
+				           
+				            </div>
+			@else
+			
+				<h3>{!! Lang::get('ru.articles_no') !!}</h3>
+			
+			@endif
+			@else
+				<h3>Error 404 Category!</h3>	
+			@endif            
+				        </div>
