@@ -8,7 +8,7 @@
 				                      @foreach($randomposts as $randompost )
 				                         
 				                         <div class="hentry-post group">
-				                           <div class="thumb-img"><img id="mini-img" src="{{$randompost->img_mini}}" alt="{{$randompost->title}}" title="{{$randompost->title}}" /></div>
+				                           <div class="thumb-img mini-img"><img src="{{$randompost->img_mini}}" alt="{{$randompost->title}}" title="{{$randompost->title}}" /></div>
 				                           <div class="text">
 				                            <a href="{{route('posts.show',['id'=>$randompost->id])}}" title="{{$randompost->title}}" class="title">{{$randompost->title}}</a>
 				                            <p>{!!str_limit($randompost->text, 130)!!} </p>

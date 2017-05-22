@@ -106,11 +106,12 @@ input[type="checkbox"]:hover{
 #mycenter{
 	display:none;
 }
-#mini-img{
-	width:55px;
-	height:55px;
+.mini-img{
+	overflow: hidden;
+	width: 55px;
 }
 
-
-
-
+.img-head{
+	overflow:hidden;
+	max-height:282px;
+}

@@ -8,9 +8,11 @@
 				                    <!-- post title -->
 				                    <h2 class="post-title"><a href="{{ route('posts.show',['id'=>$item->id]) }}">{{ $item->title }}</a></h2>
 				                    <!-- post featured -->
-				                    <div class="image-wrap">
-				                        <img src="{{$item->img}}" alt="{{ $item->title }}" title="{{ $item->title }}" />        
+									
+				                    <div class="image-wrap img-head">
+										<img  style="width:100%" src="{{$item->img}}" alt="{{ $item->title }}" title="{{ $item->title }}" />
 				                    </div>
+
 				                    <p class="date">
 				                        <span class="month">{{$item->created_at->format('M')}}</span>
 				                        <span class="day">{{$item->created_at->format('d')}}</span>

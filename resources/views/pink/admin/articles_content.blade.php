@@ -22,9 +22,9 @@
 				                                <td class="align-left">{{$article->id}}</td>
 				                                <td class="align-left">{!! Html::link(route('admin.posts.edit',['articles'=>$article->id]),$article->title) !!}</td>
 				                                <td class="align-left">{{str_limit($article->text,200)}}</td>
-				                                <td>
+				                                <td class="mini-img">
 													@if(isset($article->img_mini))
-													<center>{!! Html::image($article->img_mini) !!}</center>
+													{!! Html::image($article->img_mini) !!}
 													@endif
 												</td>
 				                                <td>{{$article->category->title}}</td>
