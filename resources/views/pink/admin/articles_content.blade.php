@@ -22,10 +22,14 @@
 				                                <td class="align-left">{{$article->id}}</td>
 				                                <td class="align-left">{!! Html::link(route('admin.posts.edit',['articles'=>$article->id]),$article->title) !!}</td>
 				                                <td class="align-left">{{str_limit($article->text,200)}}</td>
-				                                <td class="mini-img">
-													@if(isset($article->img_mini))
-													{!! Html::image($article->img_mini) !!}
-													@endif
+				                                <td>
+												<center style="	overflow:hidden;width:82px;height:28px">
+														<div style="width:100%;">
+															@if(isset($article->img_mini))
+															{!! Html::image($article->img) !!}
+															@endif
+														</div>
+												</center>
 												</td>
 				                                <td>{{$article->category->title}}</td>
 												<td>{{$article->user->name}} ( {{$article->user->id}} )</td>

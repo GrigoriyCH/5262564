@@ -13,8 +13,8 @@
 				                    <!-- post title -->
 				                    <h1 class="post-title"><a href="#">{{$article->title}}</a></h1>
 				                    <!-- post featured -->
-				                    <div class="image-wrap">
-				                        <img src="{{$article->img}}" alt="{{ $article->title }}" title="{{ $article->title }}" />  
+				                    <div class="image-wrap img-head">
+				                        <img style="width:100%" src="{{$article->img}}" alt="{{ $article->title }}" title="{{ $article->title }}" />  
 				                    </div>
 				                    <p class="date">
 				                        <span class="month">{{$article->created_at->format('M')}}</span>

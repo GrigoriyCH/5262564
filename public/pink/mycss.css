@@ -107,8 +107,13 @@ input[type="checkbox"]:hover{
 	display:none;
 }
 .mini-img{
-	overflow: hidden;
-	width: 55px;
+	overflow:hidden;
+	width:55px;
+	height:55px;
+}
+.thumb-img{
+	border: 1px solid #CFCFCF;
+	padding:3px;
 }
 
 .img-head{

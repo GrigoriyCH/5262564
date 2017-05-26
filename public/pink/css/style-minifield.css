@@ -3845,11 +3845,11 @@ a.video a.zoom {
 	float: left;
 	margin-right: 10px;
 }
-.recent-post .thumb-img img {
+/*.recent-post .thumb-img img {
 	border: 1px solid #CFCFCF;
 	float: none;
 	padding: 3px !important;
-}
+}*/
 .recent-post a {
 	font-size: 12px;
 	color: #AB5705;

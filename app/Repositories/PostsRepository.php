@@ -39,6 +39,27 @@ class PostsRepository extends Repository{
 			return ['status' => 'Пост добавлен!'];
 		}
 	}
+	
+	public function updateArticle($request, $article){
+		if(Gate::denies('edit',$this->model)){
+			abort(403);
+		}
+		
+		$data = $request->except('_token','_method');
+		
+		if(empty($data)){
+			return array('error' => 'Нет данных!');
+		}
+		
+		if($data['img']==''){$data['img']='http://japblog/pink/images/articles/003-816x282.jpg';}
+		if($data['img_mini']==''){$data['img']='http://japblog/pink/images/articles/003-55x55.jpg';}
+		
+		$article->fill($data);
+		
+		if($article->update()){
+			return ['status' => 'Пост обновлен!'];
+		}
+	}
 }
 
 ?>

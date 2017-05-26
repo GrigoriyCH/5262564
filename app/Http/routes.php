@@ -43,6 +43,8 @@ Route::get('/home', 'HomeController@index');
 //admin panel
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 	Route::get('/',['uses'=>'Admin\IndexController@index','as'=>'adminIndex']);
+	
+	//articles
 	Route::resource('/posts','Admin\PostsController');
 });
 

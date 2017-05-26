@@ -10,7 +10,7 @@
 				                    <!-- post featured -->
 									
 				                    <div class="image-wrap img-head">
-										<img  style="width:100%" src="{{$item->img}}" alt="{{ $item->title }}" title="{{ $item->title }}" />
+										<img style="width:100%" src="{{$item->img}}" alt="{{ $item->title }}" title="{{ $item->title }}" />
 				                    </div>
 
 				                    <p class="date">

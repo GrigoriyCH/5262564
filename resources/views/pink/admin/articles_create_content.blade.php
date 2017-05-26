@@ -64,7 +64,7 @@
 				<span class="sublabel">Будет использоваться в качестве картинки-миниатюры для поста(рекомендуем использовать квадратное изображение, и размерами 55 на 55 пикселей)</span><br />
 			</label>
 			<div class="input-prepend">
-			{!! Form::text('img_mini', isset($article->img) ? $arimgticle->img_mini  : old('img_mini'), ['placeholder'=>' Укажите ссылку на изображение']) !!}
+			{!! Form::text('img_mini', isset($article->img_mini) ? $article->img_mini  : old('img_mini'), ['placeholder'=>' Укажите ссылку на изображение']) !!}
 			 </div>
 		 </li>
 		

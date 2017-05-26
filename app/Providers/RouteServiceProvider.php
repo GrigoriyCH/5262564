@@ -27,6 +27,10 @@ class RouteServiceProvider extends ServiceProvider
         //
         $router->pattern('id','[\d]+');
         parent::boot($router);
+		
+		$router->bind('posts', function($value){
+			return \Japblog\Posts::where('id',$value)->first();
+		});
     }
 
     /**

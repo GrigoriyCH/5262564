@@ -13,6 +13,7 @@ use Japblog\Repositories\PostsRepository;
 
 use Gate;
 use Japblog\Category;
+use Japblog\Posts;
 
 class PostsController extends AdminController
 {
@@ -117,9 +118,27 @@ class PostsController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Posts $article)
     {
-        //
+        //$article = Posts::where('id',$id);
+		//dd($article);
+		
+		if(Gate::denies('edit',new Posts)){
+			abort(403);
+		}
+		
+		$this->title = 'Редактирование материала - '. $article->title;
+		
+		$categories = Category::select(['title','alias','parentid','id'])->get();
+		
+		$lists['Категории'] = array();
+		
+		foreach($categories as $category){
+			$lists['Категории'][$category->id] = $category->title;
+		}
+		//dd($article);
+		$this->content = view(env('THEME').'.admin.articles_create_content')->with(['categories' => $lists,'article' => $article])->render();
+		return $this->renderOutput();
     }
 
     /**
@@ -129,9 +148,15 @@ class PostsController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ArticleRequest $request, Posts $article)
     {
         //
+		$result = $this->p_rep->updateArticle($request, $article);
+		
+		if(is_array($result) && !empty($result['error'])){
+			return back()->with($result);
+		}
+		return redirect('/admin')->with($result);
     }
 
     /**
