@@ -158,11 +158,14 @@ class PostsController extends SiteController
 		if($article){
 			//$article->img = json_decode($article->img);
 			$article->load('user');
-		
+		}
 		/////////////////////////////////////////////////
-		$this->title = $article->title;
-		$this->keywords = $article->keywords;
-		$this->meta_desc = $article->meta_desc;}
+		if(isset($article->id))
+		{
+			$this->title = $article->title;
+			$this->keywords = $article->keywords;
+			$this->meta_desc = $article->meta_desc;
+		}
 		/////////////////////////////////////////////////
 		$content = view(env('THEME').'.article_content2')->with('article',$article)->render();
 		$this->vars = array_add($this->vars,'content',$content);

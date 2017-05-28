@@ -74,6 +74,7 @@ class CommentController extends SiteController
 		
 		if($user) {
 			$comment->user_id = $user->id;
+			$comment->name = $user->name;
 		}
 		
 		$post = Posts::find($data['article_id']);

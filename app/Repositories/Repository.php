@@ -137,6 +137,12 @@ abstract class Repository {
 		return $result;
 	}
 	
+	public function oneUserID($id){
+		
+		$result = $this->model->select('user_id')->where('id',$id)->first();
+		return $result;
+	}
+	
 }
 
 ?>

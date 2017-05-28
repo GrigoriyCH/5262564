@@ -60,6 +60,16 @@ class PostsRepository extends Repository{
 			return ['status' => 'Пост обновлен!'];
 		}
 	}
+	
+	public function deleteArticle($article){
+		if(Gate::denies('destroy',$article)){
+			abort(403);
+		}
+		$article->comments()->delete();
+		if($article->delete()){
+			return ['status' => 'Пост удален!'];
+		}
+	}
 }
 
 ?>

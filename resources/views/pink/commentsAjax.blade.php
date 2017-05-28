@@ -23,7 +23,7 @@
 				                                    <p>{{$comment->text}}</p>
 				                                </div>
 				                                <div class="reply group">
-				                                    <a id="reply_comment" class="comment-reply-link"  onclick="return addComment.moveForm(&quot;comment-{{$comment->id}}&quot;, &quot;{{$comment->id}}&quot;, &quot;respond&quot;, &quot;{{$comment->article_id}}&quot;),sayHello(&quot;<?php echo ($comment->name.", "); ?>&quot;,&quot;<?php echo($comment->user_id); ?>&quot;)">Reply</a>                    
+														<a id="reply_comment" class="comment-reply-link"  onclick="return addComment.moveForm(&quot;comment-{{$comment->id}}&quot;, &quot;{{$comment->id}}&quot;, &quot;respond&quot;, &quot;{{$comment->article_id}}&quot;),sayHello(&quot;<?php echo ($comment->name.", "); ?>&quot;,&quot;<?php echo($comment->user_id); ?>&quot;)">Reply</a>   												
 				                                </div>
 				                                <!-- .reply -->
 				                            </div>
