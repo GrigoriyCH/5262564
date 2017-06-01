@@ -8,6 +8,9 @@ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvid
 use Japblog\Posts;
 use Japblog\Policies\ArticlePolicy;
 
+use Japblog\Permission;
+use Japblog\Policies\PermissionPolicy;
+
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -16,7 +19,8 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        Posts::class => ArticlePolicy::class
+        Posts::class => ArticlePolicy::class,
+		Permission::class => PermissionPolicy::class
     ];
 
     /**
@@ -35,6 +39,10 @@ class AuthServiceProvider extends ServiceProvider
 		
 		$gate->define('VIEW_ADMIN_ARTICLES', function($user){
 			return $user->canDo('VIEW_ADMIN_ARTICLES');
+		});
+		
+		$gate->define('EDIT_USERS', function($user){
+			return $user->canDo('EDIT_USERS');
 		});
 
         //
