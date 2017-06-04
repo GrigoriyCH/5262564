@@ -11,6 +11,9 @@ use Japblog\Policies\ArticlePolicy;
 use Japblog\Permission;
 use Japblog\Policies\PermissionPolicy;
 
+use Japblog\Menu;
+use Japblog\Policies\MenusPolicy;
+
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -20,7 +23,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         Posts::class => ArticlePolicy::class,
-		Permission::class => PermissionPolicy::class
+		Permission::class => PermissionPolicy::class,
+		Menu::class => MenusPolicy::class
     ];
 
     /**

@@ -5,11 +5,10 @@ namespace Japblog\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 
 use Japblog\Http\Requests;
+use Japblog\Http\Requests\MenusRequest;
 use Japblog\Http\Controllers\Controller;
 
 use Japblog\Repositories\MenusRepository;
-use Japblog\Repositories\PostsRepository;
-use Japblog\Repositories\NewsRepository;
 
 use Gate;
 use Menu;
@@ -18,7 +17,7 @@ class MenusController extends AdminController
 {
 	protected $m_rep;
 	
-	public function __construct(MenusRepository $m_rep, PostsRepository $p_rep, NewsRepository $n_rep)
+	public function __construct(MenusRepository $m_rep)
 	{
 		parent::__construct();
 		
@@ -27,8 +26,6 @@ class MenusController extends AdminController
 		}
 		
 		$this->m_rep = $m_rep;
-		$this->p_rep = $p_rep;
-		$this->n_rep = $n_rep;
 		
 		$this->template = env('THEME').'.admin.menus';
 	}
@@ -47,7 +44,7 @@ class MenusController extends AdminController
     }
 	
 	public function getMenus(){
-		$menu = $this->m_rep->get();
+		$menu = $this->m_rep->getM();
 		
 		if($menu->isEmpty()){
 			return FALSE;
@@ -76,6 +73,19 @@ class MenusController extends AdminController
     public function create()
     {
         //
+		$this->title = 'Новый пункт меню';
+		
+		$tmp = $this->getMenus()->roots();
+		
+		$menus = $tmp->reduce(function($returnMenus, $menu){
+			
+			$returnMenus[$menu->id] = $menu->title;
+			return $returnMenus;
+			
+		},['0' => 'Родительський пункт меню']);
+		
+		$this->content = view(env('THEME').'.admin.menus_create_content')->with(['menus'=>$menus])->render();
+		return $this->renderOutput();
     }
 
     /**
@@ -84,9 +94,15 @@ class MenusController extends AdminController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MenusRequest $request)
     {
         //
+		$result = $this->m_rep->addMenu($request);
+		
+		if(is_array($result) && !empty($result['error'])){
+			return back()->with($result);
+		}
+		return redirect('/admin')->with($result);
     }
 
     /**

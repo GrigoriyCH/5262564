@@ -93,6 +93,26 @@ abstract class Repository {
 		
 		
 	}
+	public function getM($select = '*',$take = FALSE,$pagination = FALSE,$where = FALSE){
+		
+		$builder = $this->model->select($select);
+		
+		if ($take){
+			$builder->take($take);
+		}
+		
+		if($where){
+			$builder->where($where[0],$where[1]);
+		}
+		
+		if($pagination){
+			return $this->check($builder->paginate(Config::get('settings.paginate')));
+		}
+		
+		return $this->check($builder->get());
+		
+		
+	}
 	
 	public function getPostsToManager($select = '*',$pagination = TRUE,$randomsort = FALSE){
 		

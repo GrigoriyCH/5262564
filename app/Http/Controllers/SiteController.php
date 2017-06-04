@@ -68,7 +68,7 @@ class SiteController extends Controller
 		
 		public function getMenu(){
 			
-			$menu = $this->m_rep->get();
+			$menu = $this->m_rep->getM();
 			
 			$mBuilder = Menu::make('MyNav', function($m) use ($menu){
 				
