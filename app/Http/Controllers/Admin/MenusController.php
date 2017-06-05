@@ -122,9 +122,22 @@ class MenusController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(\Japblog\Menu $menu)
     {
         //
+		$this->title = 'Редактирование пункта меню - '.$menu->title;
+		
+		$tmp = $this->getMenus()->roots();
+		
+		$menus = $tmp->reduce(function($returnMenus, $menu){
+			
+			$returnMenus[$menu->id] = $menu->title;
+			return $returnMenus;
+			
+		},['0' => 'Родительський пункт меню']);
+		
+		$this->content = view(env('THEME').'.admin.menus_create_content')->with(['menu'=>$menu, 'menus'=>$menus])->render();
+		return $this->renderOutput();
     }
 
     /**
@@ -134,9 +147,15 @@ class MenusController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, \Japblog\Menu $menu)
     {
         //
+		$result = $this->m_rep->updateMenu($request, $menu);
+		
+		if(is_array($result) && !empty($result['error'])){
+			return back()->with($result);
+		}
+		return redirect('/admin')->with($result);
     }
 
     /**
@@ -145,8 +164,14 @@ class MenusController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(\Japblog\Menu $menu)
     {
         //
+		$result = $this->m_rep->deleteMenu($menu);
+		
+		if(is_array($result) && !empty($result['error'])){
+			return back()->with($result);
+		}
+		return redirect('/admin')->with($result);
     }
 }

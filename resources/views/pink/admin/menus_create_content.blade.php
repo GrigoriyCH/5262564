@@ -40,7 +40,7 @@
 						<span class="sublabel">Путь для ссылки</span><br />
 					</label>
 					<div class="input-prepend"><span class="add-on"><i class="icon-pencil"></i></span>
-					{!! Form::text('custom_link',(isset($menu->path)) ? $menu->path  : old('custom_link'), ['placeholder'=>'Введите название страницы']) !!}
+					{!! Form::text('custom_link',(isset($menu->path)) ? $menu->path  : old('custom_link'), ['placeholder'=>'Введите путь/ссылку']) !!}
 					 </div>
 				</li>
 			<div style="clear: both;"></div>
