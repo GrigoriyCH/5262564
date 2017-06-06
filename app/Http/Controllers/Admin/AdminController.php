@@ -58,7 +58,7 @@ class AdminController extends Controller
 			
 			$menu->add('Новости сайта',array('route'=>'admin.posts.index'));
 			$menu->add('Меню',array('route'=>'admin.menus.index'));
-			$menu->add('Пользователи',array('route'=>'admin.posts.index'));
+			$menu->add('Пользователи',array('route'=>'admin.users.index'));
 			$menu->add('Привелегии',array('route'=>'admin.permissions.index'));
 		});
 	}
