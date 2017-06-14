@@ -148,10 +148,12 @@ $(document).ready(function()
 });
 //////////////////////////////////////////////////////////////
 $(function(){
-  $('.img-head').height($('.img-head').width()/2.893617);
+	var block_width = $('.thumbnail').width();
+	
+  $('.img-head').height($('.img-head').width()/(block_width/282));
 
   $(window).resize(function(){
-    $('.img-head').height($('.img-head').width()/2.893617);
+    $('.img-head').height($('.img-head').width()/(block_width/282));
   });
 });
 //////////////////////////////////////////////////////////////
