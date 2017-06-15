@@ -23,7 +23,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    
+	
+    public function sitenews(){
+		return $this->hasMany('Japblog\News');
+	}
+	
     public function articles(){
 		return $this->hasMany('Japblog\Posts');
 	}

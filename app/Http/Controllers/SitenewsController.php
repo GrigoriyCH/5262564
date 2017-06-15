@@ -7,15 +7,17 @@ use Illuminate\Http\Request;
 use Japblog\Http\Requests;
 
 use Japblog\Repositories\NewsRepository;
+use Japblog\Repositories\NewsCommentsRepository;
 
 class SitenewsController extends SiteController
 {
     //
-    public function __construct(NewsRepository $n_rep){
+    public function __construct(NewsRepository $n_rep,NewsCommentsRepository $nc_rep){
 		
 		parent::__construct(new \Japblog\Repositories\MenusRepository(new \Japblog\Menu));
 		
 		$this->n_rep = $n_rep;
+		$this->nc_rep = $nc_rep;
 		
 		$this->template = env('THEME').'.sitenews';
 		
@@ -26,7 +28,7 @@ class SitenewsController extends SiteController
         $this->title = 'Новости сайта';
         $this->keywords = 'Новости сайта';
         $this->meta_desc = 'Новости сайта';
-        
+		
         $sitenews = $this->getSiteNews();
         
         $content = view(env('THEME').'.sitenews_content')->with('sitenews',$sitenews)->render();
@@ -49,10 +51,24 @@ class SitenewsController extends SiteController
 		$this->title = $news->title;
 		$this->keywords = $news->keywords;
 		$this->meta_desc = $news->meta_desc;
+		/*                                         */	
+		$comments = $this->getComments(config('settings.recent_comments'));//dd($comments);
+
 		/////////////////////////////////////////////////
-		$content = view(env('THEME').'.one_news_content')->with('news',$news)->render();
+		$content = view(env('THEME').'.one_news_content')->with(['news'=>$news, 'comments'=>$comments])->render();
 		$this->vars = array_add($this->vars,'content',$content);
 		
 		return $this->renderOutput();
+	}
+	
+	public function getComments($take)
+    {
+		$comments = $this->nc_rep->get(['text','name','email','site','news_id','user_id'],$take,FALSE,FALSE,FALSE);
+		
+		if($comments){
+			$comments->load('sitenews','user');
+		}
+		
+		return $comments;
 	}
 }
