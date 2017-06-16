@@ -5,7 +5,9 @@
 				                
 				                
 				                <!--   -->
-				                
+				                <input type="hidden" id="countComments" value="{{count($news->newscomments)}}" />
+				                <input type="hidden" id="postID" value="{{$news->id}}" />
+				                <input type="hidden" id="stepComments" value="{{config('settings.get_comments')}}" />
 				                <!--   -->
 				                <div class="thumbnail" style="max-width:100%;width:100%">
 				                    <!-- post title -->

@@ -9,7 +9,7 @@ class PostsRepository extends Repository{
 	
 	public function __construct(Posts $posts){
 		$this->model = $posts;
-	}
+	}/*
 	public function one($id,$attr = array()){
 		$article = parent::one($id,$attr);
 		
@@ -18,7 +18,7 @@ class PostsRepository extends Repository{
 			$article->comments->load('user');
 		}
 		return $article;
-	}
+	}*/
 	public function addArticle($request){
 		if(Gate::denies('save',$this->model)){
 			abort(403);

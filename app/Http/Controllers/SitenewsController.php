@@ -47,28 +47,15 @@ class SitenewsController extends SiteController
 		if($news){
 			$news->img = json_decode($news->img);
 		}
-		/////////////////////////////////////////////////
+		/*                                         */
 		$this->title = $news->title;
 		$this->keywords = $news->keywords;
 		$this->meta_desc = $news->meta_desc;
 		/*                                         */	
-		$comments = $this->getComments(config('settings.recent_comments'));//dd($comments);
-
-		/////////////////////////////////////////////////
-		$content = view(env('THEME').'.one_news_content')->with(['news'=>$news, 'comments'=>$comments])->render();
+		$content = view(env('THEME').'.one_news_content')->with(['news'=>$news])->render();
 		$this->vars = array_add($this->vars,'content',$content);
 		
 		return $this->renderOutput();
 	}
 	
-	public function getComments($take)
-    {
-		$comments = $this->nc_rep->get(['text','name','email','site','news_id','user_id'],$take,FALSE,FALSE,FALSE);
-		
-		if($comments){
-			$comments->load('sitenews','user');
-		}
-		
-		return $comments;
-	}
 }

@@ -28,6 +28,8 @@ Route::get('posts/cat/{cat_alias?}',['uses'=>'PostsController@index','as'=>'post
 
 Route::get('comments/{id_post?}/{idp?}',['uses'=>'CommentsController@index','as'=>'commentsAjax']);
 
+Route::get('newscomments/{id_post?}/{idp?}',['uses'=>'NewsCommentsController@index','as'=>'newscommentsAjax']);
+
 Route::resource('comment','CommentController',['only'=>['store']]);
 
 Route::match(['get','post'],'/contacts',['uses'=>'ContactsController@index','as'=>'contacts']);

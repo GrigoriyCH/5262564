@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
         
         DB::listen(function($query){
         	
-        	//echo '<h1>'.$query->sql.'</h1>';
+        	echo '<h1>'.$query->sql.'</h1>';
         });
         
     }
