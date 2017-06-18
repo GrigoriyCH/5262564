@@ -31,6 +31,7 @@ Route::get('comments/{id_post?}/{idp?}',['uses'=>'CommentsController@index','as'
 Route::get('newscomments/{id_post?}/{idp?}',['uses'=>'NewsCommentsController@index','as'=>'newscommentsAjax']);
 
 Route::resource('comment','CommentController',['only'=>['store']]);
+Route::resource('newscomment','NewsCommentController',['only'=>['store']]);
 
 Route::match(['get','post'],'/contacts',['uses'=>'ContactsController@index','as'=>'contacts']);
 

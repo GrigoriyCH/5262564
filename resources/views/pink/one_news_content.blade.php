@@ -8,6 +8,7 @@
 				                <input type="hidden" id="countComments" value="{{count($news->newscomments)}}" />
 				                <input type="hidden" id="postID" value="{{$news->id}}" />
 				                <input type="hidden" id="stepComments" value="{{config('settings.get_comments')}}" />
+								<input type="hidden" id="typeComments" value="newscomments" />
 				                <!--   -->
 				                <div class="thumbnail" style="max-width:100%;width:100%">
 				                    <!-- post title -->
@@ -60,7 +61,7 @@
 				                <!-- END TRACKBACK & PINGBACK -->								
 				                <div id="respond">
 				                    <h3 id="reply-title">Leave a <span>Reply</span> <small onclick="cancelHello(&quot;<?php echo($news->user_id); ?>&quot;)"><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3>
-				                    <form id="commentform" action="{{route('comment.store')}}" method="post" >
+				                    <form id="commentform" action="{{route('newscomment.store')}}" method="post" >
 				                        @if(!Auth::check())
 					                        <p class="comment-form-author"><label for="author">Name</label> <input id="name" name="name" type="text" value="" size="30" aria-required="true" /></p>
 					                        <p class="comment-form-email"><label for="email">Email</label> <input id="email" name="email" type="text" value="" size="30" aria-required="true" /></p>

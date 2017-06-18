@@ -104,13 +104,13 @@ e.preventDefault();
 var countComments = parseInt($('#countComments').val());
 var postID = $('#postID').val();
 var stepComments = parseInt($('#stepComments').val());
-
+var typeComments = $('#typeComments').val();
 
 $('#divWait').css('display','');
 $('#getContent').css('display','none');
 
 $.ajax({
-url: "/comments/"+postID+"/"+step,
+url: "/"+typeComments+"/"+postID+"/"+step,
 cache: false,
 success: function(data){
 	
