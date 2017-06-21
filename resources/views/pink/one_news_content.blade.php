@@ -15,7 +15,7 @@
 				                    <h1 class="post-title"><a href="#">{{$news->title}}</a></h1>
 				                    <!-- post featured -->
 				                    <div class="image-wrap img-head">
-				                        <img style="width:100%" src="{{asset(env('THEME'))}}/images/projects/{{$news->img->max}}" alt="{{ $news->title }}" title="{{ $news->title }}" />  
+				                        <img style="width:100%" src="{{$news->img}}" alt="{{ $news->title }}" title="{{ $news->title }}" />  
 				                    </div>
 				                    <p class="date">
 				                        <span class="month">{{$news->created_at->format('M')}}</span>

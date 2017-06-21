@@ -14,12 +14,17 @@
 				                    </div>
 				                    <!-- post featured -->
 				                    <div class="image-wrap">
-				                        <img src="{{asset(env('THEME'))}}/images/projects/{{$news->img->mini}}" alt="{{$news->title}}" title="{{$news->title}}" />        
+				                        <img src="{{$news->img_mini}}" alt="{{$news->title}}" title="{{$news->title}}" style="max-width:175px; max-height:175px;" />        
 				                    </div>
 				                </div>
 				                <!-- post content -->
 				                <div class="the-content group">
-				                	<p>{!!str_limit($news->text,512)!!}</p>
+									<!--
+										$text = $news->text;
+										$text = preg_replace( "/<span.+?>/", '', $text);
+										$text = str_replace("</span>", "", $text);
+									-->
+				                	<p>{!! str_limit(strip_tags($news->text, '<a><p><br><strong><i>'), 512) !!}</p>
 				                    <p><a href="{{route('sitenews.show',['id' => $news->id])}}" class="btn   btn-beetle-bus-goes-jamba-juice-4 btn-more-link">→ {{Lang::get('ru.read_more')}}</a></p>
 				                </div>
 				            </div>

@@ -11,7 +11,7 @@ CKEDITOR.editorConfig = function( config ) {
 		config.removePlugins = 'scayt,contextmenu';
 	 //config.uiColor = '#FF8C00';
 	    //config.uiColor = '#c07203';
-	config.removeButtons = 'Source,Save,NewPage,Preview,Print,Templates,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,CreateDiv,Anchor,ShowBlocks,About,PageBreak,SpellChecker,Language';
+	config.removeButtons = 'Source,Save,NewPage,Preview,Print,Templates,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Anchor,About,PageBreak,SpellChecker,Language';
 	config.skin = 'icy_orange';
 	config.extraPlugins = 'youtube,spoiler';	
 	

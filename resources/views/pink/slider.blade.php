@@ -45,7 +45,7 @@
 				                <img class="icon-img" src="{{asset(env('THEME'))}}/images/icons/blog1.png" alt="" />        
 				                <div>
 				                    <h3><a class="text-color" href="#" title="">Blog news</a></h3>
-				                    <p>Section shortcodes &amp; sticky posts! <a href="article.html"> | more →</a></p>
+				                    <p>Section shortcodes &amp; sticky posts! <a href="{{route('sitenews.index')}}"> | more →</a></p>
 				                </div>
 				            </div>
 				            <div class="widget-last yit-widget widget col1_4 one-fourth col yit_text_quote">

@@ -26,7 +26,7 @@
 				                </div>
 				                <!-- post content -->
 				                <div class="the-content group">
-				                    <p>{!!str_limit($item->text,512)!!}</p>
+				                    <p>{!!str_limit(strip_tags($item->text, '<a><p><br><strong><i>'),512)!!}</p>
 				                    <p><a href="{{route('posts.show',['id'=>$item->id])}}" class="btn   btn-beetle-bus-goes-jamba-juice-4 btn-more-link">→ {{Lang::get('ru.read_more')}}</a></p>
 				                    <!--<hr size="1" color="grey">-->
 				                </div>
