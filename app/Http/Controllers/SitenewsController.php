@@ -44,13 +44,15 @@ class SitenewsController extends SiteController
 		
 	public function show($id = FALSE){
 		$news = $this->n_rep->one($id); //dd($news);
-		if($news){
+		/*if($news){
 			$news->img = json_decode($news->img);
-		}
-		/*                                         */
-		$this->title = $news->title;
-		$this->keywords = $news->keywords;
-		$this->meta_desc = $news->meta_desc;
+		}*/
+		/*  
+		*/
+		if($news)
+		{$this->title = $news->title;}
+		/*$this->keywords = $news->keywords;
+		$this->meta_desc = $news->meta_desc;*/
 		/*                                         */	
 		$content = view(env('THEME').'.one_news_content')->with(['news'=>$news])->render();
 		$this->vars = array_add($this->vars,'content',$content);

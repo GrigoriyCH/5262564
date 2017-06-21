@@ -37,7 +37,8 @@ class IndexController extends SiteController
     {
         //
         $news = $this->getNews();
-        $content = view(env('THEME').'.content')->with('news',$news)->render();
+		$iskl = '<a><p><br><strong><i>';
+        $content = view(env('THEME').'.content')->with(['news'=>$news, 'iskl'=>$iskl])->render();
         $this->vars = array_add($this->vars,'content',$content);
         //dd($news);
         /////////////////////////////
@@ -57,7 +58,7 @@ class IndexController extends SiteController
     
     protected function getNews(){
 		
-		$news = $this->n_rep->get(['id','title','text','img'],Config::get('settings.home_port_count'),FALSE,FALSE,FALSE);
+		$news = $this->n_rep->get(['id','title','text','img','img_mini'],Config::get('settings.home_port_count'),FALSE,FALSE,FALSE);
 		return $news;
 	}
 	

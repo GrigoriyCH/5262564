@@ -32,6 +32,10 @@ class RouteServiceProvider extends ServiceProvider
 			return \Japblog\Posts::where('id',$value)->first();
 		});
 		
+		$router->bind('sitenews', function($value){
+			return \Japblog\News::where('id',$value)->first();
+		});
+		
 		$router->bind('menus', function($value){
 			return \Japblog\Menu::where('id',$value)->first();
 		});
