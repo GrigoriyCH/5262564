@@ -59,3 +59,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 	Route::resource('/users','Admin\UsersController');
 });
 
+Route::group(['prefix'=>'user','middleware'=>'auth'],function(){
+	Route::get('/',['uses'=>'User\IndexController@index','as'=>'userIndex']);
+});
+

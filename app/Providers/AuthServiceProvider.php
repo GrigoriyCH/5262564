@@ -60,7 +60,11 @@ class AuthServiceProvider extends ServiceProvider
 		$gate->define('VIEW_ADMIN_SITENEWS', function($user){
 			return $user->canDo('VIEW_ADMIN_SITENEWS');
 		});
-
+		
+		/*user*/
+		$gate->define('VIEW_USER_PAGE', function($user){
+			return $user->canDo('VIEW_USER_PAGE');
+		});
         //
     }
 }
