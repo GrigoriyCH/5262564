@@ -3253,13 +3253,13 @@ ul.info li {
 	margin: 1em 0 30px;
 }
 .short-table table th {
-	padding: 20px 30px;
+	padding: 0.5em 0.75em;
 	border: none;
 	border-bottom: none;
 	border-left: none;
 }
 .short-table table td {
-	padding: 20px 30px;
+	padding: 0.5em 0.75em;
 	border: 1px solid #e0e0e0;
 	border-bottom: none;
 	border-left: none;

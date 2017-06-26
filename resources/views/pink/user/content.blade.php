@@ -1,51 +1,30 @@
-<div id="content-page" class="content group">
-				            <div class="hentry group">
-				                <form id="contact-form-contact-us" class="contact-form" method="post" action="{{ route('contacts') }}" enctype="multipart/form-data">
-				                    <div class="usermessagea"></div>
-				                    <fieldset>
-				                        <ul>
-				                            <li class="text-field">
-				                                <label for="name-contact-us">
-				                                <span class="label">Name</span>
-				                                <br />					<span class="sublabel">This is the name</span><br />
-				                                </label>
-				                                <div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input type="text" name="name" id="name-contact-us" class="required" value="" /></div>
-				                                <div class="msg-error"></div>
-				                            </li>
-				                            <li class="text-field">
-				                                <label for="email-contact-us">
-				                                <span class="label">Email</span>
-				                                <br />					<span class="sublabel">This is a field email</span><br />
-				                                </label>
-				                                <div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span><input type="text" name="email" id="email-contact-us" class="required email-validate" value="" /></div>
-				                                <div class="msg-error"></div>
-				                            </li>
-				                            <li class="textarea-field">
-				                                <label for="message-contact-us">
-				                                <span class="label">Message</span>
-				                                </label>
-				                                <div class="input-prepend"><span class="add-on"><i class="icon-pencil"></i></span><textarea name="text" id="message-contact-us" rows="8" cols="30" class="required"></textarea></div>
-				                                <div class="msg-error"></div>
-				                            </li>
-				                            <li class="submit-button">
-				                            {{ csrf_field() }}
-				                                <input type="text" name="yit_bot" id="yit_bot" />
-				                              
-				                                <input type="submit" name="yit_sendmail" value="Send Message" class="sendmail alignright" />			
-				                            </li>
-				                        </ul>
-				                    </fieldset>
-				                </form>
-				                <script type="text/javascript">
-				                    var messages_form_126 = {
-				                    	name: "Please, fill in your name",
-				                    	email: "Please, insert a valid email address",
-				                    	message: "Please, insert your message"
-				                    };
-				                </script>
-				            </div>
-				            <!-- START COMMENTS -->
-				            <div id="comments">
-				            </div>
-				            <!-- END COMMENTS -->
-				        </div>
+<div id="content-blog" class="content group">
+	
+		@if($user_post)
+			<div class="short-table white">
+			<table style="width: 100%" cellspacing="0" cellpadding="0">
+			<caption>Все посты пользователя: {{$username}}</caption>
+				<th>Заголовок</th>
+				<th>Текст</th>
+				<th>Дата</th>
+				<th>Действие</th>
+			@foreach($user_post as $post)
+				<tr>
+					<td class="align-left"><a href="{{ route('user.userpost.edit',['id'=>$post->id]) }}">{{ $post->title }}</a></td>
+					<td class="align-left">{!!str_limit(strip_tags($post->text, '<a><p><br><strong><i>'),256)!!}</td>
+					<td><p class="date">{{ $post->created_at->format('F d, Y') }}</p></td>
+					<td>
+					{!! Form::open(['url' => route('user.userpost.destroy',['post'=>$post->id]),'class'=>'form-horizontal','method'=>'POST']) !!}
+					{{ method_field('DELETE') }}
+					{!! Form::button('Удалить', ['class' => 'btn btn-french-5','type'=>'submit']) !!}
+					{!! Form::close() !!}
+					</td>
+				</tr>
+			@endforeach
+			</table>
+			</div>
+		@else
+		<h3> У вас еще нет постов...<h3>
+		@endif
+				            
+</div>

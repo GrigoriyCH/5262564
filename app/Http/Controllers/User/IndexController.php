@@ -43,14 +43,27 @@ class IndexController extends SiteController
 		}
 	
 	public function index(){
-		$this->title = 'Посты пользователя - '. $this->user->name;
+		$this->title = $this->user->name;
 		//dd($this->user);
-		
-		$content = view(env('THEME').'.user.content')->render();
+		$user_post = $this->getPost($this->user->id);
+		$username = $this->title;
+		//dd($user_post);
+		$content = view(env('THEME').'.user.content')->with(['user_post'=>$user_post,'username'=>$username])->render();
         $this->vars = array_add($this->vars,'content',$content);
 		
 		$this->contentLeftBar = view(env('THEME').'.user.contact_bar')->render();
 		
 		return $this->renderOutput();
+	}
+	
+	public function getPost($user_id = FALSE){
+		if($user_id){
+			$user_post = $this->p_rep->get(['id','title','created_at','img','text','user_id','category_id','keywords','meta_desc'],FALSE,FALSE,['user_id',$user_id],FALSE);
+			return $user_post;
+		}
+	}
+	
+	public function edit($id){
+		
 	}
 }

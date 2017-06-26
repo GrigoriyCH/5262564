@@ -49,7 +49,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 	
 	//articles
 	Route::resource('/posts','Admin\PostsController');
-	//articles
+	//sitenews
 	Route::resource('/sitenews','Admin\SitenewsController');
 	//permissions
 	Route::resource('/permissions','Admin\PermissionsController');
@@ -61,5 +61,8 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
 Route::group(['prefix'=>'user','middleware'=>'auth'],function(){
 	Route::get('/',['uses'=>'User\IndexController@index','as'=>'userIndex']);
+	
+	//articles
+	Route::resource('/userpost','User\PostController');
 });
 
