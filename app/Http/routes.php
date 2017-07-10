@@ -37,7 +37,7 @@ Route::match(['get','post'],'/contacts',['uses'=>'ContactsController@index','as'
 
 Route::get('news',['uses'=>'PostsController@allnews','as'=>'allnews']);
 Route::get('review',['uses'=>'PostsController@allreview','as'=>'allreview']);
-Route::get('opinion',['uses'=>'PostsController@allopinion','as'=>'allopinion']);
+Route::get('different',['uses'=>'PostsController@allopinion','as'=>'allopinion']);
 ////////////////////////////////////////////////////
 Route::auth();
 

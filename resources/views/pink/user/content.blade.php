@@ -20,13 +20,17 @@
 											</div>
 										@endif
 										</div>
-				                        <div class="text" style="margin-left:100px;">
+										
+				                        <div class="text" style="margin-left:0px;">
+											<div style="margin-left:100px;">
+												<a href="{{ route('user.userpost.edit',['id'=>$post->id]) }}">{{ $post->title }}</a>
 											
-											<a href="{{ route('user.userpost.edit',['id'=>$post->id]) }}">{{ $post->title }}</a>
+												@if($post->created_at)
+												<p class="post-date">{{ $post->created_at->format('F d, Y') }}</p>
+												@endif
+											</div>
 											
-											@if($post->created_at)
-				                            <p class="post-date">{{ $post->created_at->format('F d, Y') }}</p>
-											@endif
+											<br>
 											
 				                            <p>{!!str_limit(strip_tags($post->text, '<a><p><br><strong><i>'),256)!!}<p>
 											
