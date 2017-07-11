@@ -13,7 +13,7 @@ class ChangeCategoriesTable extends Migration
     public function up()
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->integer('parent')->default(0);
+            $table->integer('parentid')->default(0);
         });
     }
 

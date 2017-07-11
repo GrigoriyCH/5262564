@@ -5,6 +5,7 @@ namespace Japblog\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 
 use Japblog\Http\Requests;
+
 use Japblog\Http\Controllers\Controller;
 
 use Auth;

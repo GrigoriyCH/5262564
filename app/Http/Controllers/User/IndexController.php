@@ -5,7 +5,7 @@ namespace Japblog\Http\Controllers\User;
 use Illuminate\Http\Request;
 
 use Japblog\Http\Requests;
-use Japblog\Http\Controllers\SiteController;
+use Japblog\Http\Controllers\User;
 
 use Japblog\Repositories\PostsRepository;
 use Japblog\Repositories\CommentsRepository;
@@ -15,7 +15,7 @@ use Config;
 use Auth;
 use Gate;
 
-class IndexController extends SiteController
+class IndexController extends UserController
 {
     //
 	protected $user;
