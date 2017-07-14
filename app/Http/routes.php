@@ -63,6 +63,11 @@ Route::group(['prefix'=>'user','middleware'=>'auth'],function(){
 	Route::get('/',['uses'=>'User\IndexController@index','as'=>'userIndex']);
 	
 	//articles
-	Route::resource('/userpost','User\PostController');
+	Route::get('/post/edit',function(){
+		return redirect('/user');/*extra redirect*/
+	});
+	
+	Route::resource('/post','User\PostController');
+	
 });
 

@@ -130,9 +130,11 @@
                         <div id="sidebar-header">
                                 @if (Auth::check())
 									<div id="mynoncenter">
+									<a href="{{ url('/user') }}" id="butsend" />Мои посты</a>
 									<a href="{{ url('/logout') }}" id="butsend"/>Выход</a>
 									</div>
 									<div id="mycenter">
+									<a href="{{ url('/user') }}" id="butsend" />Мои посты</a>
 									<a href="{{ url('/logout') }}" id="butsend"/>Выход</a>
 									</div>
 								@else

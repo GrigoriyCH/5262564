@@ -43,6 +43,10 @@ class RouteServiceProvider extends ServiceProvider
 		$router->bind('users', function($value){
 			return \Japblog\User::find($value);
 		});
+		
+		$router->bind('post', function($value){
+			return \Japblog\Posts::where('id',$value)->first();
+		});
     }
 
     /**

@@ -91,7 +91,7 @@
 		
 		<script type="text/javascript" src="{{asset(env('THEME'))}}/js/myscripts.js"></script>
 		
-		@if(Route::currentRouteName() == 'user.userpost.create' || Route::currentRouteName() == 'user.userpost.edit')
+		@if(Route::currentRouteName() == 'user.post.create' || Route::currentRouteName() == 'user.post.edit')
 			<script type="text/javascript" src="{{ asset(env('THEME')) }}/js/ckeditor/ckeditor.js"></script>
 			<script type="text/javascript" src="{{ asset(env('THEME')) }}/js/bootstrap-filestyle.min.js"></script>
 		@endif
@@ -183,6 +183,29 @@
 				@endif
 				
 				<!-- START PRIMARY -->
+				
+				@if (count($errors) > 0)
+				    <div class="box error-box">
+				        
+				            @foreach ($errors->all() as $error)
+				                <p>{{ $error }}</p>
+				            @endforeach
+				   
+				    </div>
+				@endif
+				
+				@if (session('status'))
+				    <div class="box success-box">
+				        {{ session('status') }}
+				    </div>
+				@endif
+				
+				@if (session('error'))
+				    <div class="box error-box">
+				        {{ session('error') }}
+				    </div>
+				@endif
+				
 				<div id="primary" class="sidebar-{{ isset($bar) ? $bar : 'no' }}">
 				    <div class="inner group">
 				        <!-- START CONTENT -->

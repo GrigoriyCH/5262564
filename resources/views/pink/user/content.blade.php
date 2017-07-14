@@ -23,7 +23,7 @@
 										
 				                        <div class="text" style="margin-left:0px;">
 											<div style="margin-left:100px;">
-												<a href="{{ route('user.userpost.edit',['id'=>$post->id]) }}">{{ $post->title }}</a>
+												<a href="{{ route('user.post.edit',['id'=>$post->id]) }}">{{ $post->title }}</a>
 											
 												@if($post->created_at)
 												<p class="post-date">{{ $post->created_at->format('F d, Y') }}</p>
@@ -35,7 +35,7 @@
 				                            <p>{!!str_limit(strip_tags($post->text, '<a><p><br><strong><i>'),256)!!}<p>
 											
 											<div style="float:right;">
-												{!! Form::open(['url' => route('user.userpost.destroy',['post'=>$post->id]),'class'=>'form-horizontal','method'=>'POST']) !!}
+												{!! Form::open(['url' => route('user.post.destroy',['post'=>$post->id]),'class'=>'form-horizontal','method'=>'POST']) !!}
 												{{ method_field('DELETE') }}
 												{!! Form::button('Удалить', ['class' => 'btn btn-french-5','type'=>'submit']) !!}
 												{!! Form::close() !!}
@@ -53,7 +53,7 @@
 		<h3> У вас еще нет постов...<h3>
 		@endif
 		
-		{!! HTML::link(route('user.userpost.create'),'Добавить новый пост',['class' => 'btn btn-the-salmon-dance-3']) !!}
+		{!! HTML::link(route('user.post.create'),'Добавить новый пост',['class' => 'btn btn-the-salmon-dance-3']) !!}
 		
 	</div>			            
 </div>

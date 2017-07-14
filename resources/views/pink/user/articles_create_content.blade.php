@@ -1,7 +1,7 @@
 <div id="content-page" class="content group">
 <div class="hentry group">
 
-{!! Form::open(['url' => (isset($article->id)) ? route('admin.posts.update',['articles'=>$article->id]) : route('admin.posts.store'),'class'=>'contact-form','method'=>'POST','enctype'=>'multipart/form-data']) !!}
+{!! Form::open(['url' => (isset($article->id)) ? route('user.post.update',['articles'=>$article->id]) : route('user.post.store'),'class'=>'contact-form','method'=>'POST','enctype'=>'multipart/form-data']) !!}
     
 	<ul>
 		<li class="text-field" style="width:50%;">

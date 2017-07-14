@@ -9,5 +9,7 @@
 	'recent_randomposts' => 3,
 	'get_comments'=> 10,
 	'paginate_posts_manager' => 5,
+	'image_big' => 'http://japblog/pink/images/articles/003-816x282.jpg',
+	'image_mini' => 'http://japblog/pink/images/articles/003-55x55.jpg'
 	];
 ?>

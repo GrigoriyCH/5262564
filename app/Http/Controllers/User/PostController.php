@@ -37,7 +37,7 @@ class PostController extends UserController
 	
     public function index()
     {
-        
+        return redirect('/user');
     }
 
     /**
@@ -77,7 +77,6 @@ class PostController extends UserController
      */
     public function store(ArticleRequest $request)
     {
-        //
 		$result = $this->p_rep->addArticle($request);
 		
 		if(is_array($result) && !empty($result['error'])){
@@ -122,7 +121,7 @@ class PostController extends UserController
 			$lists['Категории'][$category->id] = $category->title;
 		}
 		//dd($article);
-		$content = view(env('THEME').'.admin.articles_create_content')->with(['categories' => $lists,'article' => $article])->render();
+		$content = view(env('THEME').'.user.articles_create_content')->with(['categories' => $lists,'article' => $article])->render();
 		$this->vars = array_add($this->vars,'content',$content);
 		
 		return $this->renderOutput();
