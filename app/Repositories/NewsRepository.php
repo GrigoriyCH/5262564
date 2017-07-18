@@ -26,8 +26,8 @@ class NewsRepository extends Repository{
 		$tmp_text = preg_replace('#<span.*</span>#sUi', '', $tmp_text);
 		$data['text'] = $tmp_text;
 		*/
-		if($data['img']==''){$data['img']='http://japblog/pink/images/articles/003-816x282.jpg';}
-		if($data['img_mini']==''){$data['img']='http://japblog/pink/images/articles/003-55x55.jpg';}
+		if(trim($data['img'])==''){$data['img']=config('settings.image_big');}
+		if(trim($data['img_mini'])==''){$data['img_mini']=config('settings.image_mini');}
 		
 		$this->model->fill($data);
 		
@@ -47,8 +47,8 @@ class NewsRepository extends Repository{
 			return array('error' => 'Нет данных!');
 		}
 		
-		if($data['img']==''){$data['img']='http://japblog/pink/images/articles/003-816x282.jpg';}
-		if($data['img_mini']==''){$data['img']='http://japblog/pink/images/articles/003-55x55.jpg';}
+		if(trim($data['img'])==''){$data['img']=config('settings.image_big');}
+		if(trim($data['img_mini'])==''){$data['img_mini']=config('settings.image_mini');}
 		
 		$article->fill($data);
 		

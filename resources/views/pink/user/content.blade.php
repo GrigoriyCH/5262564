@@ -53,7 +53,7 @@
 		<h3> У вас еще нет постов...<h3>
 		@endif
 		
-		{!! HTML::link(route('user.post.create'),'Добавить новый пост',['class' => 'btn btn-the-salmon-dance-3']) !!}
+		{!! Html::link(route('user.post.create'),'Добавить новый пост',['class' => 'btn btn-the-salmon-dance-3']) !!}
 		
 	</div>			            
 </div>

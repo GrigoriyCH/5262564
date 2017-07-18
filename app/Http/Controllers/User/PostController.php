@@ -137,7 +137,7 @@ class PostController extends UserController
     public function update(ArticleRequest $request, Posts $article)
     {
         //
-		$result = $this->p_rep->updateArticle($request, $article);
+		$result = $this->p_rep->updateArticleOwn($request, $article);
 		
 		if(is_array($result) && !empty($result['error'])){
 			return back()->with($result);
@@ -154,7 +154,7 @@ class PostController extends UserController
     public function destroy(Posts $article)
     {
         //
-		$result = $this->p_rep->deleteArticle($article);
+		$result = $this->p_rep->deleteArticleOwn($article);
 		
 		if(is_array($result) && !empty($result['error'])){
 			return back()->with($result);

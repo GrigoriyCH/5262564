@@ -3,6 +3,8 @@
 namespace Japblog\Http\Controllers\Auth;
 
 use Japblog\User;
+use Japblog\RoleUser;
+
 use Validator;
 use Japblog\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -63,10 +65,15 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+		RoleUser::create([
+        'user_id' => $user->id,
+        'role_id' => 3
+		]);
+		return $user;
     }
 }

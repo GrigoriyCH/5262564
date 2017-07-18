@@ -70,6 +70,38 @@ class PostsRepository extends Repository{
 			return ['status' => 'Пост удален!'];
 		}
 	}
+	
+	/*work with owns*/
+	public function updateArticleOwn($request, $article){
+		if(Gate::denies('editOwn',$this->model)){
+			abort(403);
+		}
+		
+		$data = $request->except('_token','_method');
+		
+		if(empty($data)){
+			return array('error' => 'Нет данных!');
+		}
+		
+		if(trim($data['img'])==''){$data['img']=config('settings.image_big');}
+		if(trim($data['img_mini'])==''){$data['img']=config('settings.image_mini');}
+		
+		$article->fill($data);
+		
+		if($article->update()){
+			return ['status' => 'Пост обновлен!'];
+		}
+	}
+	
+	public function deleteArticleOwn($article){
+		if(Gate::denies('destroyOwn',$article)){
+			abort(403);
+		}
+		$article->comments()->delete();
+		if($article->delete()){
+			return ['status' => 'Пост удален!'];
+		}
+	}
 }
 
 ?>
