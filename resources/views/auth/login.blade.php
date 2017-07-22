@@ -98,7 +98,7 @@
 <div class="content">
 <div id="wrapper" class="group">
        <div id="block">
-                    <form role="form"  method="POST" action="{{ url('/login') }}">
+                    <form role="form"  method="POST" enctype="multipart/form-data" action="{{ url('/login') }}">
                         {{ csrf_field() }}
                         <div>
                             <label for="email">E-Mail Address</label>

@@ -1,95 +1,97 @@
-<div id="content-page" class="content group">
+<div id="content-page" class="content group" style="background-color:#FFFFF0;">
 <div class="hentry group">
 
-{!! Form::open(['url' => (isset($article->id)) ? route('user.post.update',['articles'=>$article->id]) : route('user.post.store'),'class'=>'contact-form','method'=>'POST','enctype'=>'multipart/form-data']) !!}
+<form role="form" method="POST" action="{{ (isset($article->id)) ? route('user.post.update',['articles'=>$article->id]) : route('user.post.store') }}">
     
-	<ul>
-		<li class="text-field" style="width:50%;">
+		<div class="text-field">
 			<label for="name-contact-us">
 				<span class="label">Название:</span>
 				<br />
-				<span class="sublabel">Заголовок поста</span><br />
+				<span class="mysublabel">Заголовок поста</span><br />
 			</label>
-			<div class="input-prepend">
-			{!! Form::text('title',isset($article->title) ? $article->title  : old('title'), ['placeholder'=>' Введите название вашего поста']) !!}
-			 </div>
-		 </li>
+			<div class = "divforinput">
+				<input class="INPUT_1" type="text" name="title" placeholder="Введите название вашего поста" value="{{ isset($article->title) ? $article->title  : old('title') }}">
+			</div>
+		</div>
 		
-		<li class="textarea-field">
+		<div class="textarea-field">
 			<label for="message-contact-us">
 				 <span class="label">Введите текст поста:</span>
 			</label>
+			<br/>
+			<span class="mysublabel">
+				Воспользуйтесть редактором для ввода/редактирования поста
+			</span>
 			<div class="input-prepend"><span class="add-on"><i class="icon-pencil"></i></span>
 			{!! Form::textarea('text', isset($article->text) ? $article->text  : old('text'), ['id'=>'editor2','class' => 'form-control','placeholder'=>'Введите текст вашей записи']) !!}
 			</div>
 			<div class="msg-error"></div>
-		</li>
+		</div>
 		
-		 <li class="text-field" style="width:50%;">
+		<div class="text-field">
 			<label for="name-contact-us">
 				<span class="label">Ключевые слова:</span>
 				<br />
-				<span class="sublabel">Теги поста (Не стоит указывать в теге больше 7 слов или словосочетаний. Не стоит использовать союзы, предлоги, междометия и частицы в этом теге.)</span><br />
+				<span class="mysublabel">Теги поста (Не стоит указывать в теге больше 7 слов или словосочетаний. Не стоит использовать союзы, предлоги, междометия и частицы в этом теге.)</span><br />
 			</label>
-			<div class="input-prepend">
-			{!! Form::text('keywords', isset($article->keywords) ? $article->keywords  : old('keywords'), ['placeholder'=>' Введите через запятую ключевые слова или словосочетания']) !!}
-			 </div>
-		 </li>
+			<div class = "divforinput">
+				<input class="INPUT_1" type="text" name="keywords" placeholder="Введите через запятую ключевые слова или словосочетания" value="{{ isset($article->keywords) ? $article->keywords  : old('keywords') }}">
+			</div>
+		</div>
 		 
-		 <li class="text-field" style="width:50%;">
+		<div class="text-field">
 			<label for="name-contact-us">
-				<span class="label">Мета описание:</span>
+				<span class="label">Мета-описание:</span>
 				<br />
-				<span class="sublabel">Короткое описание поста (О чем ваш текст...Или продублируйте сюда ваш первый абзац)</span><br />
+				<span class="mysublabel">Короткое описание поста (О чем ваш текст...Или продублируйте сюда ваш первый абзац)</span><br />
 			</label>
-			<div class="input-prepend">
-			{!! Form::text('meta_desc', isset($article->meta_desc) ? $article->meta_desc  : old('meta_desc'), ['placeholder'=>' Введите описание содержания вашей записи']) !!}
-			 </div>
-		 </li>
+			<div class = "divforinput">
+				<input class="INPUT_1" type="text" name="meta_desc" placeholder="Введите описание содержания вашего поста" value="{{ isset($article->meta_desc) ? $article->meta_desc  : old('meta_desc') }}">
+			</div>
+		</div>
 		
-		<li class="text-field" style="width:50%;">
+		<div class="text-field">
 			<label for="name-contact-us">
 				<span class="label">Большая картинка:</span>
 				<br />
-				<span class="sublabel">Будет использоваться в качестве шапки вашего поста</span><br />
+				<span class="mysublabel">Будет использоваться в качестве шапки вашего поста</span><br />
 			</label>
-			<div class="input-prepend">
-			{!! Form::text('img', isset($article->img) ? $article->img  : old('img'), ['placeholder'=>' Укажите ссылку на изображение']) !!}
-			 </div>
-		 </li>
-		 <li class="text-field" style="width:50%;">
+			<div class = "divforinput">
+				<input class="INPUT_1" type="text" name="img" placeholder="Укажите/Вставте ссылку на изображение" value="{{ isset($article->img) ? $article->img  : old('img') }}">
+			</div>
+		</div>
+		
+		<div class="text-field">
 			<label for="name-contact-us">
 				<span class="label">Маленькая картинка:</span>
 				<br />
-				<span class="sublabel">Будет использоваться в качестве картинки-миниатюры для поста(рекомендуем использовать квадратное изображение, и размерами 55 на 55 пикселей)</span><br />
+				<span class="mysublabel">Будет использоваться в качестве картинки-миниатюры для поста(рекомендуем использовать квадратное изображение, и размерами 55 на 55 пикселей)</span><br />
 			</label>
-			<div class="input-prepend">
-			{!! Form::text('img_mini', isset($article->img_mini) ? $article->img_mini  : old('img_mini'), ['placeholder'=>' Укажите ссылку на изображение']) !!}
-			 </div>
-		 </li>
+			<div class = "divforinput">
+				<input class="INPUT_1" type="text" name="img_mini" placeholder="Укажите/Вставте ссылку на изображение" value="{{ isset($article->img_mini) ? $article->img_mini  : old('img_mini') }}">
+			</div>
+		</div>
 		
-		<li class="text-field" style="width:25%;">
+		<div class="text-field">
 			<label for="name-contact-us">
 				<span class="label">Категория:</span>
 				<br />
-				<span class="sublabel">Выберите категорию поста</span><br />
+				<span class="mysublabel">Кликните для выбора категории поста</span><br />
 			</label>
-			<div class="input-prepend">
-				{!! Form::select('category_id', $categories,isset($article->category_id) ? $article->category_id  : '') !!}
-			 </div>
-			 
-		</li>	 
+			<div class="divforinput">
+				{!! Form::select('category_id', $categories,isset($article->category_id) ? $article->category_id  : '', ['class' => 'INPUT_1']) !!}
+			</div> 
+		</div>
 		
 		@if(isset($article->id))
 			<input type="hidden" name="_method" value="PUT">		
-		
 		@endif
 
-		<li class="submit-button"> 
+		<div class="submit-button"> 
 			{!! Form::button('Сохранить', ['class' => 'btn btn-the-salmon-dance-3','type'=>'submit']) !!}			
-		</li>
+		</div>
 		 
-	</ul>
+	</div>
 	
     
     
