@@ -137,3 +137,10 @@ input[type="checkbox"]:hover{
 	overflow:hidden;
 	max-height:282px;
 }
+
+.useravatar{
+	height:96%;
+	width:96%;
+	padding: 3px 3px 3px 3px;
+	border: 1px solid rgb(207, 207, 207);
+}

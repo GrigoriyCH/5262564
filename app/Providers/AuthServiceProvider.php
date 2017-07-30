@@ -28,7 +28,7 @@ class AuthServiceProvider extends ServiceProvider
         Posts::class => ArticlePolicy::class,
 		Permission::class => PermissionPolicy::class,
 		Menu::class => MenusPolicy::class,
-		News::class => SitenewsPolicy::class
+		News::class => SitenewsPolicy::class,
     ];
 
     /**

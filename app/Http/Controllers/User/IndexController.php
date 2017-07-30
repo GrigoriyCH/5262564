@@ -47,23 +47,28 @@ class IndexController extends UserController
 		//dd($this->user);
 		$user_post = $this->getPost($this->user->id);
 		$username = $this->title;
+		$user = $this->user;
+		//dd($user);
 		//dd($user_post);
 		$content = view(env('THEME').'.user.content')->with(['user_post'=>$user_post,'username'=>$username])->render();
         $this->vars = array_add($this->vars,'content',$content);
 		
-		$this->contentLeftBar = view(env('THEME').'.user.contact_bar')->render();
+		$this->contentLeftBar = view(env('THEME').'.user.contact_bar')->with(['user'=>$user])->render();
 		
 		return $this->renderOutput();
 	}
 	
 	public function getPost($user_id = FALSE){
 		if($user_id){
-			$user_post = $this->p_rep->get(['id','title','created_at','img','text','user_id','category_id','keywords','meta_desc'],FALSE,FALSE,['user_id',$user_id],FALSE);
+			$user_post = $this->p_rep->get(['id','title','created_at','img','text','user_id','category_id','keywords','meta_desc'],FALSE,TRUE,['user_id',$user_id],FALSE);
+				if($user_post){
+					$user_post->load('category');
+				}
 			return $user_post;
 		}
 	}
 	
-	public function edit($id){
+	public function update($id){
 		
 	}
 }

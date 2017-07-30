@@ -19,6 +19,7 @@ class UserController extends Controller
     protected $s_rep;
     protected $p_rep;
     protected $m_rep;
+	protected $u_rep;
     
     ////////////////////
     protected $keywords;

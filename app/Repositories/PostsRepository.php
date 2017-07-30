@@ -73,7 +73,7 @@ class PostsRepository extends Repository{
 	
 	/*work with owns*/
 	public function updateArticleOwn($request, $article){
-		if(Gate::denies('editOwn',$this->model)){
+		if(Gate::denies('editOwn',$article)){
 			abort(403);
 		}
 		

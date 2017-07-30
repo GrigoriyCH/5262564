@@ -50,7 +50,7 @@ class IndexController extends SiteController
         $sliders = view(env('THEME').'.slider')->with('sliders',$sliderItems)->render();
         $this->vars = array_add($this->vars,'sliders',$sliders);
         /////////////////////////////
-        $posts = $this->getPosts();// dd($posts);
+        $posts = $this->getPosts(); //dd($posts);
         $this->contentRightBar = view(env('THEME').'.indexBar')->with('posts',$posts)->render();
         /////////////////////////////
         return $this->renderOutput();
@@ -64,7 +64,8 @@ class IndexController extends SiteController
 	
 	protected function getPosts(){
 		
-		$posts = $this->p_rep->get(['title','created_at','img','img_mini','id'],Config::get('settings.home_posts_count'),FALSE,FALSE,FALSE);
+		$posts = $this->p_rep->get(['title','created_at','img','img_mini','id','user_id'],Config::get('settings.home_posts_count'),FALSE,FALSE,FALSE);
+			if($posts){$posts->load('user');}
 		return $posts;
 	}
     

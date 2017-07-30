@@ -69,5 +69,6 @@ Route::group(['prefix'=>'user','middleware'=>'auth'],function(){
 	
 	Route::resource('/post','User\PostController');
 	
+	Route::resource('/name', 'User\NameAvatarController');
 });
 

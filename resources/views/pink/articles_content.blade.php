@@ -34,10 +34,8 @@
 		 </div>
 	@endforeach			            
 				        
-				            
+				        @if($articles->lastPage() > 1)     
 				            <div class="general-pagination group">
-				            
-				            	@if($articles->lastPage() > 1) 
 				            		
 				            		@if($articles->currentPage() !== 1)
 				            			<a href="{{ $articles->url(($articles->currentPage() - 1)) }}">{{ Lang::get('pagination.previous') }}</a>
@@ -55,10 +53,9 @@
 				            			<a href="{{ $articles->url(($articles->currentPage() + 1)) }}">{{ Lang::get('pagination.next') }}</a>
 				            		@endif
 				            		
-				            	
-				            	@endif
-				           
-				            </div>
+				            </div>	
+				        @endif   
+				            
 			@else
 			
 				<h3>{!! Lang::get('ru.articles_no') !!}</h3>

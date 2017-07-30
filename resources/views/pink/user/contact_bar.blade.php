@@ -1,24 +1,38 @@
 				            <div class="widget-first widget contact-info">
-				                <h3>Contacts</h3>
+				                <h3 style="color: #656262;">{{ $user->name }}</h3>
 				                <div class="sidebar-nav">
-				                    <ul>
-				                        <li>
-				                            <i class="icon-map-marker" style="color:#979797;font-size:20pxpx"></i> Location: PinkRio, 115  Avenue street - Italy
-				                        </li>
-				                        <li>
-				                            <i class="icon-info-sign" style="color:#979797;font-size:20pxpx"></i> Phone: 3471717174
-				                        </li>
-				                        <li>
-				                            <i class="icon-print" style="color:#979797;font-size:20pxpx"></i> Fax: +39 0035 356 765
-				                        </li>
-				                        <li>
-				                            <i class="icon-envelope" style="color:#979797;font-size:20pxpx"></i> Email: pinkrio@yit.com
-				                        </li>
-				                    </ul>
+									<center>
+										<img alt="" src="{{$user->avatar}}" class="useravatar"/>
+									</center>
 				                </div>
 				            </div>
 				            <div class="widget-last widget text-image">
-				                <h3>Customer Support</h3>
-				                <div class="text-image" style="text-align:left"><img src="{{asset(env('THEME'))}}/images/callus.gif" alt="Customer Support" /></div>
-				                <p>Nunc sit amet pretium purus. Pellet netus et malesuada fames ac turpis egestas.entesque habitant morbi tristique senectus </p>
+								{!! Form::open(['url' => (isset($user->id)) ? route('user.name.update',['name'=>$user->id]) : route('home'),'method'=>'POST','enctype'=>'multipart/form-data']) !!}
+									<div>
+										<label for="email">Ваше имя</label>
+										<div class="divforinput">
+											<input class="INPUT_1" id="name" type="text" name="name" value="{{$user->name}}" style="width:100%;">
+										</div>
+									</div>
+									<div>
+										<label for="email">Ссылка на аватарку</label>
+										<div class="divforinput">
+											<input class="INPUT_1" id="avatar" type="text" name="avatar" value="{{$user->avatar}}" style="width:100%;">
+										</div>
+									</div>
+									<br>
+									
+									@if(isset($user->id))
+										<input type="hidden" name="_method" value="PUT">		
+									@endif		
+		
+									<div class="submit-button"> 
+										{!! Form::button('Обновить', ['class' => 'btn btn-the-salmon-dance-4','type'=>'submit']) !!}			
+									</div>
+								{!! Form::close() !!}
+								
+								<div style="margin-top:1em;">
+									{!! Html::link(route('user.post.create'),'Добавить новый пост',['class' => 'btn btn-the-salmon-dance-3']) !!}
+								</div>
+								
 				            </div>

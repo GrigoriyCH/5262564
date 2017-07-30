@@ -1,7 +1,7 @@
-<div id="content-page" class="content group" style="background-color:#FFFFF0;">
+<div id="content-page" class="content group">
 <div class="hentry group">
 
-<form role="form" method="POST" action="{{ (isset($article->id)) ? route('user.post.update',['articles'=>$article->id]) : route('user.post.store') }}">
+{!! Form::open(['url' => (isset($article->id)) ? route('user.post.update',['articles'=>$article->id]) : route('user.post.store'),'method'=>'POST','enctype'=>'multipart/form-data']) !!}
     
 		<div class="text-field">
 			<label for="name-contact-us">

@@ -22,7 +22,7 @@ class CreateCommentsTable extends Migration
 			$table->string('site');
 			
 			$table->integer('parent_id');
-			
+			$table->integer('to_user_id');
             $table->timestamps();
         });
     }

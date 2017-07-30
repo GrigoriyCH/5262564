@@ -3,11 +3,12 @@
 @foreach($comments as $comment)
 				                    <li id="li-comment-{{ $comment->id }}" class="comment even {{ ($comment->user_id == $article_id) ?  'bypostauthor odd' : ''}}">
 				                        <div id="comment-{{ $comment->id }}" class="comment-container">
-				                            <div class="comment-author vcard">
-				                                
-				                                @set($hash, isset($comment->email) ? md5($comment->email) : md5($comment->user->email))
-				                                
-				                                <img alt="" src="https://www.gravatar.com/avatar/{{$hash}}?d=mm&s=75" class="avatar" height="75" width="75" />
+				                            <div class="comment-author vcard"> 
+												
+													<div style="overflow:hidden;width:75px;max-height:75px">
+														<img alt="" src="{{$comment->user->avatar}}" style="width:100%;" />
+													</div>
+												
                                                 <cite class="fn">{{$comment->user->name or $comment->name}}</cite>                 
 				                            </div>
 				                            <!-- .comment-author .vcard -->

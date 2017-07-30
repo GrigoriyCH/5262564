@@ -8,7 +8,7 @@
 				                   @foreach($posts as $post)
 				               
 				                   <div class="hentry-post group">
-				                        <div class="thumb-img"><div class="mini-img"><img src="{{$post->img_mini}}" alt="{{$post->title}}" title="{{$post->title}}" /></div></div>
+				                        <div class="thumb-img"><div style="overflow:hidden;width:55px;max-height:55px"><img src="{{$post->user->avatar}}" alt="{{$post->title}}" title="{{$post->title}}" style="width:100%;" /></div></div>
 				                        <div class="text">
 				                            <a href="{{route('posts.show',['id'=>$post->id])}}" title="{{$post->title}}" class="title">{{$post->title}}</a>
 											@if($post->created_at)

@@ -6,15 +6,14 @@ use Japblog\User;
 use Config;
 
 use Gate;
-
+use Auth;
 
 class UsersRepository extends Repository
 {
-	
-    
+	protected $iam;
 	public function __construct(User $user) {
 		$this->model  = $user;
-		
+		$this->iam = Auth::user();
 	}
 	
 	public function addUser($request) {
@@ -59,6 +58,29 @@ class UsersRepository extends Repository
 		
 		return ['status' => 'Пользователь изменен'];
 		
+	}
+	
+	public function updateSelf($request, $useredit){
+		
+		if ($this->iam->id == $useredit->user_id) {
+            abort(403);
+        }
+		
+		$data = $request->except('_token','_method');
+		
+		if(empty($data)){
+			return array('error' => 'Нет данных!');
+		}
+		
+		if(trim($data['avatar'])==''){$data['avatar']=config('settings.image_big');}
+		
+		if(($this->iam->name == $data['name'])&&(($this->iam->avatar == $data['avatar']))){return ['status' => 'Вы не ввели новой информации!'];}
+		
+		$useredit->fill($data);
+		
+		if($useredit->update()){
+			return ['status' => 'Пользователь обновлен!'];
+		}
 	}
 	
 	public function deleteUser($user) {
