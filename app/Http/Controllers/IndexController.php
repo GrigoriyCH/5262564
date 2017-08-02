@@ -64,7 +64,7 @@ class IndexController extends SiteController
 	
 	protected function getPosts(){
 		
-		$posts = $this->p_rep->get(['title','created_at','img','img_mini','id','user_id'],Config::get('settings.home_posts_count'),FALSE,FALSE,FALSE);
+		$posts = $this->p_rep->get(['title','created_at','img','id','user_id'],Config::get('settings.home_posts_count'),FALSE,FALSE,FALSE);
 			if($posts){$posts->load('user');}
 		return $posts;
 	}

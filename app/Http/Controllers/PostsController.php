@@ -11,6 +11,8 @@ use Japblog\Repositories\CommentsRepository;
 use Japblog\Category;
 use Japblog\Repositories\CategoryRepository;
 
+use Auth;
+
 class PostsController extends SiteController
 {
     //
@@ -92,7 +94,7 @@ class PostsController extends SiteController
 			$whereIn = ['category_id',$In];
 		}
         
-		$articles = $this->p_rep->get3(['id','title','created_at','img','img_mini','text','user_id','category_id','keywords','meta_desc'],FALSE,TRUE,$whereIn,FALSE);
+		$articles = $this->p_rep->get3(['id','title','created_at','img','text','user_id','category_id','keywords','meta_desc'],FALSE,TRUE,$whereIn,FALSE);
 		
 		if($articles){
 			$articles->load('user','category','comments');
@@ -126,7 +128,7 @@ class PostsController extends SiteController
     
      public function getRandomposts($take)
     {
-		$randomposts = $this->p_rep->get(['title','text','id','img_mini','category_id','user_id'],$take,FALSE,FALSE,TRUE);
+		$randomposts = $this->p_rep->get(['title','text','id','category_id','user_id'],$take,FALSE,FALSE,TRUE);
 			if($randomposts){$randomposts->load('user');}
 		return $randomposts;
 	}
@@ -168,7 +170,16 @@ class PostsController extends SiteController
 			$this->meta_desc = $article->meta_desc;
 		}
 		/////////////////////////////////////////////////
-		$content = view(env('THEME').'.article_content2')->with('article',$article)->render();
+		if(Auth::check())
+			{
+				$avatar_send = Auth::user()->avatar;
+			}
+			else
+			{
+				$avatar_send = config('settings.default_avatar');
+			}
+		/**/
+		$content = view(env('THEME').'.article_content2')->with(['article'=>$article,'avatar_send'=>$avatar_send])->render();
 		$this->vars = array_add($this->vars,'content',$content);
 		
 		$comments = $this->getComments(config('settings.recent_comments'));//dd($comments);

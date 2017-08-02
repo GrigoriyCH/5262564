@@ -1,9 +1,13 @@
 <li id="li-comment-{{ $data['id']}}" class="comment even borGreen">
 	<div id="comment-{{ $data['id'] }}" class="comment-container">
-		<div class="comment-author vcard">	                                
-		<img alt="" src="https://www.gravatar.com/avatar/{{$data['hash']}}?d=mm&s=75" class="avatar" height="75" width="75" />
+		<div class="vcard mycomment">	                                
+			<div class="thumb-img div-comment-img">
+				<div style="overflow:hidden;width:89px;max-height:89px">
+					<img src="{{$data['avatar']}}" style="width:100%;"/>
+				</div>
+			</div>
         <cite class="fn">{{$data['name']}}</cite>                 
-	</div>
+		</div>
 <!-- .comment-author .vcard -->
 	<div class="comment-meta commentmetadata">
 		<div class="intro">

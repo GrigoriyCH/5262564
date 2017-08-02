@@ -5,6 +5,17 @@
     
 		<div class="text-field">
 			<label for="name-contact-us">
+				<span class="label">Большая картинка:</span>
+				<br />
+				<span class="mysublabel">Будет использоваться в качестве шапки вашего поста</span><br />
+			</label>
+			<div class = "divforinput">
+				<input class="INPUT_1" type="text" name="img" placeholder="Укажите/Вставте ссылку на изображение" value="{{ isset($article->img) ? $article->img  : old('img') }}">
+			</div>
+		</div>
+		
+		<div class="text-field">
+			<label for="name-contact-us">
 				<span class="label">Название:</span>
 				<br />
 				<span class="mysublabel">Заголовок поста</span><br />
@@ -47,28 +58,6 @@
 			</label>
 			<div class = "divforinput">
 				<input class="INPUT_1" type="text" name="meta_desc" placeholder="Введите описание содержания вашего поста" value="{{ isset($article->meta_desc) ? $article->meta_desc  : old('meta_desc') }}">
-			</div>
-		</div>
-		
-		<div class="text-field">
-			<label for="name-contact-us">
-				<span class="label">Большая картинка:</span>
-				<br />
-				<span class="mysublabel">Будет использоваться в качестве шапки вашего поста</span><br />
-			</label>
-			<div class = "divforinput">
-				<input class="INPUT_1" type="text" name="img" placeholder="Укажите/Вставте ссылку на изображение" value="{{ isset($article->img) ? $article->img  : old('img') }}">
-			</div>
-		</div>
-		
-		<div class="text-field">
-			<label for="name-contact-us">
-				<span class="label">Маленькая картинка:</span>
-				<br />
-				<span class="mysublabel">Будет использоваться в качестве картинки-миниатюры для поста(рекомендуем использовать квадратное изображение, и размерами 55 на 55 пикселей)</span><br />
-			</label>
-			<div class = "divforinput">
-				<input class="INPUT_1" type="text" name="img_mini" placeholder="Укажите/Вставте ссылку на изображение" value="{{ isset($article->img_mini) ? $article->img_mini  : old('img_mini') }}">
 			</div>
 		</div>
 		

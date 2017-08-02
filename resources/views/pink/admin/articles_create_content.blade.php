@@ -6,6 +6,17 @@
 	<ul>
 		<li class="text-field" style="width:50%;">
 			<label for="name-contact-us">
+				<span class="label">Большая картинка:</span>
+				<br />
+				<span class="sublabel">Будет использоваться в качестве шапки вашего поста</span><br />
+			</label>
+			<div class="input-prepend">
+			{!! Form::text('img', isset($article->img) ? $article->img  : old('img'), ['placeholder'=>' Укажите ссылку на изображение']) !!}
+			 </div>
+		 </li>
+		
+		<li class="text-field" style="width:50%;">
+			<label for="name-contact-us">
 				<span class="label">Название:</span>
 				<br />
 				<span class="sublabel">Заголовок поста</span><br />
@@ -44,27 +55,6 @@
 			</label>
 			<div class="input-prepend">
 			{!! Form::text('meta_desc', isset($article->meta_desc) ? $article->meta_desc  : old('meta_desc'), ['placeholder'=>' Введите описание содержания вашей записи']) !!}
-			 </div>
-		 </li>
-		
-		<li class="text-field" style="width:50%;">
-			<label for="name-contact-us">
-				<span class="label">Большая картинка:</span>
-				<br />
-				<span class="sublabel">Будет использоваться в качестве шапки вашего поста</span><br />
-			</label>
-			<div class="input-prepend">
-			{!! Form::text('img', isset($article->img) ? $article->img  : old('img'), ['placeholder'=>' Укажите ссылку на изображение']) !!}
-			 </div>
-		 </li>
-		 <li class="text-field" style="width:50%;">
-			<label for="name-contact-us">
-				<span class="label">Маленькая картинка:</span>
-				<br />
-				<span class="sublabel">Будет использоваться в качестве картинки-миниатюры для поста(рекомендуем использовать квадратное изображение, и размерами 55 на 55 пикселей)</span><br />
-			</label>
-			<div class="input-prepend">
-			{!! Form::text('img_mini', isset($article->img_mini) ? $article->img_mini  : old('img_mini'), ['placeholder'=>' Укажите ссылку на изображение']) !!}
 			 </div>
 		 </li>
 		

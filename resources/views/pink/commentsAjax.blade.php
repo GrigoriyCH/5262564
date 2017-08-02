@@ -3,11 +3,13 @@
 @foreach($comments as $comment)
 				                    <li id="li-comment-{{ $comment->id }}" class="comment even {{ ($comment->user_id == $article_id) ?  'bypostauthor odd' : ''}}">
 				                        <div id="comment-{{ $comment->id }}" class="comment-container">
-				                            <div class="comment-author vcard"> 
+				                            <div class="vcard mycomment"> 
 												
-													<div style="overflow:hidden;width:75px;max-height:75px">
-														<img alt="" src="{{$comment->user->avatar}}" style="width:100%;" />
+												<div class="thumb-img div-comment-img">
+													<div style="overflow:hidden;width:89px;max-height:89px">
+														<img src="{{ isset($comment->user) ? $comment->user->avatar : config('settings.default_avatar')}}" title = "" style="width:100%;"/>
 													</div>
+												</div>
 												
                                                 <cite class="fn">{{$comment->user->name or $comment->name}}</cite>                 
 				                            </div>

@@ -31,7 +31,6 @@ class PostsRepository extends Repository{
 		}
 		
 		if(trim($data['img'])==''){$data['img']=config('settings.image_big');}
-		if(trim($data['img_mini'])==''){$data['img_mini']=config('settings.image_mini');}
 		
 		$this->model->fill($data);
 		
@@ -52,7 +51,6 @@ class PostsRepository extends Repository{
 		}
 		
 		if(trim($data['img'])==''){$data['img']=config('settings.image_big');}
-		if(trim($data['img_mini'])==''){$data['img']=config('settings.image_mini');}
 		
 		$article->fill($data);
 		
@@ -84,7 +82,6 @@ class PostsRepository extends Repository{
 		}
 		
 		if(trim($data['img'])==''){$data['img']=config('settings.image_big');}
-		if(trim($data['img_mini'])==''){$data['img']=config('settings.image_mini');}
 		
 		$article->fill($data);
 		

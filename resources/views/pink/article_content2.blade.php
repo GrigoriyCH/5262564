@@ -78,6 +78,7 @@
 				                            <input id="comment_post_ID" type="hidden" name="comment_post_ID" value="{{ $article->id }}" />
 				                        	<input id="comment_parent" type="hidden" name="comment_parent" value="0" />
 				                        	<input id="comment_to_user_id" type="hidden" name="comment_to_user_id" value="{{ $article->user_id }}" />
+											<input id="avatar" type="hidden" name="avatar" value="{{ $avatar_send }}" />
 				                            <input name="submit" type="submit" id="submit" value="Post Comment" />
 				                        </p>
 				                    </form>

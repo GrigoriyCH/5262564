@@ -23,9 +23,9 @@
 				                                <td class="align-left">{!! Html::link(route('admin.posts.edit',['articles'=>$article->id]),$article->title) !!}</td>
 				                                <td class="align-left">{{str_limit($article->text,200)}}</td>
 				                                <td>
-												<center style="	overflow:hidden;width:82px;height:28px">
+												<center style="overflow:hidden;width:82px;height:28px">
 														<div style="width:100%;">
-															@if(isset($article->img_mini))
+															@if(isset($article->img))
 															{!! Html::image($article->img) !!}
 															@endif
 														</div>

@@ -61,6 +61,8 @@ jQuery(document).ready(function($) {
 														$('#spanCountComms').text(countComments+1);
 														
 														$('#cancel-comment-reply-link').click();
+														
+														
 														// анимация средствами JQuery
                                                         $('.children').stop().animate({
                                                         height: "0px", // высоту к нулю

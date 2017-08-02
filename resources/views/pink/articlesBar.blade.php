@@ -7,7 +7,7 @@
 				                      
 				                      @foreach($randomposts as $randompost )
 				                         
-				                         <div class="hentry-post group">
+				                        <div class="hentry-post group">
 				                           <div class="thumb-img"><div style="overflow:hidden;width:55px;max-height:55px"><img src="{{$randompost->user->avatar}}" alt="{{$randompost->title}}" title="{{$randompost->title}}" style="width:100%;"/></div></div>
 				                           <div class="text">
 				                            <a href="{{route('posts.show',['id'=>$randompost->id])}}" title="{{$randompost->title}}" class="title">{{$randompost->title}}</a>
@@ -35,7 +35,7 @@
 				                    <div class="hentry-post group">
 				                        <div class="thumb-img">
 											<div style="overflow:hidden;width:55px;max-height:55px">
-												<img src="{{$comment->user->avatar}}" alt="{{$comment->text}}" title="{{$comment->text}}" style="width:100%;"/>
+												<img src="{{ isset($comment->user) ? $comment->user->avatar : config('settings.default_avatar')}}" style="width:100%;"/>
 											</div>
 										</div>
 										<div class="text">

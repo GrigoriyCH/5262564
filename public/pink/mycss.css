@@ -144,3 +144,14 @@ input[type="checkbox"]:hover{
 	padding: 3px 3px 3px 3px;
 	border: 1px solid rgb(207, 207, 207);
 }
+
+.mycomment{
+	width:117px;
+	float:left;
+}
+
+.div-comment-img{
+	margin:0 auto;
+	margin-top:10px;
+	width:89px;
+}
