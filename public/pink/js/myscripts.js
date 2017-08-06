@@ -62,23 +62,17 @@ jQuery(document).ready(function($) {
 														
 														$('#cancel-comment-reply-link').click();
 														
-														
-														// анимация средствами JQuery
-                                                        $('.children').stop().animate({
-                                                        height: "0px", // высоту к нулю
-                                                        /*width: "0px", // высоту к нулю*/
-                                                        opacity: 0 // прозрачность к нулю к нулю
-                                                        }, 5000, function() {
-                                                        $(this).remove(); // удаляем из DOM (если требуется, если же нет, то "закомментируйте" эту строку)
-                                                        });
-                                                        //////////////////////////////////////
-                                                        $('.borGreen').stop().animate({
-                                                        height: "0px", // высоту к нулю
-                                                        /*width: "0px", // высоту к нулю*/
-                                                        opacity: 0 // прозрачность к нулю к нулю
-                                                        }, 5000, function() {
-                                                        $(this).remove(); // удаляем из DOM (если требуется, если же нет, то "закомментируйте" эту строку)
-                                                        });
+														if(countComments > 10)
+														{
+															$('.borGreen').stop().animate({
+																height: "0px", // высоту к нулю
+																/*width: "0px", // ширину к нулю*/
+																opacity: 0 // прозрачность к нулю к нулю
+															}, 5000, function() 
+																{
+																	$(this).remove(); // удаляем из DOM (если требуется, если же нет, то "закомментируйте" эту строку)
+																});
+														}
 													})
 													
 								}
@@ -150,7 +144,7 @@ $(document).ready(function()
 });
 //////////////////////////////////////////////////////////////
 $(function(){
-	var block_width = $('.thumbnail').width();
+	var block_width = 816;
 	
   $('.img-head').height($('.img-head').width()/(block_width/282));
 

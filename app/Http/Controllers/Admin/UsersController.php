@@ -89,7 +89,7 @@ class UsersController extends AdminController
 		if(is_array($result) && !empty($result['error'])) {
 			return back()->with($result);
 		}
-		return redirect('/admin')->with($result);
+		return redirect('/admin/users')->with($result);
     }
 
     /**
@@ -138,7 +138,7 @@ class UsersController extends AdminController
 		if(is_array($result) && !empty($result['error'])) {
 			return back()->with($result);
 		}
-		return redirect('/admin')->with($result);
+		return redirect('/admin/users')->with($result);
     }
 
     /**
@@ -153,6 +153,6 @@ class UsersController extends AdminController
 		if(is_array($result) && !empty($result['error'])) {
 			return back()->with($result);
 		}
-		return redirect('/admin')->with($result);
+		return redirect('/admin/users')->with($result);
     }
 }

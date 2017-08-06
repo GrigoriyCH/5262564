@@ -49,17 +49,6 @@
 				<input class="INPUT_1" type="text" name="keywords" placeholder="Введите через запятую ключевые слова или словосочетания" value="{{ isset($article->keywords) ? $article->keywords  : old('keywords') }}">
 			</div>
 		</div>
-		 
-		<div class="text-field">
-			<label for="name-contact-us">
-				<span class="label">Мета-описание:</span>
-				<br />
-				<span class="mysublabel">Короткое описание поста (О чем ваш текст...Или продублируйте сюда ваш первый абзац)</span><br />
-			</label>
-			<div class = "divforinput">
-				<input class="INPUT_1" type="text" name="meta_desc" placeholder="Введите описание содержания вашего поста" value="{{ isset($article->meta_desc) ? $article->meta_desc  : old('meta_desc') }}">
-			</div>
-		</div>
 		
 		<div class="text-field">
 			<label for="name-contact-us">

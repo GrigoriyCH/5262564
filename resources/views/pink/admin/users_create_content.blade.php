@@ -8,7 +8,7 @@
 			<label for="name-contact-us">
 				<span class="label">Имя:</span>
 				<br />
-				<span class="sublabel">Имя</span><br />
+				<span class="sublabel">Имя пользователя, отображается на сайте</span><br />
 			</label>
 			<div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span>
 			{!! Form::text('name',isset($user->name) ? $user->name  : old('name'), ['placeholder'=>'Введите название страницы']) !!}
@@ -20,9 +20,9 @@
 			<label for="name-contact-us">
 				<span class="label">Email:</span>
 				<br />
-				<span class="sublabel">Email</span><br />
+				<span class="sublabel">Email пользователя, не отображается на сайте</span><br />
 			</label>
-			<div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span>
+			<div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span>
 			{!! Form::text('email',isset($user->email) ? $user->email  : old('email'), ['placeholder'=>'Введите название страницы']) !!}
 			 </div>
 		 </li>
@@ -31,9 +31,9 @@
 			<label for="name-contact-us">
 				<span class="label">Пароль:</span>
 				<br />
-				<span class="sublabel">Пароль</span><br />
+				<span class="sublabel">Минимум 6 символов</span><br />
 			</label>
-			<div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span>
+			<div class="input-prepend"><span class="add-on"><i class="icon-key"></i></span>
 			{!! Form::password('password') !!}
 			 </div>
 		 </li>
@@ -42,10 +42,21 @@
 			<label for="name-contact-us">
 				<span class="label">Повтор пароля:</span>
 				<br />
-				<span class="sublabel">Повтор пароля</span><br />
+				<span class="sublabel">Повторный ввод пароля</span><br />
 			</label>
-			<div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span>
+			<div class="input-prepend"><span class="add-on"><i class="icon-key"></i></span>
 			{!! Form::password('password_confirmation') !!}
+			 </div>
+		 </li>
+		 
+		 <li class="text-field">
+			<label for="name-contact-us">
+				<span class="label">Аватар:</span>
+				<br />
+				<span class="sublabel">Аватар</span><br />
+			</label>
+			<div class="input-prepend"><span class="add-on"><i class="icon-picture"></i></span>
+			{!! Form::text('avatar',isset($user->avatar) ? $user->avatar  : old('avatar'), ['placeholder'=>'Введите название страницы']) !!}
 			 </div>
 		 </li>
 		 

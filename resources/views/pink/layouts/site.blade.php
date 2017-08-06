@@ -129,11 +129,19 @@
 						
                         <div id="sidebar-header">
                                 @if (Auth::check())
+									@set($rolAdmin,1)
+									@set($rolModer,2)
 									<div id="mynoncenter">
+									@if(Auth::user()->roles()->first()->id == $rolAdmin or $rolModer)
+									<a href="{{ url('/admin') }}" id="butsend" />Администратум</a>
+									@endif
 									<a href="{{ url('/user') }}" id="butsend" />Мои посты</a>
 									<a href="{{ url('/logout') }}" id="butsend"/>Выход</a>
 									</div>
 									<div id="mycenter">
+									@if(Auth::user()->roles()->first()->id == $rolAdmin or $rolModer)
+									<a href="{{ url('/admin') }}" id="butsend" />Администратум</a>
+									@endif
 									<a href="{{ url('/user') }}" id="butsend" />Мои посты</a>
 									<a href="{{ url('/logout') }}" id="butsend"/>Выход</a>
 									</div>

@@ -13,7 +13,7 @@ class UserRequest extends Request
      */
     public function authorize()
     {
-       return \Auth::user()->canDo('EDIT_USER');
+       return \Auth::user()->canDo('EDIT_USERS');
     }
 	
 	protected function getValidatorInstance()

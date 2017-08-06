@@ -17,6 +17,9 @@ use Japblog\Policies\PermissionPolicy;
 use Japblog\Menu;
 use Japblog\Policies\MenusPolicy;
 
+use Japblog\User;
+use Japblog\Policies\UserDataPolicy;
+
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -29,6 +32,7 @@ class AuthServiceProvider extends ServiceProvider
 		Permission::class => PermissionPolicy::class,
 		Menu::class => MenusPolicy::class,
 		News::class => SitenewsPolicy::class,
+		User::class => UserDataPolicy::class
     ];
 
     /**

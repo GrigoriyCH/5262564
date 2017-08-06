@@ -25,6 +25,7 @@ class IndexController extends AdminController
 	
 	public function index(){
 		$this->title = 'Панель администратора';
-		return $this->renderOutput();
+		/*return $this->renderOutput();*/
+		return redirect('/admin/posts');
 	}
 }

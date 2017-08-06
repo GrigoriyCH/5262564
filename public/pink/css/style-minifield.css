@@ -142,7 +142,7 @@ li.comment ul.children {
 	margin-left: 4.0%;
 }
 li.comment ul.children li {
-	margin: 1% 0 0 0;
+	margin: 0.1em 0 0 0;
 }
 .bypostauthor .comment-container, .bypostauthor .comment-container .children, .bypostauthor .children .bypostauthor .comment-container, .bypostauthor .children .bypostauthor .children .comment-container, .bypostauthor .children .bypostauthor .children .bypostauthor .comment-container, .bypostauthor .children .bypostauthor .children .bypostauthor .children .bypostauthor .comment-container, .bypostauthor .children .bypostauthor .children .bypostauthor .children .bypostauthor .children .bypostauthor .comment-container {
 	background-color: #f4f4f4;

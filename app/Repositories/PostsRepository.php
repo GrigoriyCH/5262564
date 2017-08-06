@@ -31,6 +31,7 @@ class PostsRepository extends Repository{
 		}
 		
 		if(trim($data['img'])==''){$data['img']=config('settings.image_big');}
+		$data['meta_desc'] = str_limit(strip_tags($data['text']), 250);
 		
 		$this->model->fill($data);
 		
@@ -51,6 +52,7 @@ class PostsRepository extends Repository{
 		}
 		
 		if(trim($data['img'])==''){$data['img']=config('settings.image_big');}
+		$data['meta_desc'] = str_limit(strip_tags($data['text']), 250);
 		
 		$article->fill($data);
 		
@@ -82,6 +84,7 @@ class PostsRepository extends Repository{
 		}
 		
 		if(trim($data['img'])==''){$data['img']=config('settings.image_big');}
+		$data['meta_desc'] = str_limit(strip_tags($data['text']), 250);
 		
 		$article->fill($data);
 		

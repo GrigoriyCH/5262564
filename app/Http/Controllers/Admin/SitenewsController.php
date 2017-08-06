@@ -87,7 +87,7 @@ class SitenewsController extends AdminController
 		if(is_array($result) && !empty($result['error'])){
 			return back()->with($result);
 		}
-		return redirect('/admin')->with($result);
+		return redirect('/admin/sitenews')->with($result);
     }
 
     /**
@@ -138,7 +138,7 @@ class SitenewsController extends AdminController
 		if(is_array($result) && !empty($result['error'])){
 			return back()->with($result);
 		}
-		return redirect('/admin')->with($result);
+		return redirect('/admin/sitenews')->with($result);
     }
 
     /**
@@ -155,6 +155,6 @@ class SitenewsController extends AdminController
 		if(is_array($result) && !empty($result['error'])){
 			return back()->with($result);
 		}
-		return redirect('/admin')->with($result);
+		return redirect('/admin/sitenews')->with($result);
     }
 }

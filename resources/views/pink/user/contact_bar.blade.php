@@ -27,7 +27,7 @@
 									@endif		
 		
 									<div class="submit-button"> 
-										{!! Form::button('Обновить', ['class' => 'btn btn-the-salmon-dance-4','type'=>'submit']) !!}			
+										{!! Form::button('Обновить', ['class' => 'btn btn-honey-pot-4','type'=>'submit']) !!}			
 									</div>
 								{!! Form::close() !!}
 								

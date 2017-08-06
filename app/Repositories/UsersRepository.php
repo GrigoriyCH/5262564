@@ -3,7 +3,6 @@
 namespace Japblog\Repositories;
 
 use Japblog\User;
-use Config;
 
 use Gate;
 use Auth;
@@ -25,10 +24,13 @@ class UsersRepository extends Repository
 		
 		$data = $request->all();
 		
+		if(trim($data['avatar'])==''){$data['avatar']=config('settings.default_avatar');}
+		
 		$user = $this->model->create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+			'avatar' => $data['avatar']
         ]);
 		
 		if($user) {
@@ -48,6 +50,8 @@ class UsersRepository extends Repository
         }
 		
 		$data = $request->all();
+		
+		if(trim($data['avatar'])==''){$data['avatar']=config('settings.default_avatar');}
 		
 		if(isset($data['password'])) {
 			$data['password'] = bcrypt($data['password']);
@@ -72,7 +76,7 @@ class UsersRepository extends Repository
 			return array('error' => 'Нет данных!');
 		}
 		
-		if(trim($data['avatar'])==''){$data['avatar']=config('settings.image_big');}
+		if(trim($data['avatar'])==''){$data['avatar']=config('settings.default_avatar');}
 		
 		if(($this->iam->name == $data['name'])&&(($this->iam->avatar == $data['avatar']))){return ['status' => 'Вы не ввели новой информации!'];}
 		
