@@ -13,9 +13,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'Japblog\Events\SomeEvent' => [
-            'Japblog\Listeners\EventListener',
-        ],
+		'Japblog\Events\PostHasViewed' => [
+		'Japblog\Listeners\Counter',
+		],
     ];
 
     /**

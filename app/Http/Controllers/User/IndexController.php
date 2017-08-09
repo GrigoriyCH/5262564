@@ -60,9 +60,9 @@ class IndexController extends UserController
 	
 	public function getPost($user_id = FALSE){
 		if($user_id){
-			$user_post = $this->p_rep->get(['id','title','created_at','img','text','user_id','category_id','keywords','meta_desc'],FALSE,TRUE,['user_id',$user_id],FALSE);
+			$user_post = $this->p_rep->get(['id','title','created_at','img','text','user_id','category_id','keywords','meta_desc','view'],FALSE,TRUE,['user_id',$user_id],FALSE);
 				if($user_post){
-					$user_post->load('category');
+					$user_post->load('category','comments');
 				}
 			return $user_post;
 		}

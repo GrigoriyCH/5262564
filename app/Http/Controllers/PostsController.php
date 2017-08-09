@@ -11,6 +11,9 @@ use Japblog\Repositories\CommentsRepository;
 use Japblog\Category;
 use Japblog\Repositories\CategoryRepository;
 
+use Event;
+use Japblog\Events\PostHasViewed;
+
 use Auth;
 
 class PostsController extends SiteController
@@ -216,7 +219,9 @@ class PostsController extends SiteController
 		$article = $this->p_rep->one($id); //dd($article);
 		if($article){
 			//$article->img = json_decode($article->img);
-			$article->load('user');
+			$article->load('user','category');
+			/*счетчик просмотров*/
+			event(new PostHasViewed($article));
 		}
 		/////////////////////////////////////////////////
 		if(isset($article->id))

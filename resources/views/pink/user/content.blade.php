@@ -26,7 +26,7 @@
 										
 				                        <div class="text" style="margin-left:0px;">
 											<div style="margin-left:100px;">
-												<a href="{{ route('user.post.edit',['id'=>$post->id]) }}" title="Добавить комментарии и просмотры">{{ $post->title }}</a>
+												<a href="{{ route('user.post.edit',['id'=>$post->id]) }}">{{ $post->title }} | Редатировать</a>
 												
 													@if($post->created_at)
 														<p class="post-date">{{ $post->created_at->format('F d, Y') }}</p>
@@ -47,6 +47,23 @@
 												<p class="post-date">{{$post->category->title}}</p>
 											</div>
 											
+											<div style="float:right;margin-right:1em;padding-top:0.5em;">
+												<p>
+													<span title="{{Lang::choice('ru.views',$post->view)}}"><i class="icon-eye-open" style="margin-right:0.1em;"></i>{{($post->view)}}</span>
+												</p>
+											</div>
+											
+											<div style="float:right;margin-right:1em;padding-top:0.5em;">
+												<p>
+													<span title="{{Lang::choice('ru.comments',count($post->comments))}}"><i class="icon-comment" style="margin-right:0.1em;"></i>{{count($post->comments)}}</span>
+												</p>
+											</div>
+											
+											<div style="float:right;margin-right:1em;padding-top:0.5em;">
+												<p>
+													<a href="{{ route('posts.show',['id'=>$post->id])}}">Перейти к посту</a>
+												</p>
+											</div>
 											
 				                        </div>
 				    </div>

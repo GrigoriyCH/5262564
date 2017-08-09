@@ -24,7 +24,7 @@
 				                </div>
 				                <!-- post meta -->
 				                <div class="meta group">
-				                    <p class="author"><span>by <a href="#" title="{{ $article->title }}" rel="author">{{$article->user->name}}</a></span></p>
+				                    <p class="author"><span>by <a href="{{route('postsAut',['aut_alias' => $article->user_id])}}" title="{{ $article->title }}" rel="author">{{$article->user->name}}</a></span></p>
 				                    <p class="categories"><span>In: <a href="{{route('postsCat',['cat_alias'=>$article->category->alias])}}" title="View all posts in {{$article->category->title}}" rel="category tag">{{$article->category->title}}</a></span></p>
 				                    <p class="comments"><span><a href="#comments" title="Comment on This is the title of the first article. Enjoy it.">{{count($article->comments) ? count($article->comments) : '0' }} {{Lang::choice('ru.comments',count($article->comments))}}</a></span></p>
 				                </div>
@@ -42,7 +42,11 @@
 				                        <a href="http://yourinspirationtheme.com/demo/pinkrio/2012/09/24/this-is-the-title-of-the-first-article-enjoy-it/" class="socials-small bookmark-small" title="This is the title of the first article. Enjoy it.">bookmark</a>
 				                    </div>
 				                </div>
-				                <p class="tags">Tags: <a href="#" rel="tag">book</a>, <a href="#" rel="tag">css</a>, <a href="#" rel="tag">design</a>, <a href="#" rel="tag">inspiration</a></p>
+				                <div>
+									<p>
+										<span><i class="icon-eye-open" style="margin-right:0.1em;"></i>{{($article->view)}}</span> {{Lang::choice('ru.views',$article->view)}}
+									</p>
+								</div>
 				                <div class="clear"></div>
 				            </div>
 				            <!-- START COMMENTS -->
