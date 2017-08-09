@@ -1,7 +1,6 @@
 <div id="content-blog" class="content group">
-	@if($alias)
 	@if($articles)
-	@foreach($articles as $item)
+		@foreach($articles as $item)
 	      <div class="sticky hentry hentry-post blog-big group">
 				                <!-- post featured & title -->
 				                <div class="thumbnail">
@@ -32,7 +31,7 @@
 				                </div>
 				                <div class="clear"></div>
 		 </div>
-	@endforeach			            
+		@endforeach			            
 				        
 				        @if($articles->lastPage() > 1)     
 				            <div class="general-pagination group">
@@ -58,10 +57,7 @@
 				            
 			@else
 			
-				<h3>{!! Lang::get('ru.articles_no') !!}</h3>
+				<h3>{!! Lang::get('ru.authorless') !!}</h3>
 			
-			@endif
-			@else
-				<h3>Error 404 Category!</h3>	
-			@endif            
-				        </div>
+			@endif           
+	</div>

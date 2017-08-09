@@ -26,6 +26,8 @@ Route::resource('posts','PostsController',[
                                           
 Route::get('posts/cat/{cat_alias?}',['uses'=>'PostsController@index','as'=>'postsCat'])->where('postsCat','[\w]+');
 
+Route::get('posts/aut/{Aut_alias?}',['uses'=>'PostsController@author','as'=>'postsAut'])->where('postsAut','[\w]+');
+
 Route::get('comments/{id_post?}/{idp?}',['uses'=>'CommentsController@index','as'=>'commentsAjax']);
 
 Route::get('newscomments/{id_post?}/{idp?}',['uses'=>'NewsCommentsController@index','as'=>'newscommentsAjax']);
@@ -37,7 +39,7 @@ Route::match(['get','post'],'/contacts',['uses'=>'ContactsController@index','as'
 
 Route::get('news',['uses'=>'PostsController@allnews','as'=>'allnews']);
 Route::get('review',['uses'=>'PostsController@allreview','as'=>'allreview']);
-Route::get('different',['uses'=>'PostsController@allopinion','as'=>'allopinion']);
+Route::get('different',['uses'=>'PostsController@alldifferent','as'=>'allopinion']);
 ////////////////////////////////////////////////////
 Route::auth();
 

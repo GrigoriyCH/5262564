@@ -34,9 +34,16 @@ class PostsController extends SiteController
         $articles = $this->getArticles($cat_alias);
         return $this->mainSelect($articles);
     }
+	
+	public function author($aut_alias = FALSE)
+    {
+        $articles = $this->getArticlesAut($aut_alias);
+        return $this->AutPosts($articles);
+    }
     
     public function allnews(){
-    	$froms = $this->cat_rep->get('id',FALSE,FALSE,['parent_id','1'],FALSE);
+		$news = 1;
+    	$froms = $this->cat_rep->get('id',FALSE,FALSE,['parent_id',$news],FALSE);
     	
     	if($froms){
     	$catArray = array();
@@ -44,7 +51,7 @@ class PostsController extends SiteController
     	{
 			array_push($catArray,$from->id);
 		} 	
-		$articles = $this->getAllFrom($catArray);
+		$articles = $this->getAllFrom($catArray, $news);
 		}
 		else{
 		$articles = [FALSE,TRUE];	
@@ -53,7 +60,8 @@ class PostsController extends SiteController
         return $this->mainSelect($articles);
 	}
 	public function allreview(){
-    	$froms = $this->cat_rep->get('id',FALSE,FALSE,['parent_id','2'],FALSE);
+		$review = 2;
+    	$froms = $this->cat_rep->get('id',FALSE,FALSE,['parent_id',$review],FALSE);
     	
     	if($froms){
     	$catArray = array();
@@ -61,7 +69,7 @@ class PostsController extends SiteController
     	{
 			array_push($catArray,$from->id);
 		} 	
-		$articles = $this->getAllFrom($catArray);
+		$articles = $this->getAllFrom($catArray, $review);
 		}
 		else{
 		$articles = [FALSE,TRUE];	
@@ -69,8 +77,9 @@ class PostsController extends SiteController
 		
         return $this->mainSelect($articles);
 	}
-	public function allopinion(){
-    	$froms = $this->cat_rep->get('id',FALSE,FALSE,['parent_id','3'],FALSE);
+	public function alldifferent(){
+		$different = 3;
+    	$froms = $this->cat_rep->get('id',FALSE,FALSE,['parent_id',$different],FALSE);
     	
     	if($froms){
     	$catArray = array();
@@ -78,7 +87,7 @@ class PostsController extends SiteController
     	{
 			array_push($catArray,$from->id);
 		} 	
-		$articles = $this->getAllFrom($catArray);
+		$articles = $this->getAllFrom($catArray, $different);
 		}
 		else{
 		$articles = [FALSE,TRUE];	
@@ -86,8 +95,7 @@ class PostsController extends SiteController
 		
         return $this->mainSelect($articles);
 	}
-	
-    public function getAllFrom($In = FALSE){
+    public function getAllFrom($In = FALSE, $mainCategory){
     	$whereIn = FALSE;
     	$alias = TRUE;
 		if(!empty($In)){
@@ -100,10 +108,30 @@ class PostsController extends SiteController
 			$articles->load('user','category','comments');
 		}
 		
-		return [$articles,$alias];
+		return [$articles,$alias,$mainCategory];
 	}
-    
     public function mainSelect($articles){
+		$this->title = 'Все посты';
+		
+		if(isset($articles[2])){
+			if(is_string($articles[2])){
+				$this->title = $articles[2];
+			}
+			else{
+				switch($articles[2])
+					{
+						case 1:
+							$this->title = 'Новости';
+							break;
+						case 2:
+							$this->title = 'Обзоры';
+							break;
+						case 3:
+							$this->title = 'Разное';
+							break;
+					}
+				}	
+		}
 		
         $content = view(env('THEME').'.articles_content')->with(['articles' => $articles[0],'alias' => $articles[1]])->render();
         $this->vars = array_add($this->vars,'content',$content);
@@ -114,7 +142,17 @@ class PostsController extends SiteController
         /////////////////////////////
         return $this->renderOutput();
 	}
-    
+	public function AutPosts($articles){
+		$this->title = 'Все посты: '.$articles->first()->user->name;
+        $content = view(env('THEME').'.articles_content_aut')->with(['articles' => $articles])->render();
+        $this->vars = array_add($this->vars,'content',$content);
+        /////////////////////////////
+        $comments = $this->getComments(config('settings.recent_comments'));//dd($comments);
+        $randomposts = $this->getRandomposts(config('settings.recent_randomposts'));//dd($randomposts);
+        $this->contentRightBar = view(env('THEME').'.articlesBar')->with(['comments'=>$comments, 'randomposts'=>$randomposts]);
+        /////////////////////////////
+        return $this->renderOutput();
+	} 
     public function getComments($take)
     {
 		$comments = $this->c_rep->get(['text','name','email','site','posts_id','user_id'],$take,FALSE,FALSE,FALSE);
@@ -124,26 +162,26 @@ class PostsController extends SiteController
 		}
 		
 		return $comments;
-	}
-    
+	}  
      public function getRandomposts($take)
     {
 		$randomposts = $this->p_rep->get(['title','text','id','category_id','user_id'],$take,FALSE,FALSE,TRUE);
 			if($randomposts){$randomposts->load('user');}
 		return $randomposts;
-	}
-	
+	}	
     public function getArticles($id = FALSE)
     {
     	$where = FALSE;
+		$catTitle = FALSE;
         $alias = TRUE;
     	if($id)
     	{		
-        $alias = $this->cat_rep->get('id',FALSE,FALSE,['alias',$id],FALSE);
+        $alias = $this->cat_rep->get(['id','title'],FALSE,FALSE,['alias',$id],FALSE);
+		$catTitle = $alias->first()->title;
     	if($alias){
 			$alias = $alias->first()->id;
 			$where = ['category_id',$alias];
-		}else return [FALSE,FALSE];
+		}else return [FALSE,FALSE,$catTitle];
     	}
 		$articles = $this->p_rep->get(['id','title','created_at','img','text','user_id','category_id','keywords','meta_desc'],FALSE,TRUE,$where,FALSE);
 		
@@ -151,7 +189,25 @@ class PostsController extends SiteController
 			$articles->load('user','category','comments');
 		}
 		
-		return [$articles,$alias];
+		return [$articles,$alias,$catTitle];
+	}
+	
+	public function getArticlesAut($id = FALSE)
+    {
+    	$where = FALSE;
+    	if($id)
+    	{		
+			$where = ['user_id',$id];
+		}else
+		return FALSE;
+    	
+		$articles = $this->p_rep->get(['id','title','created_at','img','text','user_id','category_id','keywords','meta_desc'],FALSE,TRUE,$where,FALSE);
+		
+		if($articles){
+			$articles->load('user','category','comments');
+		}
+		
+		return $articles;
 	}
 	
 	public function show($id = FALSE, $attr = array()){
