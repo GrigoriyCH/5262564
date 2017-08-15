@@ -1,4 +1,4 @@
-<div id="page">
+
 <div id="content-page" class="content group">
 	<div class="hentry group">
 	
@@ -11,7 +11,7 @@
 				<th>Все посты пользователя: {{$username}}</th>
 			</tr>
 			@foreach($user_post as $post)
-				<tr class="item">
+				<tr>
 					<td class="align-left">
 					<div class="recent-post group" style="margin-top:1em;margin-bottom:1em;">
 					<div class="hentry-post group">
@@ -38,10 +38,9 @@
 				                            <p style="margin-top:0.5em;">{!!str_limit(strip_tags($post->text, '<a><p><br><strong><i>'),256)!!}</p>
 											
 											<div style="float:right;">
-												<form class = "form-horizontal" id = "formName{{$post->id}}" action = "{{route('user.post.destroy',['post'=>$post->id])}}" method = "POST" accept-charset="UTF-8">
-												{{ csrf_field() }}
+												{!! Form::open(['url' => route('user.post.destroy',['post'=>$post->id]),'class'=>'form-horizontal','method'=>'POST']) !!}
 												{{ method_field('DELETE') }}
-												<input class = "btn btn-french-5" onclick="return clickButton.deletePost('formName',{{$post->id}})" type="button" value="Удалить" />
+												{!! Form::button('Удалить', ['class' => 'btn btn-french-5','type'=>'submit']) !!}
 												{!! Form::close() !!}
 											</div>
 											
@@ -103,5 +102,4 @@
 		
 		
 	</div>			            
-</div>
 </div>

@@ -88,6 +88,12 @@
 		<script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.colorbox-min.js"></script> <!-- nav -->
 		<script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.tweetable.js"></script>
 		
+		<!-- start confirm -->
+		<script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.confirm/jquery.confirm/jquery.confirm.js"></script>
+		<script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.confirm/js/script.js"></script>
+		
+		<link rel="stylesheet" id="custom-css" href="{{asset(env('THEME'))}}/js/jquery.confirm/jquery.confirm/jquery.confirm.css" type="text/css" media="all" />
+		<!-- end confirm -->
 		
 		<script type="text/javascript" src="{{asset(env('THEME'))}}/js/myscripts.js"></script>
 		

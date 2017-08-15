@@ -220,7 +220,7 @@ class PostsController extends SiteController
 		if($article){
 			//$article->img = json_decode($article->img);
 			$article->load('user','category');
-			/*счетчик просмотров*/
+			/*счетчик просмотров +1*/
 			event(new PostHasViewed($article));
 		}
 		/////////////////////////////////////////////////
