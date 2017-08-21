@@ -28,6 +28,8 @@ Route::get('posts/cat/{cat_alias?}',['uses'=>'PostsController@index','as'=>'post
 
 Route::get('posts/aut/{Aut_alias?}',['uses'=>'PostsController@author','as'=>'postsAut'])->where('postsAut','[\w]+');
 
+Route::get('search',['uses'=>'PostsController@search','as'=>'search']);
+
 Route::get('comments/{id_post?}/{idp?}',['uses'=>'CommentsController@index','as'=>'commentsAjax']);
 
 Route::get('newscomments/{id_post?}/{idp?}',['uses'=>'NewsCommentsController@index','as'=>'newscommentsAjax']);

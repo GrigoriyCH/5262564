@@ -35,6 +35,25 @@ abstract class Repository {
 		
 	}
 	
+	public function getFind($select = '*',$key = FALSE, $randomsort = FALSE){
+		
+		$builder = $this->model->select($select);
+		
+		if($key){
+			$builder->where('title','LIKE',"%".$key."%");
+		}
+		
+		if(!$randomsort){
+			$builder->orderBy('created_at','desc');
+		}
+		else{
+			$builder->inRandomOrder();
+		}
+		
+		return $this->check($builder->paginate(Config::get('settings.paginate')));
+
+	}
+	
 	public function get2($select = '*',$skip = FALSE,$take = FALSE,$pagination = FALSE,$where = FALSE, $randomsort = FALSE){
 		
 		$builder = $this->model->select($select);

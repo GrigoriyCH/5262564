@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Japblog\Http\Requests;
 
+use Japblog\Http\Requests\SearchRequest;
+
 use Japblog\Repositories\PostsRepository;
 use Japblog\Repositories\CommentsRepository;
 use Japblog\Category;
@@ -249,5 +251,36 @@ class PostsController extends SiteController
 		
 		return $this->renderOutput();
 	}
-    
+    public function search(Request $request){
+		//dd($request->result);
+		if($request->result){
+			$articles = $this->getSearch($request->result);
+			$this->title = 'Результат поиска: '.$request->result;
+			$result = true;
+		}
+		else{
+			$articles = false;
+			$this->title = 'Поиск';
+			$result = false;
+		}
+		//dd($articles);
+		$comments = $this->getComments(config('settings.recent_comments'));//dd($comments);
+		$randomposts = $this->getRandomposts(config('settings.recent_randomposts'));//dd($randomposts);
+		$this->contentRightBar = view(env('THEME').'.articlesBar')->with(['comments'=>$comments, 'randomposts'=>$randomposts]);
+		
+		$content = view(env('THEME').'.search_content')->with(['articles' => $articles, 'result' => $result])->render();
+		$this->vars = array_add($this->vars,'content',$content);
+		
+		return $this->renderOutput();
+	}
+	public function getSearch($key){
+		
+		$articles = $this->p_rep->getFind(['id','title','created_at','img','text','user_id','category_id','keywords','meta_desc'],$key,FALSE);
+		
+		if($articles){
+			$articles->load('user','category','comments');
+		}
+		
+		return $articles;
+	}
 }
