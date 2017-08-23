@@ -3281,12 +3281,14 @@ ul.info li {
 .short-table th.align-left, .short-table td.align-left {
 	text-align: left;
 }
+/*
 tr:nth-child(2n+1) {
 	background-color: #fafafa;
 }
 tr:nth-child(2n+0) {
 	background-color: #f7f7f7;
 }
+*/
 td img {
 	border: medium none;
 	margin: 0;

@@ -5,6 +5,7 @@
 	'home_port_count' => 5,
 	'home_posts_count' => 3,
 	'paginate' => 5,
+	'search_paginate' => 10,
 	'recent_comments' => 3,
 	'recent_randomposts' => 3,
 	'get_comments'=> 10,

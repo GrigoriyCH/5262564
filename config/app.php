@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Kiev',
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'locale' => 'ru',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -162,6 +162,7 @@ return [
 		Collective\Html\HtmlServiceProvider::class,
 		
         'Lavary\Menu\ServiceProvider',
+		'Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider',
 
     ],
 
@@ -213,7 +214,10 @@ return [
 		'Html' => Collective\Html\HtmlFacade::class,
 		
         'Menu'       => 'Lavary\Menu\Facade',
-
+		
+		'LocalizedCarbon'   => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
+		'DiffFormatter'     => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
+        
     ],
 
 ];

@@ -268,7 +268,7 @@ class PostsController extends SiteController
 		$randomposts = $this->getRandomposts(config('settings.recent_randomposts'));//dd($randomposts);
 		$this->contentRightBar = view(env('THEME').'.articlesBar')->with(['comments'=>$comments, 'randomposts'=>$randomposts]);
 		
-		$content = view(env('THEME').'.search_content')->with(['articles' => $articles, 'result' => $result])->render();
+		$content = view(env('THEME').'.search_content')->with(['articles' => $articles, 'result' => $result, 'keysearch' => $request->result])->render();
 		$this->vars = array_add($this->vars,'content',$content);
 		
 		return $this->renderOutput();

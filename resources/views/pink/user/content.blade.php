@@ -1,11 +1,9 @@
 <div id="page">
 <div id="content-page" class="content group">
-	<div class="hentry group">
-	
-		
+	<div class="hentry group">	
 	
 		@if($user_post)
-			<div class="short-table white">
+			<div class="JapTable">
 			<table style="width: 100%" cellspacing="0" cellpadding="0">
 			<tr>
 				<th>Все посты пользователя: {{$username}}</th>
@@ -30,7 +28,7 @@
 												<a href="{{ route('user.post.edit',['id'=>$post->id]) }}">{{ $post->title }} | Редатировать</a>
 												
 													@if($post->created_at)
-														<p class="post-date">{{ $post->created_at->format('F d, Y') }}</p>
+														<p class="post-date"><?php setlocale(LC_TIME, config('app.locale')); ?>{{ $post->created_at->formatLocalized('%B %d, %Y') }}</p>
 													@endif
 												
 											</div>

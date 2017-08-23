@@ -50,7 +50,7 @@ abstract class Repository {
 			$builder->inRandomOrder();
 		}
 		
-		return $this->check($builder->paginate(Config::get('settings.paginate')));
+		return $this->check($builder->paginate(Config::get('settings.search_paginate')));
 
 	}
 	

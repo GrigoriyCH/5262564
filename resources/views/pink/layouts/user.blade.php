@@ -29,7 +29,7 @@
         <meta name="keywords" content=" {{ (isset($keywords)) ? $keywords : '' }} ">
         
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        
+		
         <title>{{ $title or 'Japblog' }}</title>
         
         <!-- [favicon] begin -->

@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
         	
         	//echo '<h1>'.$query->sql.'</h1>';
         });
-        
+		
     }
 
     /**

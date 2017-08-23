@@ -43,6 +43,7 @@ class IndexController extends UserController
 		}
 	
 	public function index(){
+		
 		$this->title = $this->user->name;
 		//dd($this->user);
 		$user_post = $this->getPost($this->user->id);
