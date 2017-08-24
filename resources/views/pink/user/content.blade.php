@@ -28,7 +28,7 @@
 												<a href="{{ route('user.post.edit',['id'=>$post->id]) }}">{{ $post->title }} | Редатировать</a>
 												
 													@if($post->created_at)
-														<p class="post-date"><?php setlocale(LC_TIME, config('app.locale')); ?>{{ $post->created_at->formatLocalized('%B %d, %Y') }}</p>
+														<p class="post-date">{{ $post->created_at->format('F d, Y') }}</p>
 													@endif
 												
 											</div>
@@ -39,7 +39,7 @@
 												<form class = "form-horizontal" id = "formName{{$post->id}}" action = "{{route('user.post.destroy',['post'=>$post->id])}}" method = "POST" accept-charset="UTF-8">
 												{{ csrf_field() }}
 												{{ method_field('DELETE') }}
-												<input class = "btn btn-french-5" onclick="return clickButton.deletePost('formName',{{$post->id}})" type="button" value="Удалить" />
+												<input class = "btn btn-french-5" onclick="return clickButton.deletePost('formName',{{$post->id}},&quot;{{$post->title}}&quot;)" type="button" value="Удалить" />
 												{!! Form::close() !!}
 											</div>
 											

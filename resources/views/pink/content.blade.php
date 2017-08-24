@@ -17,7 +17,7 @@
 				                                <h2><a href="{{ route('sitenews.show',['id' => $item->id]) }}">{{ $item->title }}</a></h2>
 				                                <hr size="1" color="grey">
 				                                 <p>{!! str_limit(strip_tags($item->text, $iskl), 384) !!}</p>
-				                                <a href="{{ route('sitenews.show',['id' => $item->id]) }}" class="read-more">|| Read more</a>
+				                                <a href="{{ route('sitenews.show',['id' => $item->id]) }}" class="read-more">|| {{Lang::get('ru.read_more')}}</a>
 				                            </div>
 				                           </div>
 				                    

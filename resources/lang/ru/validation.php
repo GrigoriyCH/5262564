@@ -97,6 +97,15 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+		'email' => [
+			'required' => 'Укажите ваш e-mail адрес!',
+		],
+		'name' => [
+			'required' => 'Укажите ваше имя!',
+		],
+		'text' => [
+			'required' => 'Вы не ввели текст сообщения!',
+		],
     ],
 
     /*

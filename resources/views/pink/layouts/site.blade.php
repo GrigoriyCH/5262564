@@ -182,8 +182,8 @@
 				<!-- START PAGE META -->
 				<div id="page-meta">
 				    <div class="inner group">
-				        <h3>Welcome to my portfolio page</h3>
-				        <h4>... i hope you enjoy my works</h4>
+				        <h3>{{Lang::get('ru.welcome_sitenews')}}</h3>
+				        <h4>{{Lang::get('ru.we_glad')}}</h4>
 				    </div>
 				</div>
 				<!-- END PAGE META -->	
@@ -193,8 +193,8 @@
 				<!-- START PAGE META -->
 				<div id="page-meta">
 				    <div class="inner group">
-				        <h3>...Say Hello! :)</h3>
-				        <h4>Get in touch with Pink Rio team</h4>
+				        <h3>{{Lang::get('ru.welcome_contact')}}</h3>
+				        <h4>{{Lang::get('ru.send_message')}}</h4>
 				    </div>
 				</div>
 				<!-- END PAGE META -->	

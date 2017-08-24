@@ -1,10 +1,10 @@
 	
-clickButton={deletePost:function(formName,post_id)
+clickButton={deletePost:function(formName,post_id,title)
 	{		
 		jQuery.confirm({
 			
 			'title'		: 'Подтверждение удаления!',
-			'message'	: 'Вы собираетесь удалить пост.<br />Вы не сможете его восстановить позже! Продолжить?',
+			'message'	: 'Вы собираетесь удалить: '+'"'+title+'".'+'<br />Вы не сможете его восстановить позже! Продолжить?',
 			'buttons'	: {
 				'Да'	: {
 					'class'	: 'blue',

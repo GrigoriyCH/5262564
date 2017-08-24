@@ -20,8 +20,8 @@
 				                </div>
 				                <!-- post meta -->
 				                <div class="meta group">
-				                    <p class="author"><span>by <a href="{{route('postsAut',['aut_alias' => $item->user_id])}}" title="Posts by {{$item->user->name}}" rel="author">{{$item->user->name}}</a></span></p>
-				                    <p class="categories"><span>In: <a href="{{route('postsCat',['cat_alias' => $item->category->alias])}}" title="View all posts in {{$item->category->title}}" rel="category tag">{{$item->category->title}}</a></span></p>
+				                    <p class="author"><span><a href="{{route('postsAut',['aut_alias' => $item->user_id])}}" title="Posts by {{$item->user->name}}" rel="author">{{$item->user->name}}</a></span></p>
+				                    <p class="categories"><span><a href="{{route('postsCat',['cat_alias' => $item->category->alias])}}" title="View all posts in {{$item->category->title}}" rel="category tag">{{$item->category->title}}</a></span></p>
 				                    <p class="comments"><span><a href="{{ route('posts.show',['id'=>$item->id]) }}#respond" title="Comment on Section shortcodes &amp; sticky posts!">{{count($item->comments) ? count($item->comments) : '0'}} {{Lang::choice('ru.comments',count($item->comments))}}</a></span></p>
 				                </div>
 				                <!-- post content -->

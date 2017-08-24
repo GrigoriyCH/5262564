@@ -37,20 +37,20 @@
 				    <div id="yit-widget-area" class="group">
 				        <div class="yit-widget-content inner group">
 				            <div class="widget-first yit-widget widget col1_4 one-fourth col widget-icon-text group">
-				                <img class="icon-img" src="{{asset(env('THEME'))}}/images/icons/cloud.jpg" alt="" />		
-				                <h3>Great Design</h3>
-				                <p>A widgetized area: add shorcodes, text, icons and more.</p>
+				                <img class="icon-img" src="{{asset(env('THEME'))}}/images/icons/blog1.png" alt="" />		
+				                <h3>{{Lang::get('ru.welcome')}}</h3>
+				                <p>{{Lang::get('ru.write_interesting')}}</p>
 				            </div>
 				            <div class="yit-widget widget col1_4 one-fourth col widget-last-post group">
-				                <img class="icon-img" src="{{asset(env('THEME'))}}/images/icons/blog1.png" alt="" />        
+				                <img class="icon-img" src="{{asset(env('THEME'))}}/images/icons/message/info.png" alt="" />        
 				                <div>
-				                    <h3><a class="text-color" href="#" title="">Blog news</a></h3>
-				                    <p>Section shortcodes &amp; sticky posts! <a href="{{route('sitenews.index')}}"> | more →</a></p>
+				                    <h3><a class="text-color" href="{{route('sitenews.index')}}" title="">{{Lang::get('ru.sitenews')}}</a></h3>
+				                    <p>{{Lang::get('ru.sitenews_more')}} <a href="{{route('sitenews.index')}}"> | {{Lang::get('ru.more')}} →</a></p>
 				                </div>
 				            </div>
 				            <div class="widget-last yit-widget widget col1_4 one-fourth col yit_text_quote">
-				                <blockquote class="text-quote-quote">“Anyone who has never made a mistake has never tried anything new.”</blockquote>
-				                <cite class="text-quote-author">Albert Einstein</cite>
+				                <blockquote class="text-quote-quote">{{Lang::get('ru.cite')}}</blockquote>
+				                <cite class="text-quote-author">{{Lang::get('ru.Albert_Einstein')}}</cite>
 				            </div>
 				        </div>
 				    </div>

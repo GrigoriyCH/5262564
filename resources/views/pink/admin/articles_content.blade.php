@@ -34,9 +34,10 @@
 				                                <td>{{$article->category->title}}</td>
 												<td>{{$article->user->name}} ( {{$article->user->id}} )</td>
 				                                <td>
-												{!! Form::open(['url' => route('admin.posts.destroy',['articles'=>$article->id]),'class'=>'form-horizontal','method'=>'POST']) !!}
+												<form class = "form-horizontal" id = "formName{{$article->id}}" action = "{{route('admin.posts.destroy',['articles'=>$article->id])}}" method = "POST" accept-charset="UTF-8">
+													{{ csrf_field() }}
 												    {{ method_field('DELETE') }}
-												    {!! Form::button('Удалить', ['class' => 'btn btn-french-5','type'=>'submit']) !!}
+												    <input class = "btn btn-french-5" onclick="return clickButton.deletePost('formName',{{$article->id}},&quot;{{$article->title}}&quot;)" type="button" value="Удалить" />
 												{!! Form::close() !!}
 												</td>
 											 </tr>	
