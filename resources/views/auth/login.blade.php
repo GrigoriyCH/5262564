@@ -89,8 +89,8 @@
                     <!-- START PAGE META -->
 				    <div id="page-meta">
 				    <div class="inner group" style="margin-top: 20px;">
-				        <h3>Welcome to my portfolio page</h3>
-				        <h4>... i hope you enjoy my works</h4>
+				        <h3>Добро пожаловать на страничку входа</h3>
+				        <h4>... надеемся, вам понравиться у нас</h4>
 				    </div>
 				    </div>
 				    <!-- END PAGE META -->	
@@ -101,13 +101,13 @@
                     <form role="form"  method="POST" enctype="multipart/form-data" action="{{ url('/login') }}">
                         {{ csrf_field() }}
                         <div>
-                            <label for="email">E-Mail Address</label>
+                            <label for="email">Адрес электронной почты</label>
 
                             <div>
                                 <input class="INPUT_1" id="email" type="email" name="email" value="{{ old('email') }}">
                                 
                                 @if ($errors->has('email'))
-                                    <span>
+                                    <span style="color: red">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
@@ -115,7 +115,7 @@
                         </div>
 
                         <div>
-                            <label for="password">Password</label>
+                            <label for="password">Пароль</label>
 
                             <div>
                                 <input class="INPUT_1" id="password" type="password" name="password">
@@ -130,13 +130,13 @@
 
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember"> Remember Me
+                                        <input type="checkbox" name="remember"> Запмнить меня
                                     </label>
                                 </div>
                        
-                                <button id="butsend" type="submit"  style="margin-top: 1em;">Login</button>
+                                <button id="butsend" type="submit"  style="margin-top: 1em;">Вход</button>
 
-                                <a href="{{ url('/password/reset') }}" style="margin-left: 1em;">Forgot Your Password?</a>                       
+                                <a href="{{ url('/password/reset') }}" style="margin-left: 1em;">Забыли пароль?</a>                       
                     </form>
         </div>
 </div>

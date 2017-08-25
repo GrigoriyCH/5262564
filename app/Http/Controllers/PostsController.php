@@ -275,7 +275,7 @@ class PostsController extends SiteController
 	}
 	public function getSearch($key){
 		
-		$articles = $this->p_rep->getFind(['id','title','created_at','img','text','user_id','category_id','keywords','meta_desc'],$key,FALSE);
+		$articles = $this->p_rep->getFind(['id','title','created_at','img','text','user_id','category_id','keywords','meta_desc','view'],$key,FALSE);
 		
 		if($articles){
 			$articles->load('user','category','comments');

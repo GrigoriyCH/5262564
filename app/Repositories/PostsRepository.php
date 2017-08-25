@@ -29,7 +29,7 @@ class PostsRepository extends Repository{
 		if(empty($data)){
 			return array('error' => 'Нет данных!');
 		}
-		
+		$data['title'] = trim($data['title']);
 		if(trim($data['img'])==''){$data['img']=config('settings.image_big');}
 		$data['meta_desc'] = str_limit(strip_tags($data['text']), 250);
 		
@@ -50,7 +50,7 @@ class PostsRepository extends Repository{
 		if(empty($data)){
 			return array('error' => 'Нет данных!');
 		}
-		
+		$data['title'] = trim($data['title']);
 		if(trim($data['img'])==''){$data['img']=config('settings.image_big');}
 		$data['meta_desc'] = str_limit(strip_tags($data['text']), 250);
 		
@@ -82,7 +82,7 @@ class PostsRepository extends Repository{
 		if(empty($data)){
 			return array('error' => 'Нет данных!');
 		}
-		
+		$data['title'] = trim($data['title']);
 		if(trim($data['img'])==''){$data['img']=config('settings.image_big');}
 		$data['meta_desc'] = str_limit(strip_tags($data['text']), 250);
 		

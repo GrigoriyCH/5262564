@@ -89,8 +89,8 @@
                     <!-- START PAGE META -->
 				    <div id="page-meta">
 				    <div class="inner group" style="margin-top: 20px;">
-				        <h3>Welcome to my portfolio page</h3>
-				        <h4>... i hope you enjoy my works</h4>
+				        <h3>Добро пожаловать на сайт!</h3>
+				        <h4>... пройдите регистрацию</h4>
 				    </div>
 				    </div>
 				    <!-- END PAGE META -->	
@@ -102,13 +102,13 @@
                         {{ csrf_field() }}
 
                         <div>
-                            <label for="name">Name</label>
+                            <label for="name">Имя</label>
 
                             <div >
                                 <input class="INPUT_1" id="name" type="text" name="name" value="{{ old('name') }}">
 
                                 @if ($errors->has('name'))
-                                    <span>
+                                    <span style="color: red">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
@@ -116,13 +116,13 @@
                         </div>
 
                         <div>
-                            <label for="email">E-Mail Address</label>
+                            <label for="email">Адрес электронной почты</label>
 
                             <div>
                                 <input class="INPUT_1" id="email" type="email" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
-                                    <span>
+                                    <span style="color: red">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
@@ -130,13 +130,13 @@
                         </div>
 
                         <div>
-                            <label for="password">Password</label>
+                            <label for="password">Пароль</label>
 
                             <div>
                                 <input class="INPUT_1" id="password" type="password" name="password">
 
                                 @if ($errors->has('password'))
-                                    <span>
+                                    <span style="color: red">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
@@ -144,13 +144,13 @@
                         </div>
 
                         <div>
-                            <label for="password-confirm">Confirm Password</label>
+                            <label for="password-confirm">Введите пароль еще раз</label>
 
                             <div>
                                 <input class="INPUT_1" id="password-confirm" type="password" name="password_confirmation">
 
                                 @if ($errors->has('password_confirmation'))
-                                    <span>
+                                    <span style="color: red">
                                         <strong>{{ $errors->first('password_confirmation') }}</strong>
                                     </span>
                                 @endif
@@ -158,7 +158,7 @@
                         </div>
 
                         <div>
-                                <center><button id="butsend" type="submit"  style="margin-top: 1em;">Register</button></center>
+                                <center><button id="butsend" type="submit"  style="margin-top: 1em;">Регистрация</button></center>
                         </div>
                     </form>
        </div>

@@ -89,8 +89,8 @@
                     <!-- START PAGE META -->
 				    <div id="page-meta">
 				    <div class="inner group" style="margin-top: 20px;">
-				        <h3>Welcome to my portfolio page</h3>
-				        <h4>... i hope you enjoy my works</h4>
+				        <h3>Добро пожпловать на страничку восстановления!</h3>
+				        <h4>... надеемся, это вам поможет</h4>
 				    </div>
 				    </div>
 				    <!-- END PAGE META -->	
@@ -108,13 +108,13 @@
                         {{ csrf_field() }}
 
                         <div>
-                            <label for="email">E-Mail Address</label>
+                            <label for="email">Адрес эл.почты</label>
 
                             <div>
                                 <input class="INPUT_1" id="email" type="email" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
-                                    <span>
+                                    <span style="color: red">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
@@ -122,7 +122,7 @@
                         </div>
 
                         <div>
-                                <center><button type="submit" id="butsend"  style="margin-top: 1em;">Send Password Reset Link</button></center>
+                                <center><button type="submit" id="butsend"  style="margin-top: 1em;">Отправить ссылку на эл.почту</button></center>
                         </div>
                     </form>
        </div>

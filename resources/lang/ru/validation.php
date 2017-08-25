@@ -54,10 +54,10 @@ return [
     ],
     'mimes'                => ':attribute должно быть файлом типа: :values.',
     'min'                  => [
-        'numeric' => 'The :attribute должен быть не менее :min.',
-        'file'    => 'The :attribute должен быть не менее :min килобайт.',
-        'string'  => 'The :attribute должен быть не менее :min символов.',
-        'array'   => 'The :attribute должны иметь по крайней мере :min пунктов.',
+        'numeric' => ':attribute должен быть не менее :min.',
+        'file'    => ':attribute должен быть не менее :min килобайт.',
+        'string'  => ':attribute должен быть не менее :min символов.',
+        'array'   => ':attribute должны иметь по крайней мере :min пунктов.',
     ],
     'not_in'               => 'Выбранное :attribute является недействительным.',
     'numeric'              => ':attribute должно быть ислом.',
@@ -79,7 +79,7 @@ return [
     ],
     'string'               => ':attribute должно быть строкой.',
     'timezone'             => ':attribute должно быть действительной зоной.',
-    'unique'               => ':attribute уже был взят.',
+    'unique'               => ':attribute уже используется.',
     'url'                  => ':attribute формат является недействительным.',
 
     /*
@@ -106,6 +106,10 @@ return [
 		'text' => [
 			'required' => 'Вы не ввели текст сообщения!',
 		],
+		'password' => [
+			'required' => 'Вы не ввели пароль!',
+		],
+		
     ],
 
     /*
@@ -119,6 +123,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+		'password' => 'пароль',
+		'name' => 'имя',
+		'email' => 'электронная почта',
+		'text' => 'текст',
+	],
 
 ];
