@@ -4,7 +4,7 @@
 	
 		@if($user_post)
 			<div class="JapTable">
-			<table style="width: 100%" cellspacing="0" cellpadding="0">
+			<table style="width: 100%;table-layout:fixed;" cellspacing="0" cellpadding="0">
 			<tr>
 				<th>Все посты пользователя: {{$username}}</th>
 			</tr>

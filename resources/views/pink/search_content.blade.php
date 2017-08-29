@@ -18,7 +18,7 @@
 			{!! Form::close() !!}
 			<!-- table start -->
 			<div class="JapTable"><!-- div for table css -->
-			<table style="width: 100%" cellspacing="0" cellpadding="0">
+			<table style="width: 100%;table-layout:fixed;" cellspacing="0" cellpadding="0">
 			<tr>
 				<th>Результат поиска: {{$keysearch}}</th>
 			</tr>
