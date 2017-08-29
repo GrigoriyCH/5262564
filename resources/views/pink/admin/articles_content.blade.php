@@ -3,7 +3,7 @@
 				            <div class="hentry group">
 				                <h2>Добавленные статьи</h2>
 				                <div class="short-table white">
-				                    <table style="width: 100%" cellspacing="0" cellpadding="0">
+				                    <table style="width: 100%;" cellspacing="0" cellpadding="0">
 				                        <thead>
 				                            <tr>
 				                                <th class="align-left">ID</th>

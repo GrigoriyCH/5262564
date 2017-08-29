@@ -66,6 +66,10 @@ class UsersRepository extends Repository
 	
 	public function updateSelf($request, $useredit){
 		
+		if(Gate::denies('editSelf',$useredit)){
+			abort(403);
+		}
+		
 		if ($this->iam->id == $useredit->user_id) {
             abort(403);
         }

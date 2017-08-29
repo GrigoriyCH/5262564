@@ -50,8 +50,6 @@
         <link rel="stylesheet" type="text/css" media="all" href="{{asset(env('THEME'))}}/css/reset.css" /> <!-- RESET STYLESHEET -->
         <link rel="stylesheet" type="text/css" media="all" href="{{asset(env('THEME'))}}/style.css" /> <!-- MAIN THEME STYLESHEET -->
         
-        <link rel="stylesheet" type="text/css" media="all" href="{{asset(env('THEME'))}}/mycss.css" />
-        
         <link rel="stylesheet" id="max-width-1024-css" href="{{asset(env('THEME'))}}/css/max-width-1024.css" type="text/css" media="screen and (max-width: 1240px)" />
         <link rel="stylesheet" id="max-width-768-css" href="{{asset(env('THEME'))}}/css/max-width-768.css" type="text/css" media="screen and (max-width: 987px)" />
         <link rel="stylesheet" id="max-width-480-css" href="{{asset(env('THEME'))}}/css/max-width-480.css" type="text/css" media="screen and (max-width: 480px)" />
@@ -60,7 +58,8 @@
         <!-- CSSs Plugin -->
         <link rel="stylesheet" id="thickbox-css" href="{{asset(env('THEME'))}}/css/thickbox.css" type="text/css" media="all" />
         <link rel="stylesheet" id="styles-minified-css" href="{{asset(env('THEME'))}}/css/style-minifield.css" type="text/css" media="all" />
-        <link rel="stylesheet" id="buttons" href="{{asset(env('THEME'))}}/css/buttons.css" type="text/css" media="all" />
+        <!--<link rel="stylesheet" id="buttons" href="{{asset(env('THEME'))}}/css/buttons.css" type="text/css" media="all" />-->
+		<link rel="stylesheet" type="text/css" media="all" href="{{asset(env('THEME'))}}/mycss.css" />
         <link rel="stylesheet" id="cache-custom-css" href="{{asset(env('THEME'))}}/css/cache-custom.css" type="text/css" media="all" />
         <link rel="stylesheet" id="custom-css" href="{{asset(env('THEME'))}}/css/custom.css" type="text/css" media="all" />
 	    

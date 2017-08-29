@@ -13,7 +13,7 @@
 			
 			@foreach($rules as $key => $rule)
 				<tr>
-					<td class="align-left">
+					<td class="align-left" style="font-size: 125%">
 					{{$key}}. {{$rule}}
 					</td>
 				</tr>
