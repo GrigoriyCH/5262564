@@ -27,7 +27,7 @@ class NewsRepository extends Repository{
 		$data['text'] = $tmp_text;
 		*/
 		if(trim($data['img'])==''){$data['img']=config('settings.image_big');}
-		if(trim($data['img_mini'])==''){$data['img_mini']=config('settings.image_mini');}
+		if(trim($data['img_mini'])==''){$data['img_mini']=config('settings.image_middle');}
 		
 		$this->model->fill($data);
 		
@@ -48,7 +48,7 @@ class NewsRepository extends Repository{
 		}
 		
 		if(trim($data['img'])==''){$data['img']=config('settings.image_big');}
-		if(trim($data['img_mini'])==''){$data['img_mini']=config('settings.image_mini');}
+		if(trim($data['img_mini'])==''){$data['img_mini']=config('settings.image_middle');}
 		
 		$article->fill($data);
 		

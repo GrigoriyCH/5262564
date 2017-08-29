@@ -82,6 +82,33 @@
                             <a href="{{route('home')}}" title="Pink Rio"><img src="{{asset(env('THEME'))}}/images/logo.png" title="Pink Rio" alt="Pink Rio" /></a>
                         </div>
                         <!-- END LOGO -->
+						<div id="sidebar-header">
+                                @if (Auth::check())
+									<div id="mynoncenter">
+									@if(Auth::user()->roles()->first()->id < 3)
+									<a href="{{ url('/admin') }}" id="butsend" />Администратум</a>
+									@endif
+									<a href="{{ url('/user') }}" id="butsend" />Мои посты</a>
+									<a href="{{ url('/logout') }}" id="butsend"/>Выход</a>
+									</div>
+									<div id="mycenter">
+									@if(Auth::user()->roles()->first()->id < 3)
+									<a href="{{ url('/admin') }}" id="butsend" />Администратум</a>
+									@endif
+									<a href="{{ url('/user') }}" id="butsend" />Мои посты</a>
+									<a href="{{ url('/logout') }}" id="butsend"/>Выход</a>
+									</div>
+								@else
+									<div id="mynoncenter">
+									
+									<a href="{{ url('/register') }}" id="butsend" />Регистрация</a>
+									</div>
+									<div id="mycenter">
+									
+									<a href="{{ url('/register') }}" id="butsend" />Регистрация</a>
+									</div>
+							    @endif
+                        </div>
                         <div class="clearer"></div>
                         <hr />
                         
@@ -130,7 +157,7 @@
 
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember"> Запмнить меня
+                                        <input type="checkbox" name="remember"> Запомнить меня
                                     </label>
                                 </div>
                        
@@ -148,6 +175,8 @@
                             <a href="{{route('contacts')}}"><strong>Связь с администрацией сайта</strong></a>
                         </div>
                         <div class="right">
+                            <a href="{{route('rules')}}"><strong>Правила сайта</strong></a>
+						<!--
                             <a href="#" class="socials-small facebook-small" title="Facebook">facebook</a>
                             <a href="#" class="socials-small rss-small" title="Rss">rss</a>
                             <a href="#" class="socials-small twitter-small" title="Twitter">twitter</a>
@@ -155,6 +184,7 @@
                             <a href="#" class="socials-small skype-small" title="Skype">skype</a>
                             <a href="#" class="socials-small google-small" title="Google">google</a>
                             <a href="#" class="socials-small pinterest-small" title="Pinterest">pinterest</a>
+						-->
                         </div>
                     </div>
      </div>

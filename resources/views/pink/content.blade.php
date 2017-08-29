@@ -27,13 +27,13 @@
 				                        @endif
 				                
 				                    
-				                    @if($k==1)
+				                    @if($k!=0)
 				                    <div class="portfolio-projects">
-				                    @endif    
+				                     	   
 				                        <div class="related_project  {{ ($k==4) ? ' related_project_last' : '' }}">
 				                            <div class="overlay_a related_img">
 				                                <div class="overlay_wrapper"><a href="{{ route('sitenews.show',['id' => $item->id]) }}">
-				                                    <img src="{{ $item->img_mini }}" alt="{{ $item->title }}" title="{{ $item->title }}" />						
+				                                    <img src="{{ $item->img_mini }}" alt="{{ $item->title }}" title="{{ $item->title }}" style="width:175px;"" />						
 				                                    <!--<div class="overlay">-->
 				                                        <!--<a class="overlay_img" href="{{asset(env('THEME'))}}/images/projects/0061.jpg" rel="lightbox" title=""></a>-->
 				                                        <!--<a class="overlay_project" href="project.html"></a>-->
@@ -44,9 +44,11 @@
 				                            <h4><a href="{{ route('sitenews.show',['id' => $item->id]) }}">{{ $item->title }}</a></h4>
 				                            <p>{!! str_limit(strip_tags($item->text, $iskl), 200) !!}</p>
 				                        </div>
-				                        
-				                        @endforeach				                        
-				                    </div>
+									</div>	
+				                    @endif  
+																	
+				                    @endforeach				                        
+				                    
 				                </div>
 				                <div class="clear"></div>
 				            </div>

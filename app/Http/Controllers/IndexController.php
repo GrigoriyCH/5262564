@@ -14,6 +14,8 @@ use Japblog\Repositories\PostsRepository;
 
 use Config;
 
+use Auth;
+
 class IndexController extends SiteController
 {
 	public function __construct(SlidersRepository $s_rep, NewsRepository $n_rep, PostsRepository $p_rep){
@@ -44,7 +46,11 @@ class IndexController extends SiteController
         /////////////////////////////
         $this->keywords = 'Home Page';
         $this->meta_desc = 'Home Page';
-        $this->title = 'Home Page';
+		if(Auth::check()){
+			$this->title = Auth::user()->name;
+		}else{
+			$this->title = 'Home Page';
+		}
         /////////////////////////////
         $sliderItems = $this->getSliders();
         $sliders = view(env('THEME').'.slider')->with('sliders',$sliderItems)->render();

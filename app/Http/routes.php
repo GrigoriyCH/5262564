@@ -30,6 +30,8 @@ Route::get('posts/aut/{Aut_alias?}',['uses'=>'PostsController@author','as'=>'pos
 
 Route::get('search',['uses'=>'PostsController@search','as'=>'search']);
 
+Route::get('rules',['uses'=>'SitenewsController@siterules','as'=>'rules']);
+
 Route::get('comments/{id_post?}/{idp?}',['uses'=>'CommentsController@index','as'=>'commentsAjax']);
 
 Route::get('newscomments/{id_post?}/{idp?}',['uses'=>'NewsCommentsController@index','as'=>'newscommentsAjax']);

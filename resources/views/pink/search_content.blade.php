@@ -1,5 +1,6 @@
 <div id="content-blog" class="content group">
 <div class="hentry group">
+
 	@if($result)
 		@if($articles)
 			

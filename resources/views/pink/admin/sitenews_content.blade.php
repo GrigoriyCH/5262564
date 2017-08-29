@@ -1,6 +1,7 @@
-@if($articles)
+
 	<div id="content-page" class="content group">
 				            <div class="hentry group">
+							@if($articles)
 				                <h2>Добавленные Новости сайта</h2>
 				                <div class="short-table white">
 				                    <table style="width: 100%" cellspacing="0" cellpadding="0">
@@ -66,12 +67,14 @@
 				            		
 				            	@endif
 				           
-				            </div>	
-
+								</div>	
+							@else
+								{!! Html::link(route('admin.sitenews.create'),'Добавить  материал',['class' => 'btn btn-the-salmon-dance-3']) !!}
+							@endif
 				            </div>
+							
 				            <!-- START COMMENTS -->
 				            <div id="comments">
 				            </div>
 				            <!-- END COMMENTS -->
 	</div>
-@endif

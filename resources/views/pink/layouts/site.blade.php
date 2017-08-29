@@ -91,17 +91,7 @@
 		
 		<script type="text/javascript" src="{{asset(env('THEME'))}}/js/myscripts.js"></script>
 		
-		<script type="text/javascript">
-		function sayHello(name,id) {
-			document.getElementById('comment').value=name;
-			document.getElementById('comment_to_user_id').value=id;
-		}
-		function cancelHello(id_author) {
-			document.getElementById('comment').value='';
-			document.getElementById('comment_to_user_id').value=id_author;
-		}
-		</script>
-
+		<script type="text/javascript" src="{{asset(env('THEME'))}}/js/myreplyB.js"></script>
 		
     </head>
     <!-- END HEAD -->
@@ -129,17 +119,15 @@
 						
                         <div id="sidebar-header">
                                 @if (Auth::check())
-									@set($rolAdmin,1)
-									@set($rolModer,2)
 									<div id="mynoncenter">
-									@if(Auth::user()->roles()->first()->id == $rolAdmin or $rolModer)
+									@if(Auth::user()->roles()->first()->id < 3)
 									<a href="{{ url('/admin') }}" id="butsend" />Администратум</a>
 									@endif
 									<a href="{{ url('/user') }}" id="butsend" />Мои посты</a>
 									<a href="{{ url('/logout') }}" id="butsend"/>Выход</a>
 									</div>
 									<div id="mycenter">
-									@if(Auth::user()->roles()->first()->id == $rolAdmin or $rolModer)
+									@if(Auth::user()->roles()->first()->id < 3)
 									<a href="{{ url('/admin') }}" id="butsend" />Администратум</a>
 									@endif
 									<a href="{{ url('/user') }}" id="butsend" />Мои посты</a>

@@ -117,7 +117,7 @@ class UsersController extends AdminController
 		    $returnRoles[$role->id] = $role->name;
 		    return $returnRoles;
 		}, []);
-		
+
 		$this->content = view(env('THEME').'.admin.users_create_content')->with(['roles'=>$roles,'user'=>$user])->render();
         
         return $this->renderOutput();

@@ -9,6 +9,8 @@ use Japblog\Http\Requests;
 use Japblog\Repositories\NewsRepository;
 use Japblog\Repositories\NewsCommentsRepository;
 
+use Auth;
+
 class SitenewsController extends SiteController
 {
     //
@@ -54,8 +56,27 @@ class SitenewsController extends SiteController
 		/*$this->keywords = $news->keywords;
 		$this->meta_desc = $news->meta_desc;*/
 		/*                                         */	
-		$content = view(env('THEME').'.one_news_content')->with(['news'=>$news])->render();
+		if(Auth::check())
+			{
+				$avatar_send = Auth::user()->avatar;
+			}
+			else
+			{
+				$avatar_send = config('settings.default_avatar');
+			}
+			/**/
+		$content = view(env('THEME').'.one_news_content')->with(['news'=>$news,'avatar_send'=>$avatar_send])->render();
 		$this->vars = array_add($this->vars,'content',$content);
+		
+		return $this->renderOutput();
+	}
+	
+	public function siterules(){
+		$rules = config('rules');
+		$this->title = 'Правила сайта';
+		/*dd($rules);*/
+		$content = view(env('THEME').'.siterules_content')->with('rules',$rules)->render();
+        $this->vars = array_add($this->vars,'content',$content);
 		
 		return $this->renderOutput();
 	}

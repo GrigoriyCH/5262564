@@ -28,7 +28,7 @@
 				                <div class="the-content single group">
 				                    
 				                    <p>{!!$news->text!!}</p>
-				                    
+				                    <!--
 				                    <div class="socials">
 				                        <h2>love it, share it!</h2>
 				                        <a href="https://www.facebook.com/sharer.html?u=http%3A%2F%2Fyourinspirationtheme.com%2Fdemo%2Fpinkrio%2F2012%2F09%2F24%2Fthis-is-the-title-of-the-first-article-enjoy-it%2F&amp;t=This+is+the+title+of+the+first+article.+Enjoy+it." class="socials-small facebook-small" title="Facebook">facebook</a>
@@ -37,8 +37,9 @@
 				                        <a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fyourinspirationtheme.com%2Fdemo%2Fpinkrio%2F2012%2F09%2F24%2Fthis-is-the-title-of-the-first-article-enjoy-it%2F&amp;media=http://yourinspirationtheme.com/demo/pinkrio/files/2012/09/00212.jpg&amp;description=Fusce+nec+accumsan+eros.+Aenean+ac+orci+a+magna+vestibulum+posuere+quis+nec+nisi.+Maecenas+rutrum+vehicula+condimentum.+Donec+volutpat+nisl+ac+mauris+consectetur+gravida.+Lorem+ipsum+dolor+sit+amet%2C+consectetur+adipiscing+elit.+Donec+vel+vulputate+nibh.+Pellentesque%5B...%5D" class="socials-small pinterest-small" title="Pinterest">pinterest</a>
 				                        <a href="http://yourinspirationtheme.com/demo/pinkrio/2012/09/24/this-is-the-title-of-the-first-article-enjoy-it/" class="socials-small bookmark-small" title="This is the title of the first article. Enjoy it.">bookmark</a>
 				                    </div>
+									-->
 				                </div>
-				                <p class="tags">Tags: <a href="#" rel="tag">book</a>, <a href="#" rel="tag">css</a>, <a href="#" rel="tag">design</a>, <a href="#" rel="tag">inspiration</a></p>
+				                <!--<p class="tags">Tags: <a href="#" rel="tag">book</a>, <a href="#" rel="tag">css</a>, <a href="#" rel="tag">design</a>, <a href="#" rel="tag">inspiration</a></p>-->
 				                <div class="clear"></div>
 				            </div>
 				            <!-- START COMMENTS -->
@@ -54,27 +55,28 @@
 				                </ol>
                                 <center id="cent"><a id="getContent">Показать еще комментарии</a><div id="divWait" style="display: none">Загрузка комментариев...</div><div id="divContent"></div></center>
 				                <!-- START TRACKBACK & PINGBACK -->
-				                <h2 id="trackbacks">Trackbacks and pingbacks</h2>
+				                <!--<h2 id="trackbacks">Trackbacks and pingbacks</h2>
 				                <ol class="trackbacklist"></ol>
-				                <p><em>No trackback or pingback available for this article.</em></p>
+				                <p><em>No trackback or pingback available for this article.</em></p>-->
                                 
 				                <!-- END TRACKBACK & PINGBACK -->								
 				                <div id="respond">
-				                    <h3 id="reply-title">Leave a <span>Reply</span> <small onclick="cancelHello(&quot;<?php echo($news->user_id); ?>&quot;)"><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3>
+				                    <h3 id="reply-title">Оставьте <span>Отзыв</span> <small onclick="cancelHello(&quot;<?php echo($news->user_id); ?>&quot;)"><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Не отвечать на комментарий</a></small></h3>
 				                    <form id="commentform" action="{{route('newscomment.store')}}" method="post" >
 				                        @if(!Auth::check())
-					                        <p class="comment-form-author"><label for="author">Name</label> <input id="name" name="name" type="text" value="" size="30" aria-required="true" /></p>
-					                        <p class="comment-form-email"><label for="email">Email</label> <input id="email" name="email" type="text" value="" size="30" aria-required="true" /></p>
-					                        <p class="comment-form-url"><label for="url">Website</label><input id="url" name="site" type="text" value="" size="30" /></p>
+					                        <p class="comment-form-author"><label for="author">Имя</label> <input id="name" name="name" type="text" value="" placeholder="обезательно" size="30" aria-required="true" /></p>
+					                        <p class="comment-form-email"><label for="email">Эл.почта</label> <input id="email" name="email" type="text" value="" placeholder="обезательно, не будет видно пользователям" size="30" aria-required="true" /></p>
+					                        <p class="comment-form-url"><label for="url">Сайт</label><input id="url" name="site" type="text" value="" placeholder="не обезательно" size="30" /></p>
 				                        @endif
-				                        <p class="comment-form-comment"><label for="comment">Your comment</label><textarea id="comment" name="text" cols="45" rows="8"></textarea></p>
+				                        <p class="comment-form-comment"><label for="comment">Комментарий</label><textarea id="comment" name="text" cols="45" rows="8"></textarea></p>
 				                        <div class="clear"></div>
 				                        <p class="form-submit">
 				                            {{ csrf_field() }}
 				                            <input id="comment_post_ID" type="hidden" name="comment_post_ID" value="{{ $news->id }}" />
 				                        	<input id="comment_parent" type="hidden" name="comment_parent" value="0" />
 				                        	<input id="comment_to_user_id" type="hidden" name="comment_to_user_id" value="{{ $news->user_id }}" />
-				                            <input name="submit" type="submit" id="submit" value="Post Comment" />
+											<input id="avatar" type="hidden" name="avatar" value="{{ $avatar_send }}" />
+				                            <input name="submit" type="submit" id="submit" value="Комментировать" />
 				                        </p>
 				                    </form>
 				                </div>

@@ -71,9 +71,9 @@
 				                    <h3 id="reply-title">Оставьте <span>Отзыв</span> <small onclick="cancelHello(&quot;<?php echo($article->user_id); ?>&quot;)"><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Не отвечать на комментарий</a></small></h3>
 				                    <form id="commentform" action="{{route('comment.store')}}" method="post" >
 				                        @if(!Auth::check())
-					                        <p class="comment-form-author"><label for="author">Имя</label> <input id="name" name="name" type="text" value="" size="30" aria-required="true" /></p>
-					                        <p class="comment-form-email"><label for="email">Эл.почта</label> <input id="email" name="email" type="text" value="" size="30" aria-required="true" /></p>
-					                        <p class="comment-form-url"><label for="url">Сайт</label><input id="url" name="site" type="text" value="" size="30" /></p>
+					                        <p class="comment-form-author"><label for="author">Имя</label> <input id="name" name="name" type="text" value="" size="30" placeholder="обезательно" aria-required="true" /></p>
+					                        <p class="comment-form-email"><label for="email">Эл.почта</label> <input id="email" name="email" type="text" value="" size="30" placeholder="обезательно, не будет видно пользователям" aria-required="true" /></p>
+					                        <p class="comment-form-url"><label for="url">Сайт</label><input id="url" name="site" type="text" value="" size="30" placeholder="не обезательно"/></p>
 				                        @endif
 				                        <p class="comment-form-comment"><label for="comment">Комментарий</label><textarea id="comment" name="text" cols="45" rows="8"></textarea></p>
 				                        <div class="clear"></div>
