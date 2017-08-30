@@ -32,7 +32,7 @@ class PostController extends UserController
 		
 		$this->p_rep = $p_rep;
 		
-		$this->template = env('THEME').'.user.articles';
+		$this->template = config('settings.theme').'.user.articles';
 	}
 	
     public function index()
@@ -63,7 +63,7 @@ class PostController extends UserController
 			$lists['Категории'][$category->id] = $category->title;
 		}
 		
-		$content = view(env('THEME').'.user.articles_create_content')->with('categories', $lists)->render();
+		$content = view(config('settings.theme').'.user.articles_create_content')->with('categories', $lists)->render();
 		$this->vars = array_add($this->vars,'content',$content);
 		
 		return $this->renderOutput();
@@ -121,7 +121,7 @@ class PostController extends UserController
 			$lists['Категории'][$category->id] = $category->title;
 		}
 		//dd($article);
-		$content = view(env('THEME').'.user.articles_create_content')->with(['categories' => $lists,'article' => $article])->render();
+		$content = view(config('settings.theme').'.user.articles_create_content')->with(['categories' => $lists,'article' => $article])->render();
 		$this->vars = array_add($this->vars,'content',$content);
 		
 		return $this->renderOutput();

@@ -21,7 +21,7 @@ class SitenewsController extends SiteController
 		$this->n_rep = $n_rep;
 		$this->nc_rep = $nc_rep;
 		
-		$this->template = env('THEME').'.sitenews';
+		$this->template = config('settings.theme').'.sitenews';
 		
 		}
 		public function index()
@@ -33,7 +33,7 @@ class SitenewsController extends SiteController
 		
         $sitenews = $this->getSiteNews();
         
-        $content = view(env('THEME').'.sitenews_content')->with('sitenews',$sitenews)->render();
+        $content = view(config('settings.theme').'.sitenews_content')->with('sitenews',$sitenews)->render();
         $this->vars = array_add($this->vars,'content',$content);
         
         return $this->renderOutput();
@@ -65,7 +65,7 @@ class SitenewsController extends SiteController
 				$avatar_send = config('settings.default_avatar');
 			}
 			/**/
-		$content = view(env('THEME').'.one_news_content')->with(['news'=>$news,'avatar_send'=>$avatar_send])->render();
+		$content = view(config('settings.theme').'.one_news_content')->with(['news'=>$news,'avatar_send'=>$avatar_send])->render();
 		$this->vars = array_add($this->vars,'content',$content);
 		
 		return $this->renderOutput();
@@ -75,7 +75,7 @@ class SitenewsController extends SiteController
 		$rules = config('rules');
 		$this->title = 'Правила сайта';
 		/*dd($rules);*/
-		$content = view(env('THEME').'.siterules_content')->with('rules',$rules)->render();
+		$content = view(config('settings.theme').'.siterules_content')->with('rules',$rules)->render();
         $this->vars = array_add($this->vars,'content',$content);
 		
 		return $this->renderOutput();

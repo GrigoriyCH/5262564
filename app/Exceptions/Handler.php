@@ -53,11 +53,11 @@ class Handler extends ExceptionHandler
 				case '404' :
 				$obj = new \Japblog\Http\Controllers\SiteController(new \Japblog\Repositories\MenusRepository(new \Japblog\Menu));
 				
-				$navigation = view(env('THEME').'.navigation')->with('menu',$obj->getMenu())->render();
+				$navigation = view(config('settings.theme').'.navigation')->with('menu',$obj->getMenu())->render();
 				
 				\Log::alert('Страница не найдена - '. $request->url());
 				
-				return response()->view(env('THEME').'.404',['bar' => 'no','title' =>'Страница не найдена','navigation'=>$navigation]);
+				return response()->view(config('settings.theme').'.404',['bar' => 'no','title' =>'Страница не найдена','navigation'=>$navigation]);
 			}
 		}
     	

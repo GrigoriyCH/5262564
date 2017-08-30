@@ -11,7 +11,7 @@
 				<span class="sublabel">Имя пользователя, отображается на сайте</span><br />
 			</label>
 			<div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span>
-			{!! Form::text('name',isset($user->name) ? $user->name  : old('name'), ['placeholder'=>'Введите название страницы']) !!}
+			{!! Form::text('name',isset($user->name) ? $user->name  : old('name'), ['placeholder'=>'Введите имя пользователя']) !!}
 			 </div>
 		 </li>
 		 
@@ -23,7 +23,7 @@
 				<span class="sublabel">Email пользователя, не отображается на сайте</span><br />
 			</label>
 			<div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span>
-			{!! Form::text('email',isset($user->email) ? $user->email  : old('email'), ['placeholder'=>'Введите название страницы']) !!}
+			{!! Form::text('email',isset($user->email) ? $user->email  : old('email'), ['placeholder'=>'Введите email пользователя']) !!}
 			 </div>
 		 </li>
 		 
@@ -34,7 +34,7 @@
 				<span class="sublabel">Минимум 6 символов</span><br />
 			</label>
 			<div class="input-prepend"><span class="add-on"><i class="icon-key"></i></span>
-			{!! Form::password('password') !!}
+			{!! Form::text('password',isset($user->password) ? $user->password  : old('password')) !!}
 			 </div>
 		 </li>
 		 
@@ -45,7 +45,7 @@
 				<span class="sublabel">Повторный ввод пароля</span><br />
 			</label>
 			<div class="input-prepend"><span class="add-on"><i class="icon-key"></i></span>
-			{!! Form::password('password_confirmation') !!}
+			{!! Form::text('password_confirmation',isset($user->password) ? $user->password  : old('password')) !!}
 			 </div>
 		 </li>
 		 

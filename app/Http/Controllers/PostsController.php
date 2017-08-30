@@ -30,7 +30,7 @@ class PostsController extends SiteController
 		$this->cat_rep = $cat_rep;
 		
 		$this->bar='right';
-		$this->template = env('THEME').'.articles';
+		$this->template = config('settings.theme').'.articles';
 		
 		}
 		
@@ -138,23 +138,23 @@ class PostsController extends SiteController
 				}	
 		}
 		
-        $content = view(env('THEME').'.articles_content')->with(['articles' => $articles[0],'alias' => $articles[1]])->render();
+        $content = view(config('settings.theme').'.articles_content')->with(['articles' => $articles[0],'alias' => $articles[1]])->render();
         $this->vars = array_add($this->vars,'content',$content);
         /////////////////////////////
         $comments = $this->getComments(config('settings.recent_comments'));//dd($comments);
         $randomposts = $this->getRandomposts(config('settings.recent_randomposts'));//dd($randomposts);
-        $this->contentRightBar = view(env('THEME').'.articlesBar')->with(['comments'=>$comments, 'randomposts'=>$randomposts]);
+        $this->contentRightBar = view(config('settings.theme').'.articlesBar')->with(['comments'=>$comments, 'randomposts'=>$randomposts]);
         /////////////////////////////
         return $this->renderOutput();
 	}
 	public function AutPosts($articles){
 		$this->title = 'Все посты: '.$articles->first()->user->name;
-        $content = view(env('THEME').'.articles_content_aut')->with(['articles' => $articles])->render();
+        $content = view(config('settings.theme').'.articles_content_aut')->with(['articles' => $articles])->render();
         $this->vars = array_add($this->vars,'content',$content);
         /////////////////////////////
         $comments = $this->getComments(config('settings.recent_comments'));//dd($comments);
         $randomposts = $this->getRandomposts(config('settings.recent_randomposts'));//dd($randomposts);
-        $this->contentRightBar = view(env('THEME').'.articlesBar')->with(['comments'=>$comments, 'randomposts'=>$randomposts]);
+        $this->contentRightBar = view(config('settings.theme').'.articlesBar')->with(['comments'=>$comments, 'randomposts'=>$randomposts]);
         /////////////////////////////
         return $this->renderOutput();
 	} 
@@ -242,12 +242,12 @@ class PostsController extends SiteController
 				$avatar_send = config('settings.default_avatar');
 			}
 		/**/
-		$content = view(env('THEME').'.article_content2')->with(['article'=>$article,'avatar_send'=>$avatar_send])->render();
+		$content = view(config('settings.theme').'.article_content2')->with(['article'=>$article,'avatar_send'=>$avatar_send])->render();
 		$this->vars = array_add($this->vars,'content',$content);
 		
 		$comments = $this->getComments(config('settings.recent_comments'));//dd($comments);
         $randomposts = $this->getRandomposts(config('settings.recent_randomposts'));//dd($randomposts);
-        $this->contentRightBar = view(env('THEME').'.articlesBar')->with(['comments'=>$comments, 'randomposts'=>$randomposts]);
+        $this->contentRightBar = view(config('settings.theme').'.articlesBar')->with(['comments'=>$comments, 'randomposts'=>$randomposts]);
 		
 		return $this->renderOutput();
 	}
@@ -266,9 +266,9 @@ class PostsController extends SiteController
 		//dd($articles);
 		$comments = $this->getComments(config('settings.recent_comments'));//dd($comments);
 		$randomposts = $this->getRandomposts(config('settings.recent_randomposts'));//dd($randomposts);
-		$this->contentRightBar = view(env('THEME').'.articlesBar')->with(['comments'=>$comments, 'randomposts'=>$randomposts]);
+		$this->contentRightBar = view(config('settings.theme').'.articlesBar')->with(['comments'=>$comments, 'randomposts'=>$randomposts]);
 		
-		$content = view(env('THEME').'.search_content')->with(['articles' => $articles, 'result' => $result, 'keysearch' => $request->result])->render();
+		$content = view(config('settings.theme').'.search_content')->with(['articles' => $articles, 'result' => $result, 'keysearch' => $request->result])->render();
 		$this->vars = array_add($this->vars,'content',$content);
 		
 		return $this->renderOutput();

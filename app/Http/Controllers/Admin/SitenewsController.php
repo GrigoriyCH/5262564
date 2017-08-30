@@ -31,7 +31,7 @@ class SitenewsController extends AdminController
 		
 		$this->n_rep = $n_rep;
 		
-		$this->template = env('THEME').'.admin.sitenews';
+		$this->template = config('settings.theme').'.admin.sitenews';
 	}
 	
     public function index()
@@ -45,7 +45,7 @@ class SitenewsController extends AdminController
 			$articles->load('user');
 		}
 		
-		$this->content = view(env('THEME').'.admin.sitenews_content')->with('articles',$articles)->render();
+		$this->content = view(config('settings.theme').'.admin.sitenews_content')->with('articles',$articles)->render();
 		
 		return $this->renderOutput();
     }
@@ -68,7 +68,7 @@ class SitenewsController extends AdminController
 		
 		$this->title = "Добавить новую новость";
 		
-		$this->content = view(env('THEME').'.admin.sitenews_create_content')->render();
+		$this->content = view(config('settings.theme').'.admin.sitenews_create_content')->render();
 		
 		return $this->renderOutput();
     }
@@ -119,7 +119,7 @@ class SitenewsController extends AdminController
 		$this->title = 'Редактирование материала - '. $article->title;
 		
 		//dd($article);
-		$this->content = view(env('THEME').'.admin.sitenews_create_content')->with(['article' => $article])->render();
+		$this->content = view(config('settings.theme').'.admin.sitenews_create_content')->with(['article' => $article])->render();
 		return $this->renderOutput();
     }
 

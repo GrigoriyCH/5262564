@@ -13,7 +13,7 @@
 				                        
 				                        <div class="portfolios hentry work group">
 				                            <div class="work-thumbnail">
-				                                <img src="{{asset(env('THEME'))}}/images/projects/{{$news->img->max}}" alt="{{$news->title}}" title="{{$news->title}}" />
+				                                <img src="{{asset(config('settings.theme'))}}/images/projects/{{$news->img->max}}" alt="{{$news->title}}" title="{{$news->title}}" />
 				                            </div>
 				                            <div class="work-description">
 				                               <p>{{$news->text}}</p>

@@ -12,6 +12,8 @@ use Auth;
 
 use Menu;
 
+use Gate;
+
 class AdminController extends Controller
 {
     //
@@ -37,17 +39,17 @@ class AdminController extends Controller
 		
 		$menu = $this->getMenu();
 		/* 
-		$content = view(env('THEME').'.admin.content')->render();
+		$content = view(config('settings.theme').'.admin.content')->render();
         $this->vars = array_add($this->vars,'content',$content);
 		*/
-		$navigation = view(env('THEME').'.admin.navigation')->with('menu',$menu)->render();
+		$navigation = view(config('settings.theme').'.admin.navigation')->with('menu',$menu)->render();
 		$this->vars = array_add($this->vars,'navigation',$navigation);
 		
 		if($this->content){
 			$this->vars = array_add($this->vars,'content',$this->content);
 		}
 		
-		$footer = view(env('THEME').'.admin.footer')->render();
+		$footer = view(config('settings.theme').'.admin.footer')->render();
 		$this->vars = array_add($this->vars,'footer',$footer);
 		
 		return view($this->template)->with($this->vars);
@@ -55,12 +57,22 @@ class AdminController extends Controller
 	
 	public function getMenu(){
 		return Menu::make('adminMenu', function($menu){
-			$menu->add('Посты',array('route'=>'admin.posts.index'));
 			
-			$menu->add('Новости сайта',array('route'=>'admin.sitenews.index'));
-			$menu->add('Меню',array('route'=>'admin.menus.index'));
-			$menu->add('Пользователи',array('route'=>'admin.users.index'));
-			$menu->add('Привелегии',array('route'=>'admin.permissions.index'));
+			if(Gate::allows('VIEW_ADMIN_ARTICLES')){
+				$menu->add('Посты',array('route'=>'admin.posts.index'));
+			}
+			if(Gate::allows('VIEW_ADMIN_SITENEWS')){
+				$menu->add('Новости сайта',array('route'=>'admin.sitenews.index'));
+			}
+			if(Gate::allows('VIEW_ADMIN_MENU')){
+				$menu->add('Меню',array('route'=>'admin.menus.index'));
+			}
+			if(Gate::allows('ADMIN_USERS')){
+				$menu->add('Пользователи',array('route'=>'admin.users.index'));
+			}
+			if(Gate::allows('EDIT_USERS')){	
+				$menu->add('Привелегии',array('route'=>'admin.permissions.index'));
+			}
 		});
 	}
 }

@@ -14,7 +14,7 @@
 		</tr>		
 		 @if($item->hasChildren())
 		        
-		        @include(env('THEME').'.admin.custom-menu-items', array('items' => $item->children(),'paddingLeft' => $paddingLeft.'--'))
+		        @include(config('settings.theme').'.admin.custom-menu-items', array('items' => $item->children(),'paddingLeft' => $paddingLeft.'--'))
 
 		 @endif
 

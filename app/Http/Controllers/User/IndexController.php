@@ -39,7 +39,7 @@ class IndexController extends UserController
 		$this->p_rep = $p_rep;
 		
 		$this->bar='left';
-		$this->template = env('THEME').'.user.index';
+		$this->template = config('settings.theme').'.user.index';
 		}
 	
 	public function index(){
@@ -51,10 +51,10 @@ class IndexController extends UserController
 		$user = $this->user;
 		//dd($user);
 		//dd($user_post);
-		$content = view(env('THEME').'.user.content')->with(['user_post'=>$user_post,'username'=>$username])->render();
+		$content = view(config('settings.theme').'.user.content')->with(['user_post'=>$user_post,'username'=>$username])->render();
         $this->vars = array_add($this->vars,'content',$content);
 		
-		$this->contentLeftBar = view(env('THEME').'.user.contact_bar')->with(['user'=>$user])->render();
+		$this->contentLeftBar = view(config('settings.theme').'.user.contact_bar')->with(['user'=>$user])->render();
 		
 		return $this->renderOutput();
 	}

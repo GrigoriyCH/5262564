@@ -20,12 +20,12 @@ class IndexController extends AdminController
 			abort(403);
 		}
 		
-		$this->template = env('THEME').'.admin.index';
+		$this->template = config('settings.theme').'.admin.index';
 	}
 	
 	public function index(){
 		$this->title = 'Панель администратора';
-		/*return $this->renderOutput();*/
-		return redirect('/admin/posts');
+		return $this->renderOutput();
+		/*return redirect('/admin/posts');*/
 	}
 }

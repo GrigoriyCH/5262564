@@ -23,7 +23,7 @@ class CommentsController extends SiteController
 			//dd($article_id);
 			$comments = $this->getComments($idp,config('settings.get_comments'),$id_post);//dd($comments);
 			if($comments && $article_id)
-			return view(env('THEME').'.commentsAjax')->with(['comments'=>$comments,'article_id'=>$article_id->user_id,'idp'=>$idp]);
+			return view(config('settings.theme').'.commentsAjax')->with(['comments'=>$comments,'article_id'=>$article_id->user_id,'idp'=>$idp]);
 			
 		}
 		public function getComments($idp,$take,$id_post)

@@ -25,7 +25,7 @@
 				            <div class="widget-last widget text-image">
 				                <h3>Место для рекламы</h3>
 								<!--
-				                <div class="text-image" style="text-align:left"><img src="{{asset(env('THEME'))}}/images/callus.gif" alt="Customer support" /></div>
+				                <div class="text-image" style="text-align:left"><img src="{{asset(config('settings.theme'))}}/images/callus.gif" alt="Customer support" /></div>
 				                <p>Proin porttitor dolor eu nibh lacinia at ultrices lorem venenatis. Sed volutpat scelerisque vulputate. </p>
 								-->
 				            </div>

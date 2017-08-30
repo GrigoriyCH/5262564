@@ -1,11 +1,15 @@
 @if(count('$comments') > 0)
 @set($num,$idp+1)
 @foreach($comments as $comment)
+			@if(Auth::check())
 					@if(($comment->to_user_id == Auth::user()->id)&&($comment->user_id != Auth::user()->id))
 				                    <li id="li-comment-{{ $comment->id }}" class="comment even comment_to_me">
 					@else
 									<li id="li-comment-{{ $comment->id }}" class="comment even {{ ($comment->user_id == $article_id) ?  'bypostauthor odd' : ''}}">
 					@endif
+			@else
+									<li id="li-comment-{{ $comment->id }}" class="comment even {{ ($comment->user_id == $article_id) ?  'bypostauthor odd' : ''}}">
+			@endif
 				                        <div id="comment-{{ $comment->id }}" class="comment-container">
 				                            <div class="vcard mycomment"> 
 												

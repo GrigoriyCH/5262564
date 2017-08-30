@@ -27,7 +27,7 @@ class IndexController extends SiteController
 		$this->p_rep = $p_rep;
 		
 		$this->bar='right';
-		$this->template = env('THEME').'.index';
+		$this->template = config('settings.theme').'.index';
 		}
 	
     /**
@@ -40,7 +40,7 @@ class IndexController extends SiteController
         //
         $news = $this->getNews();
 		$iskl = '<a><p><br><strong><i>';
-        $content = view(env('THEME').'.content')->with(['news'=>$news, 'iskl'=>$iskl])->render();
+        $content = view(config('settings.theme').'.content')->with(['news'=>$news, 'iskl'=>$iskl])->render();
         $this->vars = array_add($this->vars,'content',$content);
         //dd($news);
         /////////////////////////////
@@ -53,11 +53,11 @@ class IndexController extends SiteController
 		}
         /////////////////////////////
         $sliderItems = $this->getSliders();
-        $sliders = view(env('THEME').'.slider')->with('sliders',$sliderItems)->render();
+        $sliders = view(config('settings.theme').'.slider')->with('sliders',$sliderItems)->render();
         $this->vars = array_add($this->vars,'sliders',$sliders);
         /////////////////////////////
         $posts = $this->getPosts(); //dd($posts);
-        $this->contentRightBar = view(env('THEME').'.indexBar')->with('posts',$posts)->render();
+        $this->contentRightBar = view(config('settings.theme').'.indexBar')->with('posts',$posts)->render();
         /////////////////////////////
         return $this->renderOutput();
     }

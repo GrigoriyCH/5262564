@@ -7,7 +7,7 @@
 				    @set($i,1)
 				    @foreach($sliders as $slider)
 				    <li>
-				        <div class="slide-holder" style="background:  url('{{asset(env('THEME'))}}/images/{{$slider->img}}') no-repeat center center" style="height:483px;">
+				        <div class="slide-holder" style="background:  url('{{asset(config('settings.theme'))}}/images/{{$slider->img}}') no-repeat center center" style="height:483px;">
 				             <div class="slide-content-holder inner" style="height:483px;">
 				             
 				                 @if($i%2 !== 0)
@@ -37,12 +37,12 @@
 				    <div id="yit-widget-area" class="group">
 				        <div class="yit-widget-content inner group">
 				            <div class="widget-first yit-widget widget col1_4 one-fourth col widget-icon-text group">
-				                <img class="icon-img" src="{{asset(env('THEME'))}}/images/icons/blog1.png" alt="" />		
+				                <img class="icon-img" src="{{asset(config('settings.theme'))}}/images/icons/blog1.png" alt="" />		
 				                <h3>{{Lang::get('ru.welcome')}}</h3>
 				                <p>{{Lang::get('ru.write_interesting')}}</p>
 				            </div>
 				            <div class="yit-widget widget col1_4 one-fourth col widget-last-post group">
-				                <img class="icon-img" src="{{asset(env('THEME'))}}/images/icons/message/info.png" alt="" />        
+				                <img class="icon-img" src="{{asset(config('settings.theme'))}}/images/icons/message/info.png" alt="" />        
 				                <div>
 				                    <h3><a class="text-color" href="{{route('sitenews.index')}}" title="">{{Lang::get('ru.sitenews')}}</a></h3>
 				                    <p>{{Lang::get('ru.sitenews_more')}} <a href="{{route('sitenews.index')}}"> | {{Lang::get('ru.more')}} →</a></p>
@@ -109,7 +109,7 @@
 				    });
 				</script>
 				<div class="mobile-slider">
-				    <div class="slider fixed-image inner"><img src="{{asset(env('THEME'))}}/images/slider-cycle/cycle-fixed.jpg" alt="" /></div>
+				    <div class="slider fixed-image inner"><img src="{{asset(config('settings.theme'))}}/images/slider-cycle/cycle-fixed.jpg" alt="" /></div>
 				</div>
 				
 

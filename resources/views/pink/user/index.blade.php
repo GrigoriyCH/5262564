@@ -1,4 +1,4 @@
-@extends(env('THEME').'.layouts.user')
+@extends(config('settings.theme').'.layouts.user')
 
 @section('navigation')
 {!!$navigation!!}

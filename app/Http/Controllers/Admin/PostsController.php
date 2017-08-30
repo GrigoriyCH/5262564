@@ -32,7 +32,7 @@ class PostsController extends AdminController
 		
 		$this->p_rep = $p_rep;
 		
-		$this->template = env('THEME').'.admin.articles';
+		$this->template = config('settings.theme').'.admin.articles';
 	}
 	
     public function index()
@@ -46,7 +46,7 @@ class PostsController extends AdminController
 			$articles->load('user','category');
 		}
 		
-		$this->content = view(env('THEME').'.admin.articles_content')->with('articles',$articles)->render();
+		$this->content = view(config('settings.theme').'.admin.articles_content')->with('articles',$articles)->render();
 		
 		return $this->renderOutput();
     }
@@ -79,7 +79,7 @@ class PostsController extends AdminController
 			$lists['Категории'][$category->id] = $category->title;
 		}
 		
-		$this->content = view(env('THEME').'.admin.articles_create_content')->with('categories', $lists)->render();
+		$this->content = view(config('settings.theme').'.admin.articles_create_content')->with('categories', $lists)->render();
 		
 		return $this->renderOutput();
     }
@@ -137,7 +137,7 @@ class PostsController extends AdminController
 			$lists['Категории'][$category->id] = $category->title;
 		}
 		//dd($article);
-		$this->content = view(env('THEME').'.admin.articles_create_content')->with(['categories' => $lists,'article' => $article])->render();
+		$this->content = view(config('settings.theme').'.admin.articles_create_content')->with(['categories' => $lists,'article' => $article])->render();
 		return $this->renderOutput();
     }
 

@@ -1,6 +1,7 @@
 <?php
 	return [
-	
+	'theme' => env('THEME','default'),
+	'mail_admin' => env('MAIL_ADMIN','default'),
 	'slider_path' => 'slider-cycle',
 	'home_port_count' => 5,
 	'home_posts_count' => 3,

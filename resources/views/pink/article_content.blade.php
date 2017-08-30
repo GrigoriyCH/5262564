@@ -9,7 +9,7 @@
 				                    <h1 class="post-title"><a href="#">{{$article->title}}</a></h1>
 				                    <!-- post featured -->
 				                    <div class="image-wrap">
-				                        <img src="{{asset(env('THEME'))}}/images/articles/{{$article->img->max}}" alt="{{ $article->title }}" title="{{ $article->title }}" />  
+				                        <img src="{{asset(config('settings.theme'))}}/images/articles/{{$article->img->max}}" alt="{{ $article->title }}" title="{{ $article->title }}" />  
 				                    </div>
 				                    <p class="date">
 				                        <span class="month">{{$article->created_at->format('M')}}</span>
@@ -53,7 +53,7 @@
 				                    @if($k !== 0)
 				                        @break
 				                    @endif
-				                    @include(env('THEME').'.comment',['items'=>$comments])
+				                    @include(config('settings.theme').'.comment',['items'=>$comments])
 				                @endforeach
 				                    
 				                </ol>

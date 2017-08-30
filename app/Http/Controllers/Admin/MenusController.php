@@ -27,7 +27,7 @@ class MenusController extends AdminController
 		
 		$this->m_rep = $m_rep;
 		
-		$this->template = env('THEME').'.admin.menus';
+		$this->template = config('settings.theme').'.admin.menus';
 	}
     /**
      * Display a listing of the resource.
@@ -39,7 +39,7 @@ class MenusController extends AdminController
         //
 		$menu = $this->getMenus();
 		
-		$this->content = view(env('THEME').'.admin.menus_content')->with('menus',$menu)->render();
+		$this->content = view(config('settings.theme').'.admin.menus_content')->with('menus',$menu)->render();
 		return $this->renderOutput();
     }
 	
@@ -84,7 +84,7 @@ class MenusController extends AdminController
 			
 		},['0' => 'Родительський пункт меню']);
 		
-		$this->content = view(env('THEME').'.admin.menus_create_content')->with(['menus'=>$menus])->render();
+		$this->content = view(config('settings.theme').'.admin.menus_create_content')->with(['menus'=>$menus])->render();
 		return $this->renderOutput();
     }
 
@@ -136,7 +136,7 @@ class MenusController extends AdminController
 			
 		},['0' => 'Родительський пункт меню']);
 		
-		$this->content = view(env('THEME').'.admin.menus_create_content')->with(['menu'=>$menu, 'menus'=>$menus])->render();
+		$this->content = view(config('settings.theme').'.admin.menus_create_content')->with(['menu'=>$menu, 'menus'=>$menus])->render();
 		return $this->renderOutput();
     }
 

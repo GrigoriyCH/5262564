@@ -53,7 +53,7 @@ class UsersRepository extends Repository
 		
 		if(trim($data['avatar'])==''){$data['avatar']=config('settings.default_avatar');}
 		
-		if(isset($data['password'])) {
+		if($user->password != $data['password']) {
 			$data['password'] = bcrypt($data['password']);
 		}
 		
