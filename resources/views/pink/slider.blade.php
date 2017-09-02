@@ -38,7 +38,7 @@
 				        <div class="yit-widget-content inner group">
 				            <div class="widget-first yit-widget widget col1_4 one-fourth col widget-icon-text group">
 				                <img class="icon-img" src="{{asset(config('settings.theme'))}}/images/icons/blog1.png" alt="" />		
-				                <h3>{{Lang::get('ru.welcome')}}</h3>
+				                <h3><a class="text-color" href="{{route('userIndex')}}" title="">{{Lang::get('ru.welcome')}}</a></h3>
 				                <p>{{Lang::get('ru.write_interesting')}}</p>
 				            </div>
 				            <div class="yit-widget widget col1_4 one-fourth col widget-last-post group">
