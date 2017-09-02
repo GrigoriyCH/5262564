@@ -18,7 +18,7 @@
 				                        <img style="width:100%" src="{{$article->img}}" alt="{{ $article->title }}" title="{{ $article->title }}" />  
 				                    </div>
 				                    <p class="date">
-				                        <span class="month">{{$article->created_at->format('M')}}</span>
+				                        <span class="month">{{Lang::get('date.s'.($article->created_at->format('m')))}}</span>
 				                        <span class="day">{{$article->created_at->format('d')}}</span>
 				                    </p>
 				                </div>

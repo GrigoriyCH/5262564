@@ -7,14 +7,14 @@ p{overflow-wrap:break-word;
 /* нет поддержки для русского языка */-webkit-hyphens:none; -ms-hyphens:none; hyphens:none;
 /* значение auto не поддерживается Chrome */}
 a:hover{cursor:pointer}
-.INPUT_1{box-sizing:content-box;height:15px;overflow-wrap:break-word;text-size-adjust:100%;width:200px;word-break:keep-all;word-wrap:break-word;hyphens:none;perspective-origin:200px 17.5px;transform-origin:200px 17.5px;border:1px solid rgb(207,207,207);padding:9px;transition:border 0.2s linear 0s,box-shadow 0.2s linear 0s;margin-bottom:0.5em}
+.INPUT_1{box-sizing:content-box;/*height:15px;*/overflow-wrap:break-word;text-size-adjust:100%;width:200px;word-break:keep-all;word-wrap:break-word;hyphens:none;perspective-origin:200px 17.5px;transform-origin:200px 17.5px;border:1px solid rgb(207,207,207);padding:9px;transition:border 0.2s linear 0s,box-shadow 0.2s linear 0s;margin-bottom:0.5em}
 /*#INPUT_1*/.INPUT_1:focus{box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 3px rgba(82,168,236,0.6);border-color:rgba(82,168,236,0.8) !important}
 .mysublabel{font-family:'Calibri','Droid Sans',Verdana,Arial,sans-serif;font-size:11px;color:#9C9B9B}
 .divforinput{width:100%}
 .divforinput .INPUT_1{width:100%;height:100%;box-sizing:border-box}
 #block{max-width:220px;margin:0 auto}
-#butsend{background-position:0px 0px;color:rgb(76,75,75);cursor:pointer;height:28px;letter-spacing:1px;overflow-wrap:break-word;text-align:center;text-transform:uppercase;white-space:pre;word-break:keep-all;word-wrap:break-word;column-rule-color:rgb(76,75,75);align-items:flex-start;hyphens:none;perspective-origin:65px 14px;transform-origin:65px 14px;user-select:none;background:rgb(243,240,240) url("http://japblog/pink/images/input_pattern.png") repeat-x scroll 0px 0px / auto padding-box border-box;border:1px solid rgb(207,207,207);font:normal normal normal normal 8.4px / normal Arial;margin:0px 0px 20px;outline:rgb(76,75,75) none 0px;padding:8px}
-/*#INPUT_1*/#butsend:hover{background:rgb(243,240,240) url("http://japblog/pink/images/input_pattern_hover.png") repeat-x scroll 0px 0px / auto padding-box border-box}
+#butsend{background-position:0px 0px;color:rgb(76,75,75);cursor:pointer;height:28px;letter-spacing:1px;overflow-wrap:break-word;text-align:center;text-transform:uppercase;white-space:pre;word-break:keep-all;word-wrap:break-word;column-rule-color:rgb(76,75,75);align-items:flex-start;hyphens:none;perspective-origin:65px 14px;transform-origin:65px 14px;user-select:none;background:rgb(243,240,240) url("http://grigoryvbloge.loc/pink/images/input_pattern.png") repeat-x scroll 0px 0px / auto padding-box border-box;border:1px solid rgb(207,207,207);font:normal normal normal normal 8.4px / normal Arial;margin:0px 0px 20px;outline:rgb(76,75,75) none 0px;padding:8px}
+/*#INPUT_1*/#butsend:hover{background:rgb(243,240,240) url("http://grigoryvbloge.loc/pink/images/input_pattern_hover.png") repeat-x scroll 0px 0px / auto padding-box border-box}
 /*
 input[type="checkbox"] {
 -webkit-transform: scale(1.1);

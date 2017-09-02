@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'timezone' => 'Europe/Kiev',
+    'timezone' => 'Europe/Moscow',
 
     /*
     |--------------------------------------------------------------------------
@@ -163,7 +163,6 @@ return [
 		
         'Lavary\Menu\ServiceProvider',
 		'Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider',
-		'Jenssegers\Date\DateServiceProvider',
 
     ],
 
@@ -218,7 +217,6 @@ return [
 		
 		'LocalizedCarbon'   => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
 		'DiffFormatter'     => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
-		'Date' => Jenssegers\Date\Date::class,
         
     ],
 

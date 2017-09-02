@@ -170,7 +170,7 @@ class PostsController extends SiteController
 	}  
      public function getRandomposts($take)
     {
-		$randomposts = $this->p_rep->get(['title','text','id','category_id','user_id'],$take,FALSE,FALSE,TRUE);
+		$randomposts = $this->p_rep->get(['title','text','id','category_id','user_id','meta_desc'],$take,FALSE,FALSE,TRUE);
 			if($randomposts){$randomposts->load('user');}
 		return $randomposts;
 	}	

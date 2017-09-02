@@ -11,7 +11,7 @@
 				                           <div class="thumb-img"><div style="overflow:hidden;width:55px;max-height:55px"><img src="{{$randompost->user->avatar}}" alt="{{$randompost->title}}" title="{{$randompost->title}}" style="width:100%;"/></div></div>
 				                           <div class="text">
 				                            <a href="{{route('posts.show',['id'=>$randompost->id])}}" title="{{$randompost->title}}" class="title">{{$randompost->title}}</a>
-				                            <p>{!!str_limit($randompost->text, 130)!!} </p>
+				                            <p>{!!str_limit($randompost->meta_desc, 130)!!} </p>
 				                            <a class="read-more" href="{{route('posts.show',['id'=>$randompost->id])}}">&rarr; {{Lang::get('ru.read_more')}}</a>
 				                           </div>
 				                        </div>
@@ -39,7 +39,7 @@
 											</div>
 										</div>
 										<div class="text">
-											<span class="author"><strong><a href="#">{{isset($comment->user) ? $comment->user->name : $comment->name}}</a></strong> in</span> 
+											<span class="author"><strong><a href="{{route('posts.show',['id'=>$comment->posts->id])}}#respond">{{isset($comment->user) ? $comment->user->name : $comment->name}}</a></strong> в</span> 
 											<a class="title" href="{{route('posts.show',['id'=>$comment->posts->id])}}">{{$comment->posts->title}}</a>
 											<p class="comment">
 												{!!str_limit($comment->text)!!} <a class="goto" href="{{route('posts.show',['id'=>$comment->posts->id])}}">&#187;</a>

@@ -12,7 +12,7 @@
 				                        <div class="text">
 				                            <a href="{{route('posts.show',['id'=>$post->id])}}" title="{{$post->title}}" class="title">{{$post->title}}</a>
 											@if($post->created_at)
-				                            <p class="post-date">{{ $post->created_at->format('F d, Y') }}</p>
+				                            <p class="post-date">{{ LocalizedCarbon::instance($post->created_at)->diffForHumans() }}</p>
 											@endif
 				                        </div>
 				                    </div>

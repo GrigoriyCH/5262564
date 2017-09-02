@@ -49,7 +49,7 @@ class ContactsController extends SiteController
 	        });
 			
 			if($result) {
-				return redirect()->route('contacts')->with('status', 'Письмо отправлено!');
+				return redirect()->route('contacts')->with('status', 'Email is send');
 			}
 			
 		}

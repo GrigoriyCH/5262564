@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "/www/grigoryvbloge.loc/public/webstat"
+AuthUserFile /var/www/grigory12041992/data/etc/41949850.passwd
+DirectoryIndex index.html
+<Limit GET POST>
+	require valid-user
+</Limit>

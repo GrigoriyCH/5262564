@@ -13,7 +13,7 @@
 				                    </div>
 
 				                    <p class="date">
-				                        <span class="month">{{$item->created_at->format('M')}}</span>
+				                        <span class="month">{{Lang::get('date.s'.($item->created_at->format('m')))}}</span>
 				                        <span class="day">{{$item->created_at->format('d')}}</span>
 				                    </p>
 				                </div>

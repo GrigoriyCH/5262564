@@ -26,7 +26,7 @@
 				                                <div class="intro">
 				                                    <div class="commentDate">
 				                                        <a>
-				                                        {{ is_object($comment->created_at) ? $comment->created_at->format('F d, Y \a\t H:i') : ''}}</a>                        
+				                                        {{ is_object($comment->created_at) ? LocalizedCarbon::instance($comment->created_at)->diffForHumans() : ''}}</a>                        
 				                                    </div>
 				                                    <div class="commentNumber">#&nbsp;{{$num}}</div>
 				                                </div>

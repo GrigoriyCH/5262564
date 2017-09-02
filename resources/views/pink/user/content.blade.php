@@ -28,7 +28,7 @@
 												<a href="{{ route('user.post.edit',['id'=>$post->id]) }}">{{ $post->title }} | Редатировать</a>
 												
 													@if($post->created_at)
-														<p class="post-date">{{ $post->created_at->format('F d, Y') }}</p>
+														<p class="post-date">{{ LocalizedCarbon::instance($post->created_at)->diffForHumans() }}</p>
 													@endif
 												
 											</div>

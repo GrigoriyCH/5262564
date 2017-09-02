@@ -9,7 +9,7 @@
 				                    <!-- post meta -->
 				                    <div class="meta group">
 				                    @if($news->created_at)
-				                        <p class="date">{{ $news->created_at->format('F d, Y') }}</p>
+				                        <p class="date">{{ LocalizedCarbon::instance($news->created_at)->diffForHumans() }}</p>
 				                    @endif
 				                    </div>
 				                    <!-- post featured -->
