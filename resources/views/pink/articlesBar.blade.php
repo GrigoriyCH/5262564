@@ -1,10 +1,11 @@
 			            
 				            <div class="widget-first widget recent-posts">
+								@if($randomposts)
+								@if(!$randomposts->isEmpty())
+								@if(count($randomposts)>1)
 				                <h3>{{ Lang::get('ru.random_projects') }}</h3>
 				                <div class="recent-post group">
-									@if($randomposts)
-									@if(!$randomposts->isEmpty())
-				                      
+									
 										@foreach($randomposts as $randompost)
 				                         
 				                        <div class="hentry-post group">
@@ -18,10 +19,10 @@
 				                         
 										@endforeach
 				                      
-									@endif
-									@endif
 				                </div>
-
+								@endif
+								@endif
+								@endif
 				            </div>
 							
 							@if($comments)
