@@ -2,10 +2,10 @@
 				            <div class="widget-first widget recent-posts">
 				                <h3>{{ Lang::get('ru.random_projects') }}</h3>
 				                <div class="recent-post group">
-				                
-				                  @if(!$randomposts->isEmpty())
+									@if($randomposts)
+									@if(!$randomposts->isEmpty())
 				                      
-				                      @foreach($randomposts as $randompost )
+										@foreach($randomposts as $randompost)
 				                         
 				                        <div class="hentry-post group">
 				                           <div class="thumb-img"><div style="overflow:hidden;width:55px;max-height:55px"><img src="{{$randompost->user->avatar}}" alt="{{$randompost->title}}" title="{{$randompost->title}}" style="width:100%;"/></div></div>
@@ -16,11 +16,11 @@
 				                           </div>
 				                        </div>
 				                         
-				                      @endforeach
+										@endforeach
 				                      
-				                  @endif
-				                  
-				                    </div>
+									@endif
+									@endif
+				                </div>
 
 				            </div>
 							

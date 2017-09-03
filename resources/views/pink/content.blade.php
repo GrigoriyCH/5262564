@@ -1,9 +1,9 @@
-@if($news && count($news)>0)
-
 <div id="content-home" class="content group">
 				            <div class="hentry group">
 				                <div class="section portfolio">
-				                    
+								
+				                @if($news && count($news)>0)    
+									
 				                    <h3 class="title">{{ trans('ru.latest_projects') }}</h3>
 			 
 				                    @foreach($news as $k=>$item)
@@ -48,16 +48,14 @@
 				                    @endif  
 																	
 				                    @endforeach				                        
-				                    
+				                @else
+									
+									<h3>Новостей нет...</h3>				        
+								@endif    
 				                </div>
 				                <div class="clear"></div>
 				            </div>
 				            <!-- START COMMENTS -->
-				            <div id="comments">
-				            </div>
+				            <div id="comments"></div>
 				            <!-- END COMMENTS -->
-				        </div>
-@else
-	<br>
-<h3>Новостей нет...</h3>				        
-@endif
+</div>

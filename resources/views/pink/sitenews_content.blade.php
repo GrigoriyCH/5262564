@@ -29,14 +29,12 @@
 				                </div>
 				            </div>
 				            @endforeach
-				            @endif
-				            
-				            <div class="clear"></div>
-				            
-				            <div class="general-pagination group">
+							
+								<div class="clear"></div>
 				            
 				            	@if($sitenews->lastPage() > 1) 
-				            		
+				            		<div class="general-pagination group">
+								
 				            		@if($sitenews->currentPage() !== 1)
 				            			<a href="{{ $sitenews->url(($sitenews->currentPage() - 1)) }}">{{ Lang::get('pagination.previous') }}</a>
 				            		@endif
@@ -53,9 +51,10 @@
 				            			<a href="{{ $sitenews->url(($sitenews->currentPage() + 1)) }}">{{ Lang::get('pagination.next') }}</a>
 				            		@endif
 				            		
-				            	
+									</div>
 				            	@endif
+							@else
+								<h3>{{Lang::get('ru.all_sitenews_no')}}</h3>
+				            @endif
 				           
-				            </div>
-				            
-				        </div>
+</div>

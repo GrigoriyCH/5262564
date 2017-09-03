@@ -137,7 +137,7 @@ class PostsController extends SiteController
 					}
 				}	
 		}
-		
+		//dd($articles);
         $content = view(config('settings.theme').'.articles_content')->with(['articles' => $articles[0],'alias' => $articles[1]])->render();
         $this->vars = array_add($this->vars,'content',$content);
         /////////////////////////////
@@ -174,20 +174,24 @@ class PostsController extends SiteController
 			if($randomposts){$randomposts->load('user');}
 		return $randomposts;
 	}	
-    public function getArticles($id = FALSE)
+    public function getArticles($id)
     {
     	$where = FALSE;
 		$catTitle = FALSE;
         $alias = TRUE;
+		
     	if($id)
     	{		
-        $alias = $this->cat_rep->get(['id','title'],FALSE,FALSE,['alias',$id],FALSE);
-		$catTitle = $alias->first()->title;
-    	if($alias){
-			$alias = $alias->first()->id;
-			$where = ['category_id',$alias];
-		}else return [FALSE,FALSE,$catTitle];
-    	}
+			$alias = $this->cat_rep->get(['id','title'],FALSE,FALSE,['alias',$id],FALSE);
+			$catTitle = $alias->first()->title;
+				if($alias){
+					$alias = $alias->first()->id;
+					$where = ['category_id',$alias];
+				}else{
+					return [FALSE,FALSE,$catTitle];
+				}
+		}
+
 		$articles = $this->p_rep->get(['id','title','created_at','img','text','user_id','category_id','keywords','meta_desc'],FALSE,TRUE,$where,FALSE);
 		
 		if($articles){
