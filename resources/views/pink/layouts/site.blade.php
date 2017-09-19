@@ -25,12 +25,14 @@
         <!-- this line will appear only if the website is visited with an iPad -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes" />
         
-        <meta name="description" content=" {{ (isset($meta_desc)) ? $meta_desc : '' }} ">
-        <meta name="keywords" content=" {{ (isset($keywords)) ? $keywords : '' }} ">
+        <meta name="description" content=" {{ (isset($meta_desc)) ? $meta_desc : '' }} " />
+        <meta name="keywords" content=" {{ (isset($keywords)) ? $keywords : '' }} " />
+		
+		<meta name="theme-color" content="#F0E68C" /><!-- this tabs color -->
         
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         
-        <title>{{ $title or 'Japblog' }}</title>
+        <title>{{ $title or 'MOYZHURMAL.COM' }}</title>
         
         <!-- [favicon] begin -->
         <link rel="shortcut icon" type="image/x-icon" href="{{asset(config('settings.theme'))}}/images/favicon.ico" />
@@ -50,6 +52,10 @@
         <link rel="stylesheet" type="text/css" media="all" href="{{asset(config('settings.theme'))}}/css/reset.css" /> <!-- RESET STYLESHEET -->
         <link rel="stylesheet" type="text/css" media="all" href="{{asset(config('settings.theme'))}}/style.css" /> <!-- MAIN THEME STYLESHEET -->
         
+		<link rel="stylesheet" type="text/css" media="all" href="{{asset(config('settings.theme'))}}/mycss.css" />
+		
+		<link rel="stylesheet" id="cache-custom-css" href="{{asset(config('settings.theme'))}}/css/cache-custom.css" type="text/css" media="all" />
+		
         <link rel="stylesheet" id="max-width-1024-css" href="{{asset(config('settings.theme'))}}/css/max-width-1024.css" type="text/css" media="screen and (max-width: 1240px)" />
         <link rel="stylesheet" id="max-width-768-css" href="{{asset(config('settings.theme'))}}/css/max-width-768.css" type="text/css" media="screen and (max-width: 987px)" />
         <link rel="stylesheet" id="max-width-480-css" href="{{asset(config('settings.theme'))}}/css/max-width-480.css" type="text/css" media="screen and (max-width: 480px)" />
@@ -59,8 +65,8 @@
         <link rel="stylesheet" id="thickbox-css" href="{{asset(config('settings.theme'))}}/css/thickbox.css" type="text/css" media="all" />
         <link rel="stylesheet" id="styles-minified-css" href="{{asset(config('settings.theme'))}}/css/style-minifield.css" type="text/css" media="all" />
         <!--<link rel="stylesheet" id="buttons" href="{{asset(config('settings.theme'))}}/css/buttons.css" type="text/css" media="all" />-->
-		<link rel="stylesheet" type="text/css" media="all" href="{{asset(config('settings.theme'))}}/mycss.css" />
-        <link rel="stylesheet" id="cache-custom-css" href="{{asset(config('settings.theme'))}}/css/cache-custom.css" type="text/css" media="all" />
+		<link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/mini-buttons.css" />
+        
         <link rel="stylesheet" id="custom-css" href="{{asset(config('settings.theme'))}}/css/custom.css" type="text/css" media="all" />
 	    
         <!-- FONTs -->
@@ -96,8 +102,9 @@
     <!-- END HEAD -->
     
     <!-- START BODY -->
-    <body class="no_js responsive {{ (Route::currentRouteName() == 'home')||(Route::currentRouteName() == 'sitenews.index') ||(Route::currentRouteName() == 'sitenews.show') ? 'page-template-home-php' : '' }} stretched">
-        
+    <body class="no_js responsive {{(Route::currentRouteName() == 'home')||(Route::currentRouteName() == 'sitenews.index')||(Route::currentRouteName() == 'sitenews.show') ? 'page-template-home-php' : '' }}stretched">
+        <!-- statr counter Liveinternet --><script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/counter-liveinternet.js"></script><!-- end counter Liveinternet -->
+		<!-- statr counter Google Analytics --><script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/counter-googleanalytics.js"></script><!-- end counter Google Analytics -->
         <!-- START BG SHADOW -->
         <div class="bg-shadow">
             
@@ -111,7 +118,7 @@
                         
                         <!-- START LOGO -->
                         <div id="logo" class="group">
-                            <a href="{{route('home')}}" title="Pink Rio"><img src="{{asset(config('settings.theme'))}}/images/logo.png" title="Pink Rio" alt="Pink Rio" /></a>
+                            <a href="{{route('home')}}" title="MOYZHURMAL.COM"><img src="{{asset(config('settings.theme'))}}/images/logo.png" title="MOYZHURMAL.COM" alt="MOYZHURMAL.COM" /></a>
                         </div>
                         <!-- END LOGO -->
                         
@@ -119,27 +126,27 @@
                         <div id="sidebar-header">
                                 @if (Auth::check())
 									<div id="mynoncenter">
-									@if(Auth::user()->roles()->first()->id < 3)
-									<a href="{{ url('/admin') }}" id="butsend" />Администратум</a>
-									@endif
-									<a href="{{ url('/user') }}" id="butsend" />Мои посты</a>
-									<a href="{{ url('/logout') }}" id="butsend"/>Выход</a>
+										@if(Auth::user()->roles()->first()->id < 3)
+											<a href="{{ url('/admin') }}" id="butsend" />Администратум</a>
+										@endif
+										<a href="{{ url('/user') }}" id="butsend" />Мои посты</a>
+										<a href="{{ url('/logout') }}" id="butsend"/>Выход</a>
 									</div>
 									<div id="mycenter">
-									@if(Auth::user()->roles()->first()->id < 3)
-									<a href="{{ url('/admin') }}" id="butsend" />Администратум</a>
-									@endif
-									<a href="{{ url('/user') }}" id="butsend" />Мои посты</a>
-									<a href="{{ url('/logout') }}" id="butsend"/>Выход</a>
+										@if(Auth::user()->roles()->first()->id < 3)
+											<a href="{{ url('/admin') }}" id="butsend" />Администратум</a>
+										@endif
+										<a href="{{ url('/user') }}" id="butsend" />Мои посты</a>
+										<a href="{{ url('/logout') }}" id="butsend"/>Выход</a>
 									</div>
 								@else
 									<div id="mynoncenter">
-									<a href="{{ url('/login') }}" id="butsend" />Вход</a>
-									<a href="{{ url('/register') }}" id="butsend" />Регистрация</a>
+										<a href="{{ url('/login') }}" id="butsend" />Вход</a>
+										<a href="{{ url('/register') }}" id="butsend" />Регистрация</a>
 									</div>
 									<div id="mycenter">
-									<a href="{{ url('/login') }}" id="butsend" />Вход</a>
-									<a href="{{ url('/register') }}" id="butsend" />Регистрация</a>
+										<a href="{{ url('/login') }}" id="butsend" />Вход</a>
+										<a href="{{ url('/register') }}" id="butsend" />Регистрация</a>
 									</div>
 							    @endif
                         </div>

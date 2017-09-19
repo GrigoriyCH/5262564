@@ -1,1 +1,1 @@
-<h1>{{$data['text']}}</h1>
+<p>{{$data['text']}}</p>

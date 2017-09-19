@@ -82,7 +82,7 @@ class UsersRepository extends Repository
 		
 		if(trim($data['avatar'])==''){$data['avatar']=config('settings.default_avatar');}
 		
-		if(($this->iam->name == $data['name'])&&(($this->iam->avatar == $data['avatar']))){return ['status' => 'Вы не ввели новой информации!'];}
+		if(($this->iam->name == $data['name'])&&(($this->iam->avatar == $data['avatar']))){return ['notnew' => 'Вы не ввели новой информации!'];}
 		
 		$useredit->fill($data);
 		

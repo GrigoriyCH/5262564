@@ -109,7 +109,7 @@
 				    });
 				</script>
 				<div class="mobile-slider">
-				    <div class="slider fixed-image inner"><img src="{{asset(config('settings.theme'))}}/images/slider-cycle/cycle-fixed.jpg" alt="" /></div>
+				    <div class="slider fixed-image inner"><img src="{{asset(config('settings.theme'))}}/images/slider-cycle/{{Config::get('settings.fixed_slide')}}" alt="" /></div>
 				</div>
 				
 

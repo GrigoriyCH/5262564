@@ -45,11 +45,14 @@ class ContactsController extends SiteController
 				
 	            $m->from($data['email'], $data['name']);
 
-	            $m->to($mail_admin, 'Mr. Admin')->subject('Question');
+	            $m->to($mail_admin, 'Mr. Admin')->subject('сайт: moyzhurnal.com');
 	        });
 			
 			if($result) {
-				return redirect()->route('contacts')->with('status', 'Email is send');
+				return redirect()->route('contacts')->with('status', 'Письмо отправлено!');
+			}
+			else{
+				return redirect()->route('contacts')->with('notsend', 'Письмо не отправлено! Техническая неисправность, попробуйте позже...');
 			}
 			
 		}

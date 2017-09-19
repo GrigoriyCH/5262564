@@ -3,7 +3,8 @@
 /* === MENU */#header .menu > ul{width:94.6%}
 #header .menu ul li{padding:0px 9px}
 #header .menu ul li{padding:0px 10px !important}
-@media screen and (max-width:750px){.style-picker{display:none}
+@media screen and (max-width:750px){
+.style-picker{display:none}
 #logo{margin-left:0 !important; width:100%; text-align:center}
 /*#sidebar-header { margin-right:0 !important; width:100% !important; }*/#sidebar-header p,#sidebar-header blockquote,#sidebar-header cite,#sidebar-header li{line-height:1.41em; margin:0 auto !important; width:94%; text-align:center; display:block}
 #header .menu,#header hr{display:none}
@@ -12,7 +13,9 @@
 .call-to-action .number-phone{line-height:1.41em; margin-left:20px; margin-bottom:20px}
 /*my change*/#mynoncenter{display:none}
 #mycenter{display:inline}
-#sidebar-header{margin-left:0 !important; margin-right:0 !important; width:100%; text-align:center}}
+#sidebar-header{margin-left:0 !important; margin-right:0 !important; width:100%; text-align:center}
+.post-title{font-size: 16px;}
+}
 /* === SLIDER */.mobile-slider{display:block !important}
 .slider.no-responsive{display:none !important}
 .slider.fixed-image.inner{max-width:100%;padding:0}

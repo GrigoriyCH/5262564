@@ -1,0 +1,567 @@
+AWSTATS DATA FILE 7.0 (build 1.971)
+# If you remove this file, all statistics for date 201709 will be lost/reset.
+# Last config file used to build this data file was /etc/awstats/awstats.moyzhurnal.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1994                
+POS_TIME 2677                
+POS_VISITOR 8933                
+POS_DAY 12984               
+POS_DOMAIN 3541                
+POS_LOGIN 3775                
+POS_ROBOT 3930                
+POS_WORMS 4393                
+POS_EMAILSENDER 4524                
+POS_EMAILRECEIVER 4667                
+POS_SESSION 13499               
+POS_SIDER 13709               
+POS_FILETYPES 4802                
+POS_DOWNLOADS 5122                
+POS_OS 5254                
+POS_BROWSER 5393                
+POS_SCREENSIZE 6423                
+POS_UNKNOWNREFERER 6497                
+POS_UNKNOWNREFERERBROWSER 6975                
+POS_ORIGIN 7128                
+POS_SEREFERRALS 7270                
+POS_PAGEREFS 7445                
+POS_SEARCHWORDS 8255                
+POS_KEYWORDS 8416                
+POS_MISC 2339                
+POS_ERRORS 8484                
+POS_CLUSTER 3631                
+POS_SIDER_404 8624                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20170919044418 306 63710 6726434731602
+FirstTime 20170903233911
+LastTime 20170919044418
+LastUpdate 20170919045125 306 0 306 0 0
+TotalVisits 168                 
+TotalUnique 86                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 104                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 290 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 255 586 10939577 59 82 758821
+1 135 398 3400453 24 50 1153192
+2 8 49 280173 10 21 316737
+3 13 111 4683288 10 15 327182
+4 10 13 280292 8 17 215914
+5 9 59 3545639 11 19 290541
+6 6 6 133561 21 26 499598
+7 15 161 7934834 9 54 926424
+8 13 23 282864 11 21 444484
+9 10 65 376270 24 70 1078726
+10 7 13 208038 37 50 1642608
+11 13 134 3657068 14 25 293219
+12 13 61 277428 10 16 236869
+13 33 606 6856820 40 51 250628
+14 93 535 16490791 16 60 342971
+15 219 532 3287464 47 148 929038
+16 74 417 13838543 47 119 2846614
+17 65 180 8718377 20 55 792773
+18 61 597 1125308 17 35 393249
+19 93 190 2084031 31 126 833158
+20 122 556 4232989 31 59 1046437
+21 284 913 27086368 39 126 2214083
+22 199 1227 10147433 27 52 869019
+23 172 639 12207431 70 114 506901
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 1922 8071 142075040
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 9
+yandex 424 6821841 20170919044154 127
+googlebot 285 7022482 20170918013422 13
+unknown 56 27323 20170919044404 56
+bot[\s_+:,\.\;\/\\-] 18 247642 20170913102159 0
+no_user_agent 10 214684 20170908151217 1
+crawl 10 102516 20170909230952 6
+python 4 96276 20170917121016 0
+robot 3 30212 20170918183118 2
+favicon 1 27228 20170911084712 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 13
+css 1596 12911209 0 0
+png 1481 1316739 0 0
+txt 2 498 0 0
+woff 33 375768 0 0
+php 169 298258 0 0
+html 516 13109416 0 0
+xml 3 37136 0 0
+js 2480 14818041 0 0
+jpg 273 19260923 0 0
+jpeg 311 51456990 0 0
+Unknown 1200 28458421 0 0
+gif 6 19721 0 0
+com 1 11920 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 3
+/robots.txt 204 0 56756
+/sdkfjvvr237rufhklsd.txt 2 0 498
+/blog/robots.txt 1 0 12018
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS 9
+linuxandroid 764
+winxp 22
+winlong 49
+winnt 9
+winvista 54
+linux 360
+win7 6455
+macosx 216
+Unknown 142
+END_OS
+
+# Browser ID - Hits
+BEGIN_BROWSER 56
+safari7.0.3 1
+firefox5.0 1
+chrome50.0.2661.89 54
+chrome34.0.1847.137 1
+chrome49.0.2623.110 209
+chrome22.0.1229.79 16
+chrome39.0.2171.95 25
+chrome31.0.1650.57 2
+chrome56.0.2924.87 91
+curl 2
+firefox49.0 1
+chrome12.0.742.112 1
+chrome43.0.2357.121 49
+firefox24.0 1
+opera9.80 5
+chrome58.0.3029.110 51
+msie8.0 186
+firefox0.10.1 1
+chrome40.0.2214.85 2
+firefox41.0 24
+chrome56.2.6435.1163 1
+firefox27.0 3
+opera7.54 1
+Unknown 61
+chrome60.0.3112.116 534
+netscape 25
+firefox50.0 4
+chrome59.0.3071.115 1
+safari9.0.3 1
+chrome53.0.2785.143 1
+chrome34.0.1847.131 3
+firefox55.0 2554
+safari10.0 1
+chrome60.0.3112.107 137
+chrome41.0.2272.118 146
+safari10.0.3 1
+safari6.0 48
+firefox38.0 1
+firefox30.0 2
+chrome59.0.3071.125 3173
+chrome60.0.3112.113 158
+chrome45.0.2454.94 1
+safari9.0 147
+firefox33.0 2
+mozilla 260
+firefox1.0 1
+firefox14.0.1 1
+chrome57.0.2987.133 2
+msie10.0 2
+firefox51.0 12
+chrome61.0.3116.0 43
+chrome41.0.2228.0 2
+chrome11.0.696.71 4
+safari 1
+chrome21.0.1180.89 12
+firefox3.6.13 2
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 8
+Mozilla 20170911173559
+Curl/PHP_5.6.31_(http://github.com/shuber/curl) 20170915160403
+Mozilla/5.0_(compatible;_Dataprovider.com;) 20170905155218
+Mozilla/5.0_(compatible;_ips-agent) 20170910012027
+okhttp/2.5.0 20170904161758
+Mozilla/5.0_(compatible;_vkShare;__http://vk.com/dev/Share) 20170908004630
+ltx71_-_(http://ltx71.com/) 20170919044418
+Mozilla/4.0_(compatible;_Synapse) 20170905003207
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 2
+okhttp/2.5.0 20170904161758
+ltx71_-_(http://ltx71.com/) 20170919044418
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 641 713
+From1 1 1
+From2 4 4
+From3 27 31
+From4 1249 7322
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 3
+google 1 1
+bing 2 2
+yandex 1 1
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 18
+http://away.vk.com/away.php 14 14
+http://i.yapx.ru/TYZc.jpg 1 1
+https://www.youtube.com/embed/a_j3gNPz87E 1 1
+http://www.liveinternet.ru/click 1 1
+http://www.liveinternet.ru/stat/moyzhurnal.com/ 1 1
+http://i.yapx.ru/TFf1.jpg 1 1
+http://i.yapx.ru/S9Hi.jpg 1 1
+http://i.yapx.ru/TSAS.jpg 1 1
+https://mawords.com/moyzhurnal.com 1 1
+http://www.siteindexed.com/myurl=moyzhurnal.com 1 1
+http://i.yapx.ru/S6RI.jpg 0 1
+http://fonts.googleapis.com/css 0 1
+http://counter.yadro.ru/logo 0 1
+http://i.yapx.ru/S2un.png 1 1
+http://i.yapx.ru/S0oe.jpg 0 1
+https://www.youtube.com/embed/PIcjLX1o678 1 1
+https://www.youtube.com/embed/qTzYHqCfekk 1 1
+http://i.yapx.ru/TSAR.jpg 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 1
+amazon 2
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 1
+amazon 2
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 5
+403 31 87736
+302 222 305561
+206 3 35517
+500 41 66874
+301 13 5884
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 0
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 104
+92.113.102.157 860 3426 66106947 20170918151733
+37.54.152.59 658 2556 24851014 20170918230807
+104.192.74.37 50 50 1160774 20170911173559
+104.238.248.15 38 38 796332 20170913065512
+35.193.153.123 34 53 1305046 20170919044418 20170919044418 /contacts
+46.101.106.88 31 92 1627582 20170906221211
+165.227.130.53 20 86 449287 20170908220500
+159.253.18.159 19 19 349893 20170912220211
+192.99.47.111 14 14 224736 20170905155219
+165.227.137.178 11 62 268359 20170910050228
+195.211.23.223 0 1 3056 
+188.226.154.224 3 51 72126 20170908004725
+195.211.23.222 0 2 348094 
+162.242.156.106 2 2 45726 20170904232319
+106.75.85.103 1 1 25548 20170906040615
+34.253.76.232 1 49 3294888 20170907071641
+172.16.3.1 1 46 1119666 20170903233935
+162.244.33.8 1 1 22744 20170904172456
+195.211.23.212 0 1 3056 
+195.211.23.211 0 1 2606 
+195.211.23.210 1 1 22743 20170905004247
+165.227.141.248 10 69 336441 20170912221217
+110.88.44.29 6 6 106585 20170905192542
+34.214.116.251 1 1 29803 20170914031555
+91.210.147.90 1 1 29824 20170913115541
+91.77.54.165 1 50 3295993 20170911174610
+138.68.81.49 2 2 10542 20170910205855
+207.154.233.206 7 62 1349252 20170914232702
+167.114.243.147 1 1 22971 20170905034218
+104.227.32.88 1 1 29816 20170913190317
+195.211.23.206 0 1 3657 
+52.38.172.126 1 1 30044 20170915035627
+188.166.91.5 2 56 67643 20170916221936
+140.205.201.13 2 96 2257862 20170913112734
+66.102.8.25 0 60 5152583 
+138.128.206.233 1 1 21877 20170904130536
+23.111.167.114 2 2 52790 20170915160403
+88.212.202.33 2 2 59426 20170918000352
+195.211.23.215 0 1 2606 
+216.230.75.11 1 1 37782 20170910032900
+188.166.25.25 6 79 179388 20170912205659
+52.51.0.217 1 49 3294887 20170907035607
+104.148.118.51 2 2 39685 20170904132103
+212.83.158.95 4 4 65207 20170911014624
+195.211.23.224 0 1 4563 
+207.154.253.165 2 7 71621 20170917235320
+80.82.77.10 1 1 27162 20170908002914
+144.76.219.43 1 1 974 20170905154153
+176.9.136.47 1 43 1118044 20170903235126
+195.211.23.214 1 2 13650 20170906210517
+163.172.4.153 3 3 80002 20170916142830
+45.56.116.155 1 1 27222 20170911052028
+172.16.3.3 1 43 1118052 20170903233911
+52.168.80.148 1 1 21892 20170904134353
+106.75.106.221 1 1 25302 20170906032257
+138.246.253.19 2 2 1960 20170913230940
+66.102.8.23 2 43 1775253 20170915160405
+93.79.131.121 7 66 4045171 20170910172137
+195.211.23.217 0 2 489193 
+207.154.255.115 10 64 1297857 20170911220708
+59.61.185.129 2 2 39458 20170907060718
+40.71.27.111 1 1 22743 20170905070435
+195.211.23.216 0 2 6153 
+188.166.121.88 1 5 30096 20170913010424
+138.68.107.209 1 50 33311 20170918201434
+35.165.83.152 1 1 23656 20170905234921
+66.249.92.215 0 37 1048012 
+202.105.116.213 1 1 22979 20170905005159
+66.102.8.27 1 43 798873 20170904131227
+188.226.153.20 2 8 38262 20170918224013
+66.249.92.217 1 4 38958 20170915160444
+54.72.56.115 1 49 3294881 20170907052901
+188.166.87.191 6 191 192216 20170913011113
+70.42.131.170 2 89 2128691 20170907034113
+188.166.95.64 1 45 1051007 20170905004300
+206.225.80.193 2 2 22625 20170904131222
+207.154.253.102 11 70 332076 20170917104250
+195.211.23.220 0 2 925111 
+167.114.55.124 1 1 29654 20170918182825
+149.210.218.175 1 1 26614 20170907174407
+13.66.51.137 4 4 69532 20170905112105
+120.35.38.184 2 2 40363 20170909223433
+104.130.124.209 2 2 60342 20170916050011
+34.208.61.49 1 1 22751 20170904235221
+195.211.23.221 1 2 39588 20170908004630
+217.107.219.119 3 4 53994 20170915011727
+189.102.232.77 1 1 22738 20170904163437
+158.69.229.134 1 1 21655 20170904080232
+199.30.228.147 1 1 21649 20170904114046
+140.205.201.27 0 24 1158472 
+13.90.156.86 2 2 40815 20170904163021
+195.211.23.208 0 1 3097 
+66.249.92.219 0 2 35184 
+195.211.23.218 0 2 6282 
+69.58.178.57 10 10 239235 20170910012027
+178.92.4.209 3 3 37702 20170911125122
+54.80.140.171 1 1 23654 20170905220706
+194.28.172.176 1 1 26371 20170907211726
+195.211.23.213 0 1 4563 
+50.117.89.222 8 8 170732 20170907061834
+212.83.152.183 7 7 94865 20170905003207
+195.211.23.219 0 1 943644 
+174.129.103.253 2 2 50622 20170906073958
+93.170.128.212 3 3 87009 20170912220709
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 17
+20170903 11 233 6615230 4
+20170904 525 2569 32804762 22
+20170905 129 535 11079946 25
+20170906 272 867 20126333 12
+20170907 29 302 11534789 12
+20170908 152 361 4018898 8
+20170909 17 121 366065 6
+20170910 69 219 5678822 10
+20170911 103 411 6917688 8
+20170912 118 443 3215258 10
+20170913 135 779 22557230 12
+20170914 33 180 2185085 4
+20170915 8 153 4610611 6
+20170916 62 408 2064521 8
+20170917 76 144 2420029 7
+20170918 180 341 5771751 12
+20170919 3 5 108022 2
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+1h+ 20
+5mn-15mn 4
+30s-2mn 12
+15mn-30mn 4
+2mn-5mn 5
+0s-30s 108
+30mn-1h 14
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 93
+/ 516 13109416 141 92
+/user 267 7070432 0 6
+/mail_send.php 151 25509 1 1
+/posts 93 2705474 3 7
+/contacts 85 1518983 1 19
+/posts/1 44 1420106 2 2
+/login 40 399982 2 2
+/posts/2 40 1385759 0 1
+/password/reset 38 362821 0 0
+/comments/2/0 37 191068 0 2
+/jfhjkdshfdsfkjhdjfdjfhjskdhfeuwfewifhhdfjkfhkdjhfsdjkfhdjkfhdkfhdfhk 1 12993 0 0
+/sitemap.xml 2 25118 0 0
+/posts/7 7 229207 0 2
+/user/post/9/edit 5 131831 0 0
+/comments/3/0 19 97936 4 4
+/admin.php 1 12643 1 0
+/admin/sitenews 7 70165 0 0
+/admin/users/3/edit 2 22110 0 0
+/posts/9 9 329549 0 0
+/admin/post 2 23840 1 0
+/authentication.php 1 12643 0 0
+/posts/8 10 363547 0 0
+/xmlrpc.php 1 12018 0 0
+/typo3/index.php 1 12643 0 0
+/posts/10 10 421447 0 1
+/posts/4 19 678910 0 1
+/admin/menus 2 27784 0 0
+/user/post/2/edit 14 366712 0 0
+/search 9 151612 0 0
+/bitrix/admin/index.php 1 12643 0 0
+/admin/users 13 122353 0 1
+/register 15 152748 0 0
+/mail_send.com 1 11920 0 0
+/admin/sitenews/create 2 20496 0 0
+/posts/5 12 432689 0 0
+/posts/cat/moviereview 6 156345 0 1
+/posts/cat/movienews 4 75076 0 0
+/posts/cat/animereview 13 301101 0 0
+/pink/fonts/fontawesome/fontawesome-webfont.woff 33 375768 0 4
+/password/reset/428aecb296c10ea1de574e06686e12022a9c83d024869311528f218ddeaa44ad 1 10043 0 0
+/administrator 1 12643 0 0
+/home 1 4585 0 0
+/wp-login.php 5 61340 1 1
+/manager 1 12643 0 0
+/user/post/8/edit 7 180013 0 0
+/admin/users/2/edit 2 22158 0 0
+/posts/cat/goodfood 6 108596 0 0
+/user/post/12/edit 13 409552 0 0
+/posts/cat/manganews 1 12874 0 0
+/user/post/10/edit 7 223392 0 0
+/user/post/1/edit 24 626199 0 0
+/rules 7 133906 0 1
+/wp-includes/wlwmanifest.xml 1 12018 0 0
+/sitenews/1 10 207977 0 1
+/news 9 163042 1 0
+/netcat 1 12643 0 0
+/admin/posts 1 7889 0 0
+/different 8 133955 0 0
+/user/post/11/edit 11 347384 0 0
+/posts/cat/cartoonsnews 5 101119 0 0
+/posts/cat/tvserialsreview 5 96390 1 0
+/comment 4 9862 0 0
+/review 14 396086 0 1
+/admincp 1 12643 0 0
+/posts/6 13 462824 0 1
+/password/reset/d211cdcd97a9900b682a737a74d9f1a2431c1570b5629c4f9772591e99a38795 1 10043 0 0
+/posts/cat/tvserialsnews 5 95828 0 0
+/password/reset/9283e803c3c7fa8d3dda500bec776e4e2e82a5eade71000073bbbb00ad59c8c4 2 20088 0 0
+/admin/users/1/edit 2 22168 0 0
+/password/reset/6259e6db2acc95a6dc56a1b5378b7ffce9600b29d0ebfec878e54441c0d6eb58 17 173855 0 0
+/administrator/index.php 4 48697 0 2
+/sitenews 9 127086 0 0
+/user/post/3/edit 13 341093 0 0
+/user/post/4/edit 18 448136 0 0
+/user/post/7/edit 2 43138 0 0
+/user/post/6/edit 11 274210 0 0
+/webasyst 1 12643 0 0
+/Contact. 5 62439 0 5
+/password/reset/2e0298101a662539d18a2d2f17f64468cf2e3bf783d1b979444456de165c76ef 1 10055 0 0
+/posts/11 23 964388 0 4
+/admin 13 100504 0 0
+/posts/12 12 492445 1 1
+/posts/3 30 1093485 6 2
+/user/post/create 18 305015 1 1
+/user/post/5/edit 6 153182 0 0
+/posts/cat/animenews 5 96248 0 0
+/admin/sitenews/1/edit 2 22448 0 0
+/index.php 3 87479 0 0
+/ucp.php 1 12643 0 0
+/password/reset/91f1edd022e24f3525896a101260a48d44bbd203553376df0420eebb942f2d24 7 70233 0 0
+/posts/13 6 226725 1 1
+/posts/aut/1 8 233194 0 0
+/posts/cat/cartoonsreview 5 108278 0 0
+END_SIDER

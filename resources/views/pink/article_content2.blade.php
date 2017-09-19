@@ -12,7 +12,7 @@
 				                <!--   -->
 				                <div class="thumbnail">
 				                    <!-- post title -->
-				                    <h1 class="post-title"><a href="#">{{$article->title}}</a></h1>
+				                    <h1 class="post-title">{{$article->title}}</h1>
 				                    <!-- post featured -->
 				                    <div class="image-wrap img-head">
 				                        <img style="width:100%" src="{{$article->img}}" alt="{{ $article->title }}" title="{{ $article->title }}" />  
@@ -24,8 +24,8 @@
 				                </div>
 				                <!-- post meta -->
 				                <div class="meta group">
-				                    <p class="author"><span>by <a href="{{route('postsAut',['aut_alias' => $article->user_id])}}" title="{{ $article->title }}" rel="author">{{$article->user->name}}</a></span></p>
-				                    <p class="categories"><span>In: <a href="{{route('postsCat',['cat_alias'=>$article->category->alias])}}" title="View all posts in {{$article->category->title}}" rel="category tag">{{$article->category->title}}</a></span></p>
+				                    <p class="author"><span><a href="{{route('postsAut',['aut_alias' => $article->user_id])}}" title="{{ $article->title }}" rel="author">{{$article->user->name}}</a></span></p>
+				                    <p class="categories"><span><a href="{{route('postsCat',['cat_alias'=>$article->category->alias])}}" title="View all posts in {{$article->category->title}}" rel="category tag">{{$article->category->title}}</a></span></p>
 				                    <p class="comments"><span><a href="#comments" title="Comment on This is the title of the first article. Enjoy it.">{{count($article->comments) ? count($article->comments) : '0' }} {{Lang::choice('ru.comments',count($article->comments))}}</a></span></p>
 				                </div>
 				                <!-- post content -->

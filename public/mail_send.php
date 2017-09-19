@@ -1,3 +1,3 @@
 <?php
-var_dump(mail("admin@vbloge.com","Test","Test"));
+var_dump(mail("admin@moyzhurnal.com","Test","Test"));
 ?>

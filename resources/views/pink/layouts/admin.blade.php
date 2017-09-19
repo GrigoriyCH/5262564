@@ -17,6 +17,7 @@
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/style.css" /> <!-- MAIN THEME STYLESHEET -->
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/css/style-minifield.css" /> <!-- MAIN THEME STYLESHEET -->
         <!--<link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/css/buttons.css" />--> <!-- MAIN THEME STYLESHEET -->
+		<link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/mini-buttons.css" /><!-- My buttons -->
 		<link rel="stylesheet" type="text/css" media="all" href="{{asset(config('settings.theme'))}}/mycss.css" />
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/css/cache-custom.css" /> <!-- MAIN THEME STYLESHEET -->
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/css/cache-custom.css" /> <!-- MAIN THEME STYLESHEET -->
@@ -45,7 +46,8 @@
     <!-- START BODY -->
     
     <body class="no_js responsive {{ (Route::currentRouteName() == 'home') ? 'page-template-home-php' : ''}} stretched" style="background-color:#FFFFF0;">
-        
+        <!-- statr counter Liveinternet --><script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/counter-liveinternet.js"></script><!-- end counter Liveinternet -->
+		<!-- statr counter Google Analytics --><script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/counter-googleanalytics.js"></script><!-- end counter Google Analytics -->
         <!-- START BG SHADOW -->
         <div class="bg-shadow">
             
@@ -59,7 +61,7 @@
                         
                         <!-- START LOGO -->
                         <div id="logo" class="group">
-                            <a href="{{route('home')}}" title="Pink Rio"><img src="{{asset(config('settings.theme'))}}/images/logo.png" title="Pink Rio" alt="Pink Rio" /></a>
+                            <a href="{{route('home')}}" title="MOYZHURNAL.COM"><img src="{{asset(config('settings.theme'))}}/images/logo.png" title="MOYZHURNAL.COM" alt="MOYZHURNAL.COM" /></a>
                         </div>
                         <!-- END LOGO -->
                         

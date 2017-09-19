@@ -26,11 +26,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes" />
         
         <meta name="description" content="Вход на сайт">
-        <meta name="keywords" content="Вход, сайт, Japblog">
+        <meta name="keywords" content="Вход, сайт, MOYZHURNAL.COM">
         
         <meta name="csrf-token" content="{{ csrf_token() }}">
         
-        <title>Сброс пароля на Japblog</title>
+        <title>Сброс пароля от MOYZHURNAL.COM</title>
         
         <!-- [favicon] begin -->
         <link rel="shortcut icon" type="image/x-icon" href="{{asset(config('settings.theme'))}}/images/favicon.ico" />
@@ -79,7 +79,7 @@
                         
                         <!-- START LOGO -->
                         <div id="logo" class="group">
-                            <a href="{{route('home')}}" title="Pink Rio"><img src="{{asset(config('settings.theme'))}}/images/logo.png" title="Pink Rio" alt="Pink Rio" /></a>
+                            <a href="{{route('home')}}" title="MOYZHURNAL.COM"><img src="{{asset(config('settings.theme'))}}/images/logo.png" title="MOYZHURNAL.COM" alt="MOYZHURNAL.COM" /></a>
                         </div>
                         <!-- END LOGO -->
 						<div id="sidebar-header">
@@ -116,7 +116,7 @@
                     <!-- START PAGE META -->
 				    <div id="page-meta">
 				    <div class="inner group" style="margin-top: 20px;">
-				        <h3>Добро пожпловать на страничку восстановления!</h3>
+				        <h3>Добро пожаловать на страничку восстановления!</h3>
 				        <h4>... надеемся, это вам поможет</h4>
 				    </div>
 				    </div>
@@ -126,9 +126,12 @@
 <div id="wrapper" class="group">
        <div id="block">
                     @if (session('status'))
-                        <div>
-                            {{ session('status') }}
-                        </div>
+                        <!--<div>
+                             {{ session('status') }}
+                        </div>-->
+						<span style="color: green">
+							<strong>На электронный ящик была отправлена ссылка, для восстановления пароля.</strong>
+                        </span>
                     @endif
 
                     <form role="form" method="POST" action="{{ url('/password/email') }}">

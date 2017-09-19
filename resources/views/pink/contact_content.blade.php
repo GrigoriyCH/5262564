@@ -7,11 +7,16 @@
 				            @endforeach
 				   
 				    </div>
-				@endif
+@endif
 				
 				@if (session('status'))
 				    <div class="box success-box">
 				        {{ session('status') }}
+				    </div>
+				@endif
+				@if (session('notsend'))
+				    <div class="box error-box">
+				        {{ session('notsend') }}
 				    </div>
 				@endif
 

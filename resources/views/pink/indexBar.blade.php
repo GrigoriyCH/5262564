@@ -21,12 +21,20 @@
 				                    
 				               </div>
 				            @endif
-				            
+				            <!--
 				            <div class="widget-last widget text-image">
 				                <h3>Место для рекламы</h3>
-								<!--
+								
 				                <div class="text-image" style="text-align:left"><img src="{{asset(config('settings.theme'))}}/images/callus.gif" alt="Customer support" /></div>
 				                <p>Proin porttitor dolor eu nibh lacinia at ultrices lorem venenatis. Sed volutpat scelerisque vulputate. </p>
-								-->
+								
+				            </div>
+							-->
+							<div class="widget-last widget text-image">
+				                <h3>Наша статистика</h3>
+								<!--LiveInternet logo-->
+								<a href="//www.liveinternet.ru/click"target="_blank">
+								<img src="//counter.yadro.ru/logo?29.1"title="LiveInternet: показано количество просмотров и посетителей"alt="" border="0" width="88" height="120"/></a>
+								<!--/LiveInternet-->
 				            </div>
 				            

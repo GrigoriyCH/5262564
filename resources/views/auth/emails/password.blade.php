@@ -1,1 +1,3 @@
-Click here to reset your password: <a href="{{ $link = url('password/reset', $token).'?email='.urlencode($user->getEmailForPasswordReset()) }}"> {{ $link }} </a>
+Перейдите по ссылке, для создания нового пароля: <a href="{{ $link = url('password/reset', $token).'?email='.urlencode($user->getEmailForPasswordReset()) }}"> {{ $link }} </a><br/>
+При возникновении ошибки, скопируйте ссылку, и попробуйте с другого браузера. Если, все также, не получиться перейти на страничку создания нового пароля, свяжитесь с администрацией сайта.<br/>
+admin@moyzhurnal.com - электронный ящик адмистрации.

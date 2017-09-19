@@ -44,12 +44,13 @@ class IndexController extends SiteController
         $this->vars = array_add($this->vars,'content',$content);
         //dd($news);
         /////////////////////////////
-        $this->keywords = 'Home Page';
-        $this->meta_desc = 'Home Page';
+        $this->keywords = Config::get('about_site.keywords');
+        $this->meta_desc = Config::get('about_site.meta_desc');
+		
 		if(Auth::check()){
 			$this->title = Auth::user()->name;
 		}else{
-			$this->title = 'Home Page';
+			$this->title = 'МОЙ ЖУРНАЛ';
 		}
         /////////////////////////////
         $sliderItems = $this->getSliders();

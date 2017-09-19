@@ -26,11 +26,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes" />
         
         <meta name="description" content="Вход на сайт">
-        <meta name="keywords" content="Вход, сайт, Japblog">
+        <meta name="keywords" content="Вход, сайт, MOYZHURNAL.COM">
         
         <meta name="csrf-token" content="{{ csrf_token() }}">
         
-        <title>Вход на Japblog</title>
+        <title>Вход на MOYZHURNAL.COM</title>
         
         <!-- [favicon] begin -->
         <link rel="shortcut icon" type="image/x-icon" href="{{asset(config('settings.theme'))}}/images/favicon.ico" />
@@ -79,33 +79,33 @@
                         
                         <!-- START LOGO -->
                         <div id="logo" class="group">
-                            <a href="{{route('home')}}" title="Pink Rio"><img src="{{asset(config('settings.theme'))}}/images/logo.png" title="Pink Rio" alt="Pink Rio" /></a>
+                            <a href="{{route('home')}}" title="MOYZHURNAL.COM"><img src="{{asset(config('settings.theme'))}}/images/logo.png" title="MOYZHURNAL.COM" alt="MOYZHURNAL.COM" /></a>
                         </div>
                         <!-- END LOGO -->
 						<div id="sidebar-header">
                                 @if (Auth::check())
 									<div id="mynoncenter">
-									@if(Auth::user()->roles()->first()->id < 3)
-									<a href="{{ url('/admin') }}" id="butsend" />Администратум</a>
-									@endif
-									<a href="{{ url('/user') }}" id="butsend" />Мои посты</a>
-									<a href="{{ url('/logout') }}" id="butsend"/>Выход</a>
+										@if(Auth::user()->roles()->first()->id < 3)
+											<a href="{{ url('/admin') }}" id="butsend" />Администратум</a>
+										@endif
+										<a href="{{ url('/user') }}" id="butsend" />Мои посты</a>
+										<a href="{{ url('/logout') }}" id="butsend"/>Выход</a>
 									</div>
 									<div id="mycenter">
-									@if(Auth::user()->roles()->first()->id < 3)
-									<a href="{{ url('/admin') }}" id="butsend" />Администратум</a>
-									@endif
-									<a href="{{ url('/user') }}" id="butsend" />Мои посты</a>
-									<a href="{{ url('/logout') }}" id="butsend"/>Выход</a>
+										@if(Auth::user()->roles()->first()->id < 3)
+											<a href="{{ url('/admin') }}" id="butsend" />Администратум</a>
+										@endif
+										<a href="{{ url('/user') }}" id="butsend" />Мои посты</a>
+										<a href="{{ url('/logout') }}" id="butsend"/>Выход</a>
 									</div>
 								@else
 									<div id="mynoncenter">
 									
-									<a href="{{ url('/register') }}" id="butsend" />Регистрация</a>
+										<a href="{{ url('/register') }}" id="butsend" />Регистрация</a>
 									</div>
 									<div id="mycenter">
 									
-									<a href="{{ url('/register') }}" id="butsend" />Регистрация</a>
+										<a href="{{ url('/register') }}" id="butsend" />Регистрация</a>
 									</div>
 							    @endif
                         </div>
@@ -134,7 +134,7 @@
                                 <input class="INPUT_1" id="email" type="email" name="email" value="{{ old('email') }}">
                                 
                                 @if ($errors->has('email'))
-                                    <span style="color: red">
+                                    <span style="color:red;">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
@@ -148,7 +148,7 @@
                                 <input class="INPUT_1" id="password" type="password" name="password">
                                 
                                 @if ($errors->has('password'))
-                                    <span style="color: red">
+                                    <span style="color:red;">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif

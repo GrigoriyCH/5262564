@@ -106,7 +106,7 @@ div.anythingSlider .anythingWindow{overflow:hidden;position:relative;width:100%;
 .anythingBase{background:transparent;list-style:none;position:absolute;top:0;left:0;margin:0;padding:0}
 .anythingBase .panel{background:transparent;display:block;overflow:hidden;float:left;padding:0;margin:0}
 div.anythingSlider .arrow{top:70%;position:absolute;display:none;z-index:1000}
-div.anythingSlider .arrow a{display:block;height:47px;margin:-70px 0 0 0;width:47px;text-align:center;outline:0;background:url(../images/slider-cycle/default.png) no-repeat left center}
+div.anythingSlider .arrow a{display:block;height:47px;margin:-70px 0 0 0;width:47px;text-align:center;outline:0;background:url(../images/slider-cycle/default02.png) no-repeat left center}
 div.anythingSlider .arrow a span{display:block;text-indent:-9999px}
 div.anythingSlider .back{left:0;padding-left:15%}
 .boxed div.anythingSlider .back{left:0;padding-left:4%}
