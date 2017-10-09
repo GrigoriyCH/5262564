@@ -1,3 +1,41 @@
+User-agent: Yandex
+Crawl-delay: 5
+Disallow:/webstat
+Disallow:/cgi-bin
+Disallow:/pink
+Disallow:/user
+Disallow:/admin
+Disallow:/sitenews
+Disallow:/rss-animation
+Disallow:/rss-movies
+Disallow:/dzen-rss
+Disallow:/index.php
+Disallow:/*.htaccess
+Disallow:/web.config
+Disallow:/*.html
+Allow:/pink/css
+Allow:/pink/js
+Allow:/pink/*.css
+Allow:/pink/*.js
+
 User-agent: *
-Disallow:
-Crawl-delay: 10
+Disallow:/webstat
+Disallow:/cgi-bin
+Disallow:/pink
+Disallow:/user
+Disallow:/admin
+Disallow:/sitenews
+Disallow:/rss-animation
+Disallow:/rss-movies
+Disallow:/dzen-rss
+Disallow:/index.php
+Disallow:/*.htaccess
+Disallow:/web.config
+Allow:/pink/css
+Allow:/pink/js
+Allow:/pink/*.css
+Allow:/pink/*.js
+
+Clean-param:utm_referrer /
+Host:moyzhurnal.com
+Sitemap:http://moyzhurnal.com/sitemap.xml

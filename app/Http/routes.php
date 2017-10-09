@@ -45,12 +45,14 @@ Route::get('news',['uses'=>'PostsController@allnews','as'=>'allnews']);
 Route::get('review',['uses'=>'PostsController@allreview','as'=>'allreview']);
 Route::get('different',['uses'=>'PostsController@alldifferent','as'=>'allopinion']);
 /**/
-Route::get('rss/{cat_alias?}',['uses'=>'RssController@anime','as'=>'rss'])->where('rss','[\w]+');
+Route::get('rss-animation',['uses'=>'RssController@animation','as'=>'rss-animation']);
+Route::get('rss-movies',['uses'=>'RssController@movies','as'=>'rss-movies']);
+Route::get('dzen-rss',['uses'=>'RssController@dzen','as'=>'dzen-rss']);
 /**/
 Route::auth();
-
+/*
 Route::get('/home', 'HomeController@index');
-
+*/
 //admin panel
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 	Route::get('/',['uses'=>'Admin\IndexController@index','as'=>'adminIndex']);

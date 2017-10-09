@@ -143,7 +143,24 @@ class PostsController extends SiteController
         /////////////////////////////
         $comments = $this->getComments(config('settings.recent_comments'));//dd($comments);
         $randomposts = $this->getRandomposts(config('settings.recent_randomposts'));//dd($randomposts);
-        $this->contentRightBar = view(config('settings.theme').'.articlesBar')->with(['comments'=>$comments, 'randomposts'=>$randomposts]);
+		
+		$subscribe = false;
+		$arrayAn = ['Новости аниме','Обзор аниме','Новости мультиков','Обзор мультиков'];
+		$arrayTv = ['Новости телесериалов','Новости кино','Обзор кино','Обзор телесериалов'];
+		foreach ($arrayAn as $a){
+				if($a==$articles[2])
+				{
+					$subscribe = 'animation';
+				}
+			}
+		foreach ($arrayTv as $a){
+				if($a==$articles[2])
+				{
+					$subscribe = 'movies';
+				}
+			}	
+		
+        $this->contentRightBar = view(config('settings.theme').'.articlesBar')->with(['comments'=>$comments, 'randomposts'=>$randomposts, 'subscribe' => $subscribe]);
         /////////////////////////////
         return $this->renderOutput();
 	}
@@ -246,12 +263,29 @@ class PostsController extends SiteController
 				$avatar_send = config('settings.default_avatar');
 			}
 		/**/
-		$content = view(config('settings.theme').'.article_content2')->with(['article'=>$article,'avatar_send'=>$avatar_send])->render();
+		$subscribe = false;
+		$arrayAn = ['Новости аниме','Обзор аниме','Новости мультиков','Обзор мультиков'];
+		$arrayTv = ['Новости телесериалов','Новости кино','Обзор кино','Обзор телесериалов'];
+		foreach ($arrayAn as $a){
+				if($a==$article->category->title)
+				{
+					$subscribe = 'animation';
+				}
+			}
+		foreach ($arrayTv as $a){
+				if($a==$article->category->title)
+				{
+					$subscribe = 'movies';
+				}
+			}
+			
+		$content = view(config('settings.theme').'.article_content2')->with(['article'=>$article,'avatar_send'=>$avatar_send, 'subscribe'=>$subscribe])->render();
 		$this->vars = array_add($this->vars,'content',$content);
 		
 		$comments = $this->getComments(config('settings.recent_comments'));//dd($comments);
         $randomposts = $this->getRandomposts(config('settings.recent_randomposts'));//dd($randomposts);
-        $this->contentRightBar = view(config('settings.theme').'.articlesBar')->with(['comments'=>$comments, 'randomposts'=>$randomposts]);
+		
+        $this->contentRightBar = view(config('settings.theme').'.articlesBar')->with(['comments'=>$comments, 'randomposts'=>$randomposts, 'subscribe' => $subscribe]);
 		
 		return $this->renderOutput();
 	}

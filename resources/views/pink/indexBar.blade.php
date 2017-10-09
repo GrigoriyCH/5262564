@@ -1,16 +1,16 @@
 
 				            <div class="widget-first widget recent-posts">
 				            
-				            @if($posts)
-				               <h3>{{ trans('ru.from_blog') }}</h3>
+				            @if($news && count($news)>0)
+				               <h3>{{ trans('ru.latest_projects') }}</h3>
 				               <div class="recent-post group">
 				               
-				                   @foreach($posts as $post)
+				                   @foreach($news as $post)
 				               
 				                   <div class="hentry-post group">
-				                        <div class="thumb-img"><div style="overflow:hidden;width:55px;max-height:55px"><img src="{{$post->user->avatar}}" alt="{{$post->title}}" title="{{$post->title}}" style="width:100%;" /></div></div>
+				                        <div class="thumb-img"><div style="overflow:hidden;width:55px;max-height:55px"><img src="{{$post->img_mini}}" alt="{{$post->title}}" title="{{$post->title}}" style="width:100%;" /></div></div>
 				                        <div class="text">
-				                            <a href="{{route('posts.show',['id'=>$post->id])}}" title="{{$post->title}}" class="title">{{$post->title}}</a>
+				                            <a href="{{route('sitenews.show',['id'=>$post->id])}}" title="{{$post->title}}" class="title">{{$post->title}}</a>
 											@if($post->created_at)
 				                            <p class="post-date">{{ LocalizedCarbon::instance($post->created_at)->diffForHumans() }}</p>
 											@endif
@@ -21,6 +21,7 @@
 				                    
 				               </div>
 				            @endif
+							</div>
 				            <!--
 				            <div class="widget-last widget text-image">
 				                <h3>Место для рекламы</h3>

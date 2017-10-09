@@ -39,9 +39,8 @@ class IndexController extends SiteController
     {
         //
         $news = $this->getNews();
-		$iskl = '<a><p><br><strong><i>';
-        $content = view(config('settings.theme').'.content')->with(['news'=>$news, 'iskl'=>$iskl])->render();
-        $this->vars = array_add($this->vars,'content',$content);
+		/*$iskl = '<a><p><br><strong><i>';*/
+        
         //dd($news);
         /////////////////////////////
         $this->keywords = Config::get('about_site.keywords');
@@ -58,20 +57,22 @@ class IndexController extends SiteController
         $this->vars = array_add($this->vars,'sliders',$sliders);
         /////////////////////////////
         $posts = $this->getPosts(); //dd($posts);
-        $this->contentRightBar = view(config('settings.theme').'.indexBar')->with('posts',$posts)->render();
+        $this->contentRightBar = view(config('settings.theme').'.indexBar')->with(['news'=>$news])->render();
+		$content = view(config('settings.theme').'.content')->with(['posts'=>$posts])->render();
+		$this->vars = array_add($this->vars,'content',$content);
         /////////////////////////////
         return $this->renderOutput();
     }
     
     protected function getNews(){
 		
-		$news = $this->n_rep->get(['id','title','text','img','img_mini'],Config::get('settings.home_port_count'),FALSE,FALSE,FALSE);
+		$news = $this->n_rep->get(['id','title','img_mini'],Config::get('settings.home_port_count'),FALSE,FALSE,FALSE);
 		return $news;
 	}
 	
 	protected function getPosts(){
 		
-		$posts = $this->p_rep->get(['title','created_at','img','id','user_id'],Config::get('settings.home_posts_count'),FALSE,FALSE,FALSE);
+		$posts = $this->p_rep->get(['title','created_at','img','id','user_id','meta_desc'],Config::get('settings.home_posts_count'),FALSE,FALSE,FALSE);
 			if($posts){$posts->load('user');}
 		return $posts;
 	}

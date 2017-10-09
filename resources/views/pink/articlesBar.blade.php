@@ -1,4 +1,48 @@
-			            
+							@if(!empty($subscribe))
+							@if($subscribe == 'animation')
+							<div class="widget recent-posts">
+						
+								<a target="_blank" href="http://feeds.feedburner.com/~r/moyzhurnal-animation/~6/2"><img src="http://feeds.feedburner.com/moyzhurnal-animation.2.gif" alt="RSS-лента о аниме и мультиках" style="border:0;width:100%;"></a>
+								
+								<form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=moyzhurnal-animation', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+									<h3>Подписаться на рассылку?</h3>
+									
+									<p class="divforinput">
+									<input class="INPUT_1" style="width:80%" placeholder="Введите адрес Эл.почты" type="text" name="email"/>
+									<br/>
+									Рассылка обновлений об аниме и мультиках
+									</p>
+									
+									<input type="hidden" value="moyzhurnal-animation" name="uri"/>
+									<input type="hidden" name="loc" value="ru_RU"/>
+									<input id="butsend" type="submit" value="Подписаться" />
+									
+								</form>
+							</div>
+							@endif
+							@if($subscribe == 'movies')
+							<div class="widget recent-posts">
+						
+								<a target="_blank" href="http://feeds.feedburner.com/~r/moyzhurnal-movies/~6/1"><img src="http://feeds.feedburner.com/moyzhurnal-movies.1.gif" alt="RSS-лента о кино и сериалах" style="border:0;width:100%;"></a>
+								
+								<form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=moyzhurnal-movies', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+									<h3>Подписаться на рассылку?</h3>
+									
+									<p class="divforinput">
+									<input class="INPUT_1" style="width:80%" placeholder="Введите адрес Эл.почты" type="text" name="email"/>
+									<br/>
+									Рассылка обновлений о кино и сериалах
+									</p>
+									
+									<input type="hidden" value="moyzhurnal-movies" name="uri"/>
+									<input type="hidden" name="loc" value="ru_RU"/>
+									<input id="butsend" type="submit" value="Подписаться" />
+									
+								</form>
+							</div>
+							@endif
+							@endif
+							
 				            <div class="widget-first widget recent-posts">
 								@if($randomposts)
 								@if(!$randomposts->isEmpty())
@@ -55,6 +99,7 @@
 				            @endif
 							@endif
 				            
+							
 				            
 				                
                                 

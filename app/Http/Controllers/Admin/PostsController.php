@@ -38,6 +38,7 @@ class PostsController extends AdminController
     public function index()
     {
         //
+		
 		$this->title = 'Менеджер постов';
 		
 		$articles = $this->getArticles(); /*dd($articles);*/
@@ -175,4 +176,7 @@ class PostsController extends AdminController
 		}
 		return redirect('/admin/posts')->with($result);
     }
+	public function counter(){
+		
+	}
 }

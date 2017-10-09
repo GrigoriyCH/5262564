@@ -35,7 +35,7 @@ abstract class Repository {
 		
 	}
 	
-	public function getRss($select = '*',$take = FALSE,$where = FALSE){
+	public function getRssAn($select = '*',$take = FALSE,$where){
 		
 		$builder = $this->model->select($select);
 		
@@ -43,16 +43,23 @@ abstract class Repository {
 			$builder->take($take);
 		}
 		
-		if($where){
-			$builder->where($where[0],$where[1]);
+		$builder->where($where,1)->orWhere($where,3)->orWhere($where,6)->orWhere($where,9);
+		
+		$builder->orderBy('created_at','desc');
+		
+		return $this->check($builder->get());
+		
+		
+	}
+	public function getRssTv($select = '*',$take = FALSE,$where){
+		
+		$builder = $this->model->select($select);
+		
+		if ($take){
+			$builder->take($take);
 		}
 		
-		if($where[1] == 'animation'){
-			$builder->where($where[0],1)->orWhere($where[0],3)->orWhere($where[0],6)->orWhere($where[0],9);
-		}
-		else{
-			return false;
-		}
+		$builder->where($where,2)->orWhere($where,5)->orWhere($where,7)->orWhere($where,8);
 		
 		$builder->orderBy('created_at','desc');
 		

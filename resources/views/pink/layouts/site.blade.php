@@ -31,7 +31,15 @@
 		<meta name="theme-color" content="#F0E68C" /><!-- this tabs color -->
         
         <meta name="csrf-token" content="{{ csrf_token() }}" />
-        
+		
+		<meta property="og:url"           content="http://{{ $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] }}" />
+		<meta property="og:type"          content="website" />
+		<meta property="og:title"         content="{{ $title or 'MOYZHURMAL.COM' }}" />
+		<meta property="og:description"   content="{{ (isset($meta_desc)) ? $meta_desc : '' }}" />
+		<meta property="og:image"         content="{{asset(config('settings.theme'))}}/images/logo.png" />
+		
+		<meta name="yandex-verification" content="15cbe709d0418b4f" />
+		
         <title>{{ $title or 'MOYZHURMAL.COM' }}</title>
         
         <!-- [favicon] begin -->
@@ -55,6 +63,7 @@
 		<link rel="stylesheet" type="text/css" media="all" href="{{asset(config('settings.theme'))}}/mycss.css" />
 		
 		<link rel="stylesheet" id="cache-custom-css" href="{{asset(config('settings.theme'))}}/css/cache-custom.css" type="text/css" media="all" />
+		<link rel="stylesheet" id="styles-minified-css" href="{{asset(config('settings.theme'))}}/css/style-minifield.css" type="text/css" media="all" />
 		
         <link rel="stylesheet" id="max-width-1024-css" href="{{asset(config('settings.theme'))}}/css/max-width-1024.css" type="text/css" media="screen and (max-width: 1240px)" />
         <link rel="stylesheet" id="max-width-768-css" href="{{asset(config('settings.theme'))}}/css/max-width-768.css" type="text/css" media="screen and (max-width: 987px)" />
@@ -63,7 +72,7 @@
         
         <!-- CSSs Plugin -->
         <link rel="stylesheet" id="thickbox-css" href="{{asset(config('settings.theme'))}}/css/thickbox.css" type="text/css" media="all" />
-        <link rel="stylesheet" id="styles-minified-css" href="{{asset(config('settings.theme'))}}/css/style-minifield.css" type="text/css" media="all" />
+        
         <!--<link rel="stylesheet" id="buttons" href="{{asset(config('settings.theme'))}}/css/buttons.css" type="text/css" media="all" />-->
 		<link rel="stylesheet" type="text/css" media="all" href="{{ asset(config('settings.theme')) }}/mini-buttons.css" />
         
@@ -93,18 +102,24 @@
 		<script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/jquery.colorbox-min.js"></script> <!-- nav -->
 		<script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/jquery.tweetable.js"></script>
 		
-		
+		@if(Route::currentRouteName() == 'posts.index' || Route::currentRouteName() == 'posts.show' || Route::currentRouteName() == 'sitenews.index' || Route::currentRouteName() == 'sitenews.show')
 		<script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/myscripts.js"></script>
-		
 		<script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/myreplyB.js"></script>
+		@endif
+		
+		@if(Route::currentRouteName() == 'posts.show')
+		<script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/likeBTN.js"></script>
+		@endif
+		
+		<!-- start counter Google Analytics --><script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/counter-googleanalytics.js"></script><!-- end counter Google Analytics -->
 		
     </head>
     <!-- END HEAD -->
     
     <!-- START BODY -->
     <body class="no_js responsive {{(Route::currentRouteName() == 'home')||(Route::currentRouteName() == 'sitenews.index')||(Route::currentRouteName() == 'sitenews.show') ? 'page-template-home-php' : '' }}stretched">
-        <!-- statr counter Liveinternet --><script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/counter-liveinternet.js"></script><!-- end counter Liveinternet -->
-		<!-- statr counter Google Analytics --><script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/counter-googleanalytics.js"></script><!-- end counter Google Analytics -->
+        <!-- start counter Liveinternet --><script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/counter-liveinternet.js"></script><!-- end counter Liveinternet -->
+		<!-- start init mail.ru -->@include('pink.mail-ru-init')<!-- end init mail.ru -->
         <!-- START BG SHADOW -->
         <div class="bg-shadow">
             
@@ -216,7 +231,9 @@
             <!-- END WRAPPER -->
         </div>
         <!-- END BG SHADOW -->
-        
+        @if(Route::currentRouteName() == 'home')
+		<script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/covers-resize.js"></script>	
+		@endif
         <script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/jquery.custom.js"></script>
         <script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/contact.js"></script>
         <script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/jquery.mobilemenu.js"></script> 

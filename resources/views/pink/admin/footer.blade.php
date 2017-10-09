@@ -14,3 +14,12 @@
                         </div>
                     </div>
      </div>
+	 						
+                        <div class="right">
+							<div id="qoo-counter">
+							<a style="display:none;" href="http://qoo.by/">
+							<img src="http://qoo.by/counter/standard/009.png" alt="Укоротить ссылку"></a>
+							Визиты: <div id="qoo-counter-visits"></div>
+							Просмотры: <div id="qoo-counter-views"></div>
+						</div>
+						<script type="text/javascript" src="http://qoo.by/counter.js"></script>

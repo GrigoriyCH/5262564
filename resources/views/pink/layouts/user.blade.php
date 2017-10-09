@@ -32,6 +32,8 @@
         
         <meta name="csrf-token" content="{{ csrf_token() }}" />
 		
+		<meta name="yandex-verification" content="15cbe709d0418b4f" />
+		
         <title>{{ $title or 'MOYZHURNAL.COM' }}</title>
         
         <!-- [favicon] begin -->
@@ -97,8 +99,6 @@
 		
 		<link rel="stylesheet" id="custom-css" href="{{asset(config('settings.theme'))}}/js/jquery.confirm/jquery.confirm/jquery.confirm.css" type="text/css" media="all" />
 		<!-- end confirm -->
-		
-		<script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/myscripts.js"></script>
 		
 		@if(Route::currentRouteName() == 'user.post.create' || Route::currentRouteName() == 'user.post.edit')
 			<script type="text/javascript" src="{{ asset(config('settings.theme')) }}/js/ckeditor/ckeditor.js"></script>

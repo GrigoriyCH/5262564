@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>http://moyzhurnal.com/</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/login</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/register</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/review</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/cat/animereview</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/cat/moviereview</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/cat/cartoonsreview</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/cat/tvserialsreview</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/different</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/cat/goodfood</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/news</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/cat/animenews</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/cat/movienews</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/cat/tvserialsnews</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/cat/cartoonsnews</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/search</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/sitenews</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/23</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/22</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/21</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/contacts</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/rules</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/password/reset</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/aut/1</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/20</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/19</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts?page=2</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts?page=3</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts?page=4</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts?page=5</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/4</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/13</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/16</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/3</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/15</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/14</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/review?page=2</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/review?page=3</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/review?page=4</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/12</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/10</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/cat/animereview?page=2</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/5</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/11</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/6</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/17</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/9</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/8</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/2</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/7</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/18</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/news?page=2</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/1</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/aut/1?page=2</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/aut/1?page=3</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/aut/1?page=4</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/aut/1?page=5</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts?page=1</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/review?page=1</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/cat/animereview?page=1</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/news?page=1</loc>
+</url>
+<url>
+  <loc>http://moyzhurnal.com/posts/aut/1?page=1</loc>
+</url>
+</urlset>

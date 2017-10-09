@@ -3,6 +3,7 @@
 				            <div class="hentry hentry-post blog-big group ">
 				                <!-- post featured & title -->
 				                
+								
 				                
 				                <!--   -->
 				                <input type="hidden" id="countComments" value="{{count($article->comments)}}" />
@@ -43,9 +44,10 @@
 				                    </div>
 				                </div>
 				                <div>
-									<p>
-										<span><i class="icon-eye-open" style="margin-right:0.1em;"></i>{{($article->view)}}</span> {{Lang::choice('ru.views',$article->view)}}
-									</p>
+									<p>	<span><i class="icon-eye-open" style="margin-right:0.1em;"></i>{{($article->view)}}</span> {{Lang::choice('ru.views',$article->view)}}</p>
+									<div style="height:32px">@include('pink.likeButton')</div>
+									<div><p style = "font-size: 1.5em; margin-top:6px; color:#FF4500">↓ Нажатие кнопок "Поделиться" ваших любимых соц.сетяй - делают приятно автору поста.</p></div>
+									<div class="share42init"></div><script type="text/javascript" src="//moyzhurnal.com/pink/js/share42/share42.js"></script>
 								</div>
 				                <div class="clear"></div>
 				            </div>

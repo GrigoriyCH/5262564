@@ -1,0 +1,1 @@
+<span class="likebtn-wrapper" data-theme="roundthumb" data-lang="ru" data-rich_snippet="true" data-show_like_label="false" data-counter_type="subtract_dislikes" data-share_size="large" data-loader_show="true"></span>

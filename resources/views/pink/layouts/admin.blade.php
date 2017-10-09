@@ -6,6 +6,7 @@
         
         <meta charset="UTF-8" />
 		
+		<meta name="yandex-verification" content="15cbe709d0418b4f" />
         
         <title>{{ $title }}</title>
         
@@ -39,7 +40,7 @@
 		
 		<link rel="stylesheet" id="custom-css" href="{{asset(config('settings.theme'))}}/js/jquery.confirm/jquery.confirm/jquery.confirm.css" type="text/css" media="all" />
 		<!-- end confirm -->
-		
+		<!-- statr counter Google Analytics --><script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/counter-googleanalytics.js"></script><!-- end counter Google Analytics -->
     </head>
     <!-- END HEAD -->
     
@@ -47,7 +48,6 @@
     
     <body class="no_js responsive {{ (Route::currentRouteName() == 'home') ? 'page-template-home-php' : ''}} stretched" style="background-color:#FFFFF0;">
         <!-- statr counter Liveinternet --><script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/counter-liveinternet.js"></script><!-- end counter Liveinternet -->
-		<!-- statr counter Google Analytics --><script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/counter-googleanalytics.js"></script><!-- end counter Google Analytics -->
         <!-- START BG SHADOW -->
         <div class="bg-shadow">
             

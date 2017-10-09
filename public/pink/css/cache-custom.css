@@ -49,6 +49,7 @@ code, pre, body hr, #copyright .inner, #footer .inner, .gallery img, .gallery im
 #copyright a { color: #b77a2b; }
 #copyright a:hover { color: #030303; }
 p, li, address, dd, blockquote, td, th, a.text-color { font-size: 12px; font-family: 'Droid Sans', sans-serif; color: #585555; font-style: normal; font-weight: normal; }
+blockquote p{font-style: italic;}
 a, a.text-color:hover { color: #b77a2b; }
 a:hover { color: #030303; }
 #yit-breadcrumb a { font-size: 14px; font-family: 'Damion', sans-serif; color: #838383; font-style: italic; font-weight: normal; }

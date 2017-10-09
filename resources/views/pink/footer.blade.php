@@ -4,6 +4,10 @@
                             <a href="{{route('contacts')}}"><strong>Связь с администрацией сайта</strong></a>
                         </div>
                         <div class="right">
+							@if(Route::currentRouteName() == 'home')
+								@include('pink.i-ua')
+								@include('pink.meta-ua')
+							@endif
 							<a href="{{route('rules')}}"><strong>Правила сайта</strong></a>
 						<!--
                             <a href="#" class="socials-small facebook-small" title="Facebook">facebook</a>

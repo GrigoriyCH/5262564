@@ -14,13 +14,15 @@
 /*my change*/#mynoncenter{display:none}
 #mycenter{display:inline}
 #sidebar-header{margin-left:0 !important; margin-right:0 !important; width:100%; text-align:center}
-.post-title{font-size: 16px;}
+.post-title, .post-title a{font-size: 16px;}
+h4.home a{font-size: 14px;}
 }
 /* === SLIDER */.mobile-slider{display:block !important}
 .slider.no-responsive{display:none !important}
 .slider.fixed-image.inner{max-width:100%;padding:0}
 /* === SECTIONS */
 /* === SECTION PORTFOLIO */.sidebar-right .section.portfolio .work-description,.sidebar-left .section.portfolio .work-description{width:100%}
+/* === SECTION PORTFOLIO */.sidebar-right .section.portfolio .work-thumbnail,.sidebar-left .section.portfolio .work-thumbnail{width:100%}
 .section .work-thumbnail{margin-bottom:20px}
 /* === SECTION BLOG */.section.blog .sticky .the-content{clear:both}
 .section.blog .post{float:none;margin-right:0%;width:100%}
