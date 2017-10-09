@@ -10,6 +10,7 @@
 	'recent_comments' => 3,
 	'recent_randomposts' => 3,
 	'get_comments'=> 10,
+	'rss-count'=> 14,
 	'paginate_posts_manager' => 20,
 	'image_big' => 'http://moyzhurnal.com/pink/images/articles/003-816x282.jpg',
 	'image_mini' => 'http://moyzhurnal.com/pink/images/articles/003-55x55.jpg',

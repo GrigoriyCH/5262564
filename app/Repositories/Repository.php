@@ -35,6 +35,32 @@ abstract class Repository {
 		
 	}
 	
+	public function getRss($select = '*',$take = FALSE,$where = FALSE){
+		
+		$builder = $this->model->select($select);
+		
+		if ($take){
+			$builder->take($take);
+		}
+		
+		if($where){
+			$builder->where($where[0],$where[1]);
+		}
+		
+		if($where[1] == 'animation'){
+			$builder->where($where[0],1)->orWhere($where[0],3)->orWhere($where[0],6)->orWhere($where[0],9);
+		}
+		else{
+			return false;
+		}
+		
+		$builder->orderBy('created_at','desc');
+		
+		return $this->check($builder->get());
+		
+		
+	}
+	
 	public function getFind($select = '*',$key = FALSE, $randomsort = FALSE){
 		
 		$builder = $this->model->select($select);

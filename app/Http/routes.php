@@ -44,7 +44,9 @@ Route::match(['get','post'],'/contacts',['uses'=>'ContactsController@index','as'
 Route::get('news',['uses'=>'PostsController@allnews','as'=>'allnews']);
 Route::get('review',['uses'=>'PostsController@allreview','as'=>'allreview']);
 Route::get('different',['uses'=>'PostsController@alldifferent','as'=>'allopinion']);
-////////////////////////////////////////////////////
+/**/
+Route::get('rss/{cat_alias?}',['uses'=>'RssController@anime','as'=>'rss'])->where('rss','[\w]+');
+/**/
 Route::auth();
 
 Route::get('/home', 'HomeController@index');

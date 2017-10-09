@@ -161,6 +161,8 @@ return [
 		
 		Collective\Html\HtmlServiceProvider::class,
 		
+		Roumen\Feed\FeedServiceProvider::class,
+		
         'Lavary\Menu\ServiceProvider',
 		'Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider',
 
@@ -212,6 +214,8 @@ return [
         
 		'Form' => Collective\Html\FormFacade::class,
 		'Html' => Collective\Html\HtmlFacade::class,
+		
+		'Feed' => Roumen\Feed\Feed::class,
 		
         'Menu'       => 'Lavary\Menu\Facade',
 		
