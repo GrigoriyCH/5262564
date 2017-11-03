@@ -22,25 +22,33 @@
     <head>
         
         <meta charset="UTF-8" />
+		<?php
+			if(isset($err404)){
+				header('HTTP/1.0 404 Not Found');
+				header('HTTP/1.1 404 Not Found');
+				header('Status: 404 Not Found');
+			}
+		?>
+		
         <!-- this line will appear only if the website is visited with an iPad -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes" />
-        
+        <meta name="msvalidate.01" content="03FBA0AD179B64536BFF65B5E4156E21" />
         <meta name="description" content=" {{ (isset($meta_desc)) ? $meta_desc : '' }} " />
         <meta name="keywords" content=" {{ (isset($keywords)) ? $keywords : '' }} " />
 		
 		<meta name="theme-color" content="#F0E68C" /><!-- this tabs color -->
         
         <meta name="csrf-token" content="{{ csrf_token() }}" />
-		
+		<!--
 		<meta property="og:url"           content="http://{{ $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] }}" />
 		<meta property="og:type"          content="website" />
 		<meta property="og:title"         content="{{ $title or 'MOYZHURMAL.COM' }}" />
 		<meta property="og:description"   content="{{ (isset($meta_desc)) ? $meta_desc : '' }}" />
 		<meta property="og:image"         content="{{asset(config('settings.theme'))}}/images/logo.png" />
-		
+		-->
 		<meta name="yandex-verification" content="15cbe709d0418b4f" />
 		
-        <title>{{ $title or 'MOYZHURMAL.COM' }}</title>
+        <title>{{ $title or 'moyzhurnal.com' }}</title>
         
         <!-- [favicon] begin -->
         <link rel="shortcut icon" type="image/x-icon" href="{{asset(config('settings.theme'))}}/images/favicon.ico" />
@@ -112,14 +120,17 @@
 		@endif
 		
 		<!-- start counter Google Analytics --><script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/counter-googleanalytics.js"></script><!-- end counter Google Analytics -->
+		<!-- start counter Rambler --><script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/counter-rambler.js"></script><!-- end counter Rambler -->
+		<!-- maybe next into body -->
+		<!-- start counter Liveinternet --><script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/counter-liveinternet.js"></script><!-- end counter Liveinternet -->
+		<!-- start counter mail.ru --><script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/init-mail-ru.js"></script><!-- end counter mail.ru -->
 		
     </head>
     <!-- END HEAD -->
     
     <!-- START BODY -->
     <body class="no_js responsive {{(Route::currentRouteName() == 'home')||(Route::currentRouteName() == 'sitenews.index')||(Route::currentRouteName() == 'sitenews.show') ? 'page-template-home-php' : '' }}stretched">
-        <!-- start counter Liveinternet --><script type="text/javascript" src="{{asset(config('settings.theme'))}}/js/counter-liveinternet.js"></script><!-- end counter Liveinternet -->
-		<!-- start init mail.ru -->@include('pink.mail-ru-init')<!-- end init mail.ru -->
+		
         <!-- START BG SHADOW -->
         <div class="bg-shadow">
             

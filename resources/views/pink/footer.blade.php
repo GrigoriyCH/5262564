@@ -5,7 +5,6 @@
                         </div>
                         <div class="right">
 							@if(Route::currentRouteName() == 'home')
-								@include('pink.i-ua')
 								@include('pink.meta-ua')
 							@endif
 							<a href="{{route('rules')}}"><strong>Правила сайта</strong></a>

@@ -13,7 +13,7 @@
 				                <!--   -->
 				                <div class="thumbnail">
 				                    <!-- post title -->
-				                    <h1 class="post-title">{{$article->title}}</h1>
+				                    <h1 class="post-title entry-title">{{$article->title}}</h1>
 				                    <!-- post featured -->
 				                    <div class="image-wrap img-head">
 				                        <img style="width:100%" src="{{$article->img}}" alt="{{ $article->title }}" title="{{ $article->title }}" />  
@@ -25,9 +25,9 @@
 				                </div>
 				                <!-- post meta -->
 				                <div class="meta group">
-				                    <p class="author"><span><a href="{{route('postsAut',['aut_alias' => $article->user_id])}}" title="{{ $article->title }}" rel="author">{{$article->user->name}}</a></span></p>
-				                    <p class="categories"><span><a href="{{route('postsCat',['cat_alias'=>$article->category->alias])}}" title="View all posts in {{$article->category->title}}" rel="category tag">{{$article->category->title}}</a></span></p>
-				                    <p class="comments"><span><a href="#comments" title="Comment on This is the title of the first article. Enjoy it.">{{count($article->comments) ? count($article->comments) : '0' }} {{Lang::choice('ru.comments',count($article->comments))}}</a></span></p>
+				                    <p class="author"><span><a href="{{route('postsAut',['aut_alias' => $article->user_id])}}" title="Посты автора: {{$article->user->name}}" rel="author">{{$article->user->name}}</a></span></p>
+				                    <p class="categories"><span><a href="{{route('postsCat',['cat_alias'=>$article->category->alias])}}" title="Посты в категории: {{$article->category->title}}" rel="category tag">{{$article->category->title}}</a></span></p>
+				                    <p class="comments"><span><a href="#comments" title="Комментарии поста.">{{count($article->comments) ? count($article->comments) : '0' }} {{Lang::choice('ru.comments',count($article->comments))}}</a></span></p>
 				                </div>
 				                <!-- post content -->
 				                <div class="the-content single group">
@@ -44,10 +44,14 @@
 				                    </div>
 				                </div>
 				                <div>
-									<p>	<span><i class="icon-eye-open" style="margin-right:0.1em;"></i>{{($article->view)}}</span> {{Lang::choice('ru.views',$article->view)}}</p>
+									<div style="float:right;">
+										<!-- дата для гугла--><span class="updated" style="color:white">{{$article->created_at->format('F j, Y')}}</span>
+										<!-- автор для гугла--><span class="author vcard" style="color:white"><span class="fn">{{$article->user->name}}</span></span>
+									</div>
 									<div style="height:32px">@include('pink.likeButton')</div>
 									<div><p style = "font-size: 1.5em; margin-top:6px; color:#FF4500">↓ Нажатие кнопок "Поделиться" ваших любимых соц.сетяй - делают приятно автору поста.</p></div>
-									<div class="share42init"></div><script type="text/javascript" src="//moyzhurnal.com/pink/js/share42/share42.js"></script>
+									<!--<div class="share42init"></div><script type="text/javascript" src="//moyzhurnal.com/pink/js/share42/share42.js"></script>-->
+									<div class="rambler-share"></div><script type="text/javascript" src="//moyzhurnal.com/pink/js/share-rambler.js"></script>
 								</div>
 				                <div class="clear"></div>
 				            </div>

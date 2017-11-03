@@ -73,7 +73,7 @@ class SitenewsController extends SiteController
 	
 	public function siterules(){
 		$rules = config('rules');
-		$this->title = 'Правила сайта';
+		$this->title = "Мой Журнал: Правила сайта";
 		/*dd($rules);*/
 		$content = view(config('settings.theme').'.siterules_content')->with('rules',$rules)->render();
         $this->vars = array_add($this->vars,'content',$content);

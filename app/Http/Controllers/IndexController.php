@@ -47,9 +47,9 @@ class IndexController extends SiteController
         $this->meta_desc = Config::get('about_site.meta_desc');
 		
 		if(Auth::check()){
-			$this->title = Auth::user()->name;
+			$this->title = "Мой Журнал: Добро пожаловать, " . Auth::user()->name;
 		}else{
-			$this->title = 'МОЙ ЖУРНАЛ';
+			$this->title = 'Мой Журнал';
 		}
         /////////////////////////////
         $sliderItems = $this->getSliders();
@@ -57,7 +57,7 @@ class IndexController extends SiteController
         $this->vars = array_add($this->vars,'sliders',$sliders);
         /////////////////////////////
         $posts = $this->getPosts(); //dd($posts);
-        $this->contentRightBar = view(config('settings.theme').'.indexBar')->with(['news'=>$news])->render();
+        $this->contentRightBar = view(config('settings.theme').'.indexBar')->with('news',$news)->render();
 		$content = view(config('settings.theme').'.content')->with(['posts'=>$posts])->render();
 		$this->vars = array_add($this->vars,'content',$content);
         /////////////////////////////

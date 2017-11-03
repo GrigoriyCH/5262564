@@ -11,6 +11,7 @@ use Japblog\Http\Requests\SearchRequest;
 use Japblog\Repositories\PostsRepository;
 use Japblog\Repositories\CommentsRepository;
 use Japblog\Category;
+use Japblog\Keywords;
 use Japblog\Repositories\CategoryRepository;
 
 use Event;
@@ -116,23 +117,58 @@ class PostsController extends SiteController
 		return [$articles,$alias,$mainCategory];
 	}
     public function mainSelect($articles){
-		$this->title = 'Все посты';
+		$this->title = "Мой Журнал: Все посты";
+		
+		if($articles[0]!=false){
+			$array_art = array();
+			
+			$count_art = 0;
+			
+			foreach ($articles[0] as $article) {
+				$count_art ++ ;
+				array_push($array_art, $article->title);
+			}
+			
+			$description = "На этой странице: ";
+			
+			for ($i=0; $i < $count_art; $i++)
+			{
+				$description = $description . $array_art[$i] . '; ';	
+			}
+			
+			$this->meta_desc = $description;
+			/*start gen keywords*/
+			$genKeys = new Keywords();
+			$keywords = $genKeys->seokeywords($description,5,7);
+			/*end gen keywords*/
+			$this->keywords = $keywords;
+			
+		}
+		else{
+			$description = "На этой странице пока что нет материала.";
+			$this->meta_desc = $description;
+			/*start gen keywords*/
+			$genKeys = new Keywords();
+			$keywords = $genKeys->seokeywords($description,5,7);
+			/*end gen keywords*/
+			$this->keywords = $keywords;
+		}
 		
 		if(isset($articles[2])){
 			if(is_string($articles[2])){
-				$this->title = $articles[2];
+				$this->title = "Мой Журнал: " . $articles[2];
 			}
 			else{
 				switch($articles[2])
 					{
 						case 1:
-							$this->title = 'Новости';
+							$this->title = "Мой Журнал: Новости";
 							break;
 						case 2:
-							$this->title = 'Обзоры';
+							$this->title = "Мой Журнал: Обзоры";
 							break;
 						case 3:
-							$this->title = 'Разное';
+							$this->title = "Мой Журнал: Разное";
 							break;
 					}
 				}	
@@ -165,7 +201,7 @@ class PostsController extends SiteController
         return $this->renderOutput();
 	}
 	public function AutPosts($articles){
-		$this->title = 'Все посты: '.$articles->first()->user->name;
+		$this->title = 'Мой Журнал - Все посты: '.$articles->first()->user->name;
         $content = view(config('settings.theme').'.articles_content_aut')->with(['articles' => $articles])->render();
         $this->vars = array_add($this->vars,'content',$content);
         /////////////////////////////
@@ -243,13 +279,11 @@ class PostsController extends SiteController
 		if($article){
 			//$article->img = json_decode($article->img);
 			$article->load('user','category');
-			/*счетчик просмотров +1*/
-			event(new PostHasViewed($article));
 		}
 		/////////////////////////////////////////////////
 		if(isset($article->id))
 		{
-			$this->title = $article->title;
+			$this->title = $article->title . " - Мой Журнал: " . $article->category->title;
 			$this->keywords = $article->keywords;
 			$this->meta_desc = $article->meta_desc;
 		}
@@ -298,10 +332,13 @@ class PostsController extends SiteController
 		}
 		else{
 			$articles = false;
-			$this->title = 'Поиск';
+			$this->title = "Мой Журнал: Поиск";
 			$result = false;
 		}
 		//dd($articles);
+		$this->meta_desc = "Страница поиска материала по сайту";
+		$this->keywords = "поиск";
+		
 		$comments = $this->getComments(config('settings.recent_comments'));//dd($comments);
 		$randomposts = $this->getRandomposts(config('settings.recent_randomposts'));//dd($randomposts);
 		$this->contentRightBar = view(config('settings.theme').'.articlesBar')->with(['comments'=>$comments, 'randomposts'=>$randomposts]);
@@ -313,7 +350,7 @@ class PostsController extends SiteController
 	}
 	public function getSearch($key){
 		
-		$articles = $this->p_rep->getFind(['id','title','created_at','img','text','user_id','category_id','keywords','meta_desc','view'],$key,FALSE);
+		$articles = $this->p_rep->getFind(['id','title','created_at','img','text','user_id','category_id','keywords','meta_desc'],$key,FALSE);
 		
 		if($articles){
 			$articles->load('user','category','comments');

@@ -1,7 +1,7 @@
 
 				            <div class="widget-first widget recent-posts">
 				            
-				            @if($news && count($news)>0)
+				            @if($news)
 				               <h3>{{ trans('ru.latest_projects') }}</h3>
 				               <div class="recent-post group">
 				               
@@ -21,7 +21,6 @@
 				                    
 				               </div>
 				            @endif
-							</div>
 				            <!--
 				            <div class="widget-last widget text-image">
 				                <h3>Место для рекламы</h3>

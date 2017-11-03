@@ -6,6 +6,7 @@ Disallow:/pink
 Disallow:/user
 Disallow:/admin
 Disallow:/sitenews
+Disallow:/posts/aut
 Disallow:/rss-animation
 Disallow:/rss-movies
 Disallow:/dzen-rss
@@ -25,6 +26,7 @@ Disallow:/pink
 Disallow:/user
 Disallow:/admin
 Disallow:/sitenews
+Disallow:/posts/aut
 Disallow:/rss-animation
 Disallow:/rss-movies
 Disallow:/dzen-rss
@@ -35,6 +37,7 @@ Allow:/pink/css
 Allow:/pink/js
 Allow:/pink/*.css
 Allow:/pink/*.js
+Crawl-delay: 10
 
 Clean-param:utm_referrer /
 Host:moyzhurnal.com

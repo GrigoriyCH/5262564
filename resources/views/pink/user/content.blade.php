@@ -47,11 +47,6 @@
 												<p class="post-date">{{$post->category->title}}</p>
 											</div>
 											
-											<div style="float:right;margin-right:1em;padding-top:0.5em;">
-												<p>
-													<span title="{{Lang::choice('ru.views',$post->view)}}"><i class="icon-eye-open" style="margin-right:0.1em;"></i>{{($post->view)}}</span>
-												</p>
-											</div>
 											
 											<div style="float:right;margin-right:1em;padding-top:0.5em;">
 												<p>

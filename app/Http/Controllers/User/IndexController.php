@@ -44,7 +44,7 @@ class IndexController extends UserController
 	
 	public function index(){
 		
-		$this->title = $this->user->name;
+		$this->title = "Мои посты: " . $this->user->name;
 		//dd($this->user);
 		$user_post = $this->getPost($this->user->id);
 		$username = $this->title;
@@ -61,7 +61,7 @@ class IndexController extends UserController
 	
 	public function getPost($user_id = FALSE){
 		if($user_id){
-			$user_post = $this->p_rep->get(['id','title','created_at','img','text','user_id','category_id','keywords','meta_desc','view'],FALSE,TRUE,['user_id',$user_id],FALSE);
+			$user_post = $this->p_rep->get(['id','title','created_at','img','text','user_id','category_id','keywords','meta_desc'],FALSE,TRUE,['user_id',$user_id],FALSE);
 				if($user_post){
 					$user_post->load('category','comments');
 				}

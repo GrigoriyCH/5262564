@@ -22,6 +22,7 @@ class SiteController extends Controller
     protected $keywords;
     protected $meta_desc;
     protected $title;
+	protected $author;
     ////////////////////
     
     protected $template;
@@ -60,6 +61,7 @@ class SiteController extends Controller
 			
 			$this->vars = array_add($this->vars,'keywords',$this->keywords);
 			$this->vars = array_add($this->vars,'meta_desc',$this->meta_desc);
+			$this->vars = array_add($this->vars,'author',$this->author);
 			$this->vars = array_add($this->vars,'title',$this->title);
 			
 			///////////////////////////

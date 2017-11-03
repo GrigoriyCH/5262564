@@ -19,7 +19,7 @@
 #slider-layer-slider.layer-slider .ls-layer h3 { font-size: 26px; font-family: 'Rokkitt', sans-serif; color: #c97e08; font-style: normal; font-weight: normal; }
 #slider-layer-slider.layer-slider .ls-layer h5 { font-size: 18px; font-family: 'Rokkitt', sans-serif; color: #2E2D2D; font-style: normal; font-weight: normal; }
 #slider-layer-slider.layer-slider .ls-layer h6 { font-size: 14px; font-family: 'Rokkitt', sans-serif; color: #2E2D2D; font-style: normal; font-weight: normal; }
-.post-title, .post-title a { font-size: 22px; font-family: 'Rokkitt', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
+.post-title, .post-title a { font-size: 22px; font-family: 'Parkavenue', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
 .blog-big .meta a, .blog-small .meta a { font-size: 12px; font-family: 'Droid Sans', sans-serif; color: #000000; font-style: normal; font-weight: normal; }
 .blog-big .meta a:hover, .blog-small .meta a:hover { color: #333333; }
 .section.blog .meta h4 a { font-size: 15px; font-family: 'Rokkitt', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
@@ -54,20 +54,20 @@ a, a.text-color:hover { color: #b77a2b; }
 a:hover { color: #030303; }
 #yit-breadcrumb a { font-size: 14px; font-family: 'Damion', sans-serif; color: #838383; font-style: italic; font-weight: normal; }
 #yit-breadcrumb a:hover { color: #535353; }
-h1, h1 a { font-size: 26px; font-family: 'Rokkitt', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
-h2, h2 a { font-size: 22px; font-family: 'Rokkitt', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
-h3, h3 a { font-size: 20px; font-family: 'Rokkitt', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
-h4, h4 a { font-size: 18px; font-family: 'Rokkitt', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
-h5, h5 a { font-size: 15px; font-family: 'Rokkitt', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
-h6, h6 a { font-size: 12px; font-family: 'Rokkitt', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
-#page-meta h3 { font-size: 28px; font-family: 'Rokkitt', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
-#page-meta h4 { font-size: 24px; font-family: 'Rokkitt', sans-serif; color: #C86F06; font-style: normal; font-weight: normal; }
+h1, h1 a { font-size: 26px; font-family: 'Parkavenue', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
+h2, h2 a { font-size: 22px; font-family: 'Parkavenue', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
+h3, h3 a { font-size: 20px; font-family: 'Parkavenue', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
+h4, h4 a { font-size: 18px; font-family: 'Parkavenue', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
+h5, h5 a { font-size: 15px; font-family: 'Parkavenue', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
+h6, h6 a { font-size: 12px; font-family: 'Parkavenue', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
+#page-meta h3 { font-size: 28px; font-family: 'Parkavenue', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
+#page-meta h4 { font-size: 24px; font-family: 'Parkavenue', sans-serif; color: #C86F06; font-style: normal; font-weight: normal; }
 .special-font { font-size: 12px; font-family: 'Shadows Into Light', sans-serif; color: #030303; font-style: normal; font-weight: normal; }
 h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { color: #A05F02; }
 #header #logo #textual { font-size: 40px; font-family: 'Montez', sans-serif; color: #1d1d1d; font-style: normal; font-weight: normal; }
 #header #logo #textual span { font-size: 40px; font-family: 'Montez', sans-serif; color: #ac670c; font-style: normal; font-weight: normal; }
 #header #logo #tagline { font-size: 18px; font-family: 'Droid Sans', sans-serif; color: #1d1d1d; font-style: normal; font-weight: normal; }
-#sidebar-header .widget h3 { font-size: 18px; font-family: 'Rokkitt', sans-serif; color: #1d1d1d; font-style: normal; font-weight: normal; }
+#sidebar-header .widget h3 { font-size: 18px; font-family: 'Parkavenue', sans-serif; color: #1d1d1d; font-style: normal; font-weight: normal; }
 #sidebar-header .widget p, #sidebar-header .widget div, #sidebar-header .widget li, #sidebar-header .widget blockquote { font-size: 18px; font-family: 'Rokkitt', sans-serif; color: #939191; font-style: normal; font-weight: normal; }
 #header div.menu > ul > li > a { font-size: 15px; font-family: 'Rokkitt', sans-serif; color: #939191; font-style: normal; font-weight: normal; }
 #header div.menu > ul > li > a:hover { color: #000000; }

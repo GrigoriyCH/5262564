@@ -8,7 +8,7 @@ class Posts extends Model
 {
     protected $table = 'posts';
 	
-	protected $fillable = ['title','img','text','keywords','meta_desc','category_id','user_id','view'];
+	protected $fillable = ['title','img','text','keywords','meta_desc','category_id','user_id'];
     
     public function user(){
 		return( $this->belongsTo('Japblog\User'));

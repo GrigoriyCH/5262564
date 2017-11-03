@@ -46,7 +46,7 @@
 				<span class="mysublabel">Теги поста (Не стоит указывать в теге больше 7 слов или словосочетаний. Не стоит использовать союзы, предлоги, междометия и частицы в этом теге.)</span><br />
 			</label>
 			<div class = "divforinput">
-				<input class="INPUT_1" type="text" name="keywords" placeholder="Введите через запятую ключевые слова или словосочетания" value="{{ isset($article->keywords) ? $article->keywords  : old('keywords') }}">
+				<input class="INPUT_1" type="text" name="keywords" placeholder="Оставьте это поле пустое или введите через запятую ключевые слова/словосочетания." value="{{ isset($article->keywords) ? $article->keywords  : old('keywords') }}">
 			</div>
 		</div>
 		

@@ -1,197 +1,333 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-  <loc>http://moyzhurnal.com/</loc>
+	<loc>http://moyzhurnal.com/</loc>
+	<lastmod>2017-10-12T16:53:54+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/login</loc>
+	<loc>http://moyzhurnal.com/login</loc>
+	<lastmod>2017-10-12T16:53:55+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/register</loc>
+	<loc>http://moyzhurnal.com/register</loc>
+	<lastmod>2017-10-12T16:53:57+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts</loc>
+	<loc>http://moyzhurnal.com/posts</loc>
+	<lastmod>2017-10-12T16:53:57+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/review</loc>
+	<loc>http://moyzhurnal.com/review</loc>
+	<lastmod>2017-10-12T16:53:58+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/cat/animereview</loc>
+	<loc>http://moyzhurnal.com/posts/cat/animereview</loc>
+	<lastmod>2017-10-12T16:53:59+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/cat/moviereview</loc>
+	<loc>http://moyzhurnal.com/posts/cat/moviereview</loc>
+	<lastmod>2017-10-12T16:53:59+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/cat/cartoonsreview</loc>
+	<loc>http://moyzhurnal.com/posts/cat/cartoonsreview</loc>
+	<lastmod>2017-10-12T16:54:00+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/cat/tvserialsreview</loc>
+	<loc>http://moyzhurnal.com/posts/cat/tvserialsreview</loc>
+	<lastmod>2017-10-12T16:54:01+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/different</loc>
+	<loc>http://moyzhurnal.com/different</loc>
+	<lastmod>2017-10-12T16:54:01+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/cat/goodfood</loc>
+	<loc>http://moyzhurnal.com/posts/cat/goodfood</loc>
+	<lastmod>2017-10-12T16:54:02+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/news</loc>
+	<loc>http://moyzhurnal.com/news</loc>
+	<lastmod>2017-10-12T16:54:03+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/cat/animenews</loc>
+	<loc>http://moyzhurnal.com/posts/cat/animenews</loc>
+	<lastmod>2017-10-12T16:54:03+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/cat/movienews</loc>
+	<loc>http://moyzhurnal.com/posts/cat/movienews</loc>
+	<lastmod>2017-10-12T16:54:04+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/cat/tvserialsnews</loc>
+	<loc>http://moyzhurnal.com/posts/cat/tvserialsnews</loc>
+	<lastmod>2017-10-12T16:54:05+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/cat/cartoonsnews</loc>
+	<loc>http://moyzhurnal.com/posts/cat/cartoonsnews</loc>
+	<lastmod>2017-10-12T16:54:06+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/search</loc>
+	<loc>http://moyzhurnal.com/search</loc>
+	<lastmod>2017-10-12T16:54:07+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/sitenews</loc>
+	<loc>http://moyzhurnal.com/posts/29</loc>
+	<lastmod>2017-10-12T16:54:08+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/23</loc>
+	<loc>http://moyzhurnal.com/posts/28</loc>
+	<lastmod>2017-10-12T16:54:08+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/22</loc>
+	<loc>http://moyzhurnal.com/posts/27</loc>
+	<lastmod>2017-10-12T16:54:09+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/21</loc>
+	<loc>http://moyzhurnal.com/posts/26</loc>
+	<lastmod>2017-10-12T16:54:10+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/contacts</loc>
+	<loc>http://moyzhurnal.com/posts/25</loc>
+	<lastmod>2017-10-12T16:54:10+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/rules</loc>
+	<loc>http://moyzhurnal.com/contacts</loc>
+	<lastmod>2017-10-12T16:54:11+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/password/reset</loc>
+	<loc>http://moyzhurnal.com/rules</loc>
+	<lastmod>2017-10-12T16:54:12+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/aut/1</loc>
+	<loc>http://moyzhurnal.com/password/reset</loc>
+	<lastmod>2017-10-12T16:54:12+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/20</loc>
+	<loc>http://moyzhurnal.com/posts?page=2</loc>
+	<lastmod>2017-10-12T16:54:13+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/19</loc>
+	<loc>http://moyzhurnal.com/posts?page=3</loc>
+	<lastmod>2017-10-12T16:54:14+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts?page=2</loc>
+	<loc>http://moyzhurnal.com/posts?page=4</loc>
+	<lastmod>2017-10-12T16:54:14+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts?page=3</loc>
+	<loc>http://moyzhurnal.com/posts?page=5</loc>
+	<lastmod>2017-10-12T16:54:16+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts?page=4</loc>
+	<loc>http://moyzhurnal.com/posts?page=6</loc>
+	<lastmod>2017-10-12T16:54:17+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts?page=5</loc>
+	<loc>http://moyzhurnal.com/posts/11</loc>
+	<lastmod>2017-10-12T16:54:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/4</loc>
+	<loc>http://moyzhurnal.com/posts/17</loc>
+	<lastmod>2017-10-12T16:54:19+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/13</loc>
+	<loc>http://moyzhurnal.com/posts/23</loc>
+	<lastmod>2017-10-12T16:54:20+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/16</loc>
+	<loc>http://moyzhurnal.com/posts/16</loc>
+	<lastmod>2017-10-12T16:54:20+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/3</loc>
+	<loc>http://moyzhurnal.com/posts/21</loc>
+	<lastmod>2017-10-12T16:54:21+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/15</loc>
+	<loc>http://moyzhurnal.com/posts/15</loc>
+	<lastmod>2017-10-12T16:54:22+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/14</loc>
+	<loc>http://moyzhurnal.com/posts/14</loc>
+	<lastmod>2017-10-12T16:54:22+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/review?page=2</loc>
+	<loc>http://moyzhurnal.com/review?page=2</loc>
+	<lastmod>2017-10-12T16:54:23+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/review?page=3</loc>
+	<loc>http://moyzhurnal.com/review?page=3</loc>
+	<lastmod>2017-10-12T16:54:24+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/review?page=4</loc>
+	<loc>http://moyzhurnal.com/review?page=4</loc>
+	<lastmod>2017-10-12T16:54:24+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/12</loc>
+	<loc>http://moyzhurnal.com/posts/24</loc>
+	<lastmod>2017-10-12T16:54:25+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/10</loc>
+	<loc>http://moyzhurnal.com/posts/5</loc>
+	<lastmod>2017-10-12T16:54:27+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/cat/animereview?page=2</loc>
+	<loc>http://moyzhurnal.com/posts/8</loc>
+	<lastmod>2017-10-12T16:54:27+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/5</loc>
+	<loc>http://moyzhurnal.com/posts/18</loc>
+	<lastmod>2017-10-12T16:54:27+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/11</loc>
+	<loc>http://moyzhurnal.com/posts/10</loc>
+	<lastmod>2017-10-12T16:54:29+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/6</loc>
+	<loc>http://moyzhurnal.com/posts/13</loc>
+	<lastmod>2017-10-12T16:54:29+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/17</loc>
+	<loc>http://moyzhurnal.com/posts/12</loc>
+	<lastmod>2017-10-12T16:54:30+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/9</loc>
+	<loc>http://moyzhurnal.com/posts/cat/animereview?page=2</loc>
+	<lastmod>2017-10-12T16:54:31+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/8</loc>
+	<loc>http://moyzhurnal.com/posts/4</loc>
+	<lastmod>2017-10-12T16:54:31+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/2</loc>
+	<loc>http://moyzhurnal.com/posts/1</loc>
+	<lastmod>2017-10-12T16:54:32+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/7</loc>
+	<loc>http://moyzhurnal.com/posts/6</loc>
+	<lastmod>2017-10-12T16:54:33+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/18</loc>
+	<loc>http://moyzhurnal.com/posts/19</loc>
+	<lastmod>2017-10-12T16:54:33+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/news?page=2</loc>
+	<loc>http://moyzhurnal.com/posts/20</loc>
+	<lastmod>2017-10-12T16:54:34+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/1</loc>
+	<loc>http://moyzhurnal.com/posts/22</loc>
+	<lastmod>2017-10-12T16:54:36+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/aut/1?page=2</loc>
+	<loc>http://moyzhurnal.com/posts/9</loc>
+	<lastmod>2017-10-12T16:54:36+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/aut/1?page=3</loc>
+	<loc>http://moyzhurnal.com/news?page=2</loc>
+	<lastmod>2017-10-12T16:54:37+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/aut/1?page=4</loc>
+	<loc>http://moyzhurnal.com/news?page=3</loc>
+	<lastmod>2017-10-12T16:54:38+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/aut/1?page=5</loc>
+	<loc>http://moyzhurnal.com/posts/cat/movienews?page=2</loc>
+	<lastmod>2017-10-12T16:54:38+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts?page=1</loc>
+	<loc>http://moyzhurnal.com/posts/2</loc>
+	<lastmod>2017-10-12T16:54:39+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/review?page=1</loc>
+	<loc>http://moyzhurnal.com/posts/7</loc>
+	<lastmod>2017-10-12T16:54:40+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/cat/animereview?page=1</loc>
+	<loc>http://moyzhurnal.com/posts?page=1</loc>
+	<lastmod>2017-10-12T16:54:40+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/news?page=1</loc>
+	<loc>http://moyzhurnal.com/posts/3</loc>
+	<lastmod>2017-10-12T16:54:41+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>http://moyzhurnal.com/posts/aut/1?page=1</loc>
+	<loc>http://moyzhurnal.com/review?page=1</loc>
+	<lastmod>2017-10-12T16:54:42+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>http://moyzhurnal.com/posts/cat/animereview?page=1</loc>
+	<lastmod>2017-10-12T16:54:43+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>http://moyzhurnal.com/news?page=1</loc>
+	<lastmod>2017-10-12T16:54:44+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>http://moyzhurnal.com/posts/cat/movienews?page=1</loc>
+	<lastmod>2017-10-12T16:54:45+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 </urlset>

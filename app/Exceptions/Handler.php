@@ -55,9 +55,11 @@ class Handler extends ExceptionHandler
 				
 				$navigation = view(config('settings.theme').'.navigation')->with('menu',$obj->getMenu())->render();
 				
+				$err404 = true;
+				
 				\Log::alert('Страница не найдена - '. $request->url());
 				
-				return response()->view(config('settings.theme').'.404',['bar' => 'no','title' =>'Страница не найдена','navigation'=>$navigation]);
+				return response()->view(config('settings.theme').'.404',['bar' => 'no','title' =>'Страница не найдена','navigation'=>$navigation,'err404'=>$err404]);
 			}
 		}
     	

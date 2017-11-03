@@ -2,7 +2,8 @@
 
 namespace Japblog\Repositories;
 use Japblog\Posts;
-
+use Japblog\Category;
+use Japblog\Keywords;
 use Gate;
 
 class PostsRepository extends Repository{
@@ -29,9 +30,14 @@ class PostsRepository extends Repository{
 		if(empty($data)){
 			return array('error' => 'Нет данных!');
 		}
+		
+		$tmp_text = strip_tags($data['text']);
+		
 		$data['title'] = trim($data['title']);
 		if(trim($data['img'])==''){$data['img']=config('settings.image_big');}
-		$data['meta_desc'] = str_limit(strip_tags($data['text']), 250);
+		if(trim($data['keywords'])==''){$genKeys = new Keywords();
+										$data['keywords'] = $genKeys->seokeywords($tmp_text,5,7);}
+		$data['meta_desc'] = str_limit($tmp_text, 250);
 		
 		$this->model->fill($data);
 		
@@ -50,9 +56,14 @@ class PostsRepository extends Repository{
 		if(empty($data)){
 			return array('error' => 'Нет данных!');
 		}
+		
+		$tmp_text = strip_tags($data['text']);
+		
 		$data['title'] = trim($data['title']);
 		if(trim($data['img'])==''){$data['img']=config('settings.image_big');}
-		$data['meta_desc'] = str_limit(strip_tags($data['text']), 250);
+		if(trim($data['keywords'])==''){$genKeys = new Keywords();
+										$data['keywords'] = $genKeys->seokeywords($tmp_text,5,7);}
+		$data['meta_desc'] = str_limit($tmp_text, 250);
 		
 		$article->fill($data);
 		
@@ -82,9 +93,14 @@ class PostsRepository extends Repository{
 		if(empty($data)){
 			return array('error' => 'Нет данных!');
 		}
+		
+		$tmp_text = strip_tags($data['text']);
+		
 		$data['title'] = trim($data['title']);
 		if(trim($data['img'])==''){$data['img']=config('settings.image_big');}
-		$data['meta_desc'] = str_limit(strip_tags($data['text']), 250);
+		if(trim($data['keywords'])==''){$genKeys = new Keywords();
+										$data['keywords'] = $genKeys->seokeywords($tmp_text,5,7);}
+		$data['meta_desc'] = str_limit($tmp_text, 250);
 		
 		$article->fill($data);
 		
@@ -102,6 +118,7 @@ class PostsRepository extends Repository{
 			return ['status' => 'Пост удален!'];
 		}
 	}
-}
+		
+	}
 
 ?>
